@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-ink text-bone font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  ::selection {
+    background-color: rgba(15, 76, 58, 0.85);
+    color: #e8e6e1;
+  }
+
+  /* Tlumit autofill v Chromu */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill {
+    -webkit-text-fill-color: #e8e6e1;
+    -webkit-box-shadow: 0 0 0 1000px #0b0f0d inset;
+    caret-color: #e8e6e1;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* Skip link */
+  .skip-link {
+    @apply absolute left-2 top-2 z-[100] -translate-y-20 rounded-lg bg-emerald px-4 py-2 text-bone focus:translate-y-0 transition-transform;
+  }
+}
