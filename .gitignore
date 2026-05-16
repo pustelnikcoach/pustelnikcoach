@@ -40,3 +40,6 @@ next-env.d.ts
 
 # screenshots from initial design briefing — nepushovat
 Screenshot*.png
+
+# claude code worktrees
+.claude/worktrees/
