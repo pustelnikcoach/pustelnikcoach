@@ -31,6 +31,10 @@ import {
   KG_LABELS,
   LeadSchema,
   PACKAGE_CHOICES,
+  REASONS,
+  REASON_LABELS,
+  SOURCES,
+  SOURCE_LABELS,
   TIMELINES,
   TIMELINE_LABELS,
   type LeadInput,
@@ -44,7 +48,15 @@ const goalIcons: Record<(typeof GOALS)[number], LucideIcon> = {
   sila: Zap,
 };
 
-type StepId = "goal" | "kg" | "timeline" | "experience" | "package" | "contact";
+type StepId =
+  | "goal"
+  | "kg"
+  | "timeline"
+  | "experience"
+  | "package"
+  | "source"
+  | "reason"
+  | "contact";
 
 const stepVariants = {
   initial: { opacity: 0, x: 24 },
@@ -71,6 +83,8 @@ export function LeadForm() {
       timeline: undefined,
       experience: undefined,
       package: undefined,
+      source: undefined,
+      reason: undefined,
       name: "",
       email: "",
       phone: "",
@@ -87,7 +101,7 @@ export function LeadForm() {
   const steps: StepId[] = useMemo(() => {
     const base: StepId[] = ["goal"];
     if (needsKg) base.push("kg");
-    base.push("timeline", "experience", "package", "contact");
+    base.push("timeline", "experience", "package", "source", "reason", "contact");
     return base;
   }, [needsKg]);
 
@@ -128,6 +142,8 @@ export function LeadForm() {
     timeline: ["timeline"],
     experience: ["experience"],
     package: ["package"],
+    source: ["source"],
+    reason: ["reason"],
     contact: ["name", "email", "phone", "message", "gdpr"],
   };
 
@@ -337,6 +353,62 @@ export function LeadForm() {
             </Step>
           )}
 
+          {currentStep === "source" && (
+            <Step
+              title="Odkud jsi se o mně dozvěděl?"
+              subtitle="Pomáhá mi vědět, co funguje — ať vím, kam dál cílit."
+            >
+              <Controller
+                control={control}
+                name="source"
+                render={({ field }) => (
+                  <div className="grid grid-cols-1 gap-3">
+                    {SOURCES.map((s) => (
+                      <OptionCard
+                        key={s}
+                        selected={field.value === s}
+                        onClick={() => {
+                          field.onChange(s);
+                          setTimeout(goNext, 200);
+                        }}
+                        title={SOURCE_LABELS[s]}
+                      />
+                    ))}
+                  </div>
+                )}
+              />
+              <FieldError msg={errors.source?.message} />
+            </Step>
+          )}
+
+          {currentStep === "reason" && (
+            <Step
+              title="Proč jsi vybral zrovna mě?"
+              subtitle="Nemusíš si vymýšlet — vyber, co tě sem opravdu přivedlo."
+            >
+              <Controller
+                control={control}
+                name="reason"
+                render={({ field }) => (
+                  <div className="grid grid-cols-1 gap-3">
+                    {REASONS.map((r) => (
+                      <OptionCard
+                        key={r}
+                        selected={field.value === r}
+                        onClick={() => {
+                          field.onChange(r);
+                          setTimeout(goNext, 200);
+                        }}
+                        title={REASON_LABELS[r]}
+                      />
+                    ))}
+                  </div>
+                )}
+              />
+              <FieldError msg={errors.reason?.message} />
+            </Step>
+          )}
+
           {currentStep === "contact" && (
             <Step
               title="Skoro hotovo. Kam se mám ozvat?"
@@ -515,6 +587,10 @@ function isFilled(step: StepId, values: Partial<LeadInput>): boolean {
       return !!values.experience;
     case "package":
       return !!values.package;
+    case "source":
+      return !!values.source;
+    case "reason":
+      return !!values.reason;
     case "contact":
       return (
         !!values.name && !!values.email && !!values.phone && values.gdpr === true

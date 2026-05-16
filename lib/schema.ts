@@ -14,6 +14,19 @@ export const PACKAGE_CHOICES = [
   "Hybrid Elite",
   "Nevim",
 ] as const;
+export const SOURCES = [
+  "socialni-site",
+  "doporuceni",
+  "google",
+  "jinde",
+] as const;
+export const REASONS = [
+  "reference",
+  "zkusenosti",
+  "hodnoty",
+  "vysledky",
+  "jine",
+] as const;
 
 // CZ telefon — povolíme +420 prefix nebo bez něj, mezery jsou ok
 const phoneRegex = /^(\+?420)?\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{3}$/;
@@ -24,6 +37,8 @@ export const LeadSchema = z.object({
   timeline: z.enum(TIMELINES, { required_error: "Vyber časový horizont" }),
   experience: z.enum(EXPERIENCE, { required_error: "Vyber svou úroveň" }),
   package: z.enum(PACKAGE_CHOICES, { required_error: "Vyber balíček" }),
+  source: z.enum(SOURCES, { required_error: "Vyber, odkud jsi se o mně dozvěděl" }),
+  reason: z.enum(REASONS, { required_error: "Vyber, proč jsi vybral mě" }),
   name: z
     .string()
     .min(2, "Zadej jméno a příjmení")
@@ -68,4 +83,19 @@ export const EXPERIENCE_LABELS: Record<(typeof EXPERIENCE)[number], string> = {
   zacatecnik: "Začátečník (nikdy / sporadicky)",
   obcas: "Občas cvičím (1–2× týdně, bez plánu)",
   pokrocily: "Pokročilý (pravidelně, mám systém)",
+};
+
+export const SOURCE_LABELS: Record<(typeof SOURCES)[number], string> = {
+  "socialni-site": "Sociální sítě (Instagram / TikTok / Facebook)",
+  doporuceni: "Doporučení od kamaráda",
+  google: "Google / vyhledávání trenéra",
+  jinde: "Jinde",
+};
+
+export const REASON_LABELS: Record<(typeof REASONS)[number], string> = {
+  reference: "Reference klientů",
+  zkusenosti: "Šest let zkušeností",
+  hodnoty: "Hodnoty, které vyznáváš",
+  vysledky: "Tvoje výsledky",
+  jine: "Jiné",
 };

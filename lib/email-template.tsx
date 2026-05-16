@@ -5,6 +5,8 @@ import {
   EXPERIENCE_LABELS,
   GOAL_LABELS,
   KG_LABELS,
+  REASON_LABELS,
+  SOURCE_LABELS,
   TIMELINE_LABELS,
   type LeadInput,
 } from "./schema";
@@ -31,6 +33,8 @@ export function renderLeadEmail(data: LeadInput, receivedAt: Date): string {
     ["Časový horizont", TIMELINE_LABELS[data.timeline]],
     ["Zkušenost", EXPERIENCE_LABELS[data.experience]],
     ["Balíček", escape(data.package)],
+    ["Odkud přišel", SOURCE_LABELS[data.source]],
+    ["Proč si vybral mě", REASON_LABELS[data.reason]],
     ["Zpráva", data.message ? escape(data.message).replace(/\n/g, "<br/>") : "—"],
   ];
 

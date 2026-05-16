@@ -40,7 +40,7 @@ export const hero = {
   // ÚPRAVA: podnadpis pod hlavním textem
   // (hvězdičkami **text** udělá tučně)
   subheadline:
-    "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy, žádná frustrace — jen **systém, který drží roky.**",
+    "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy — jen **systém, který drží roky.**",
 
   ctaPrimary: "Začít teď", // ÚPRAVA: text hlavního tlačítka
   ctaSecondary: "Vidět výsledky", // ÚPRAVA: text druhého tlačítka
@@ -116,9 +116,9 @@ export const about = {
     "**Šest let cvičím. Rok trénuju klienty v Elements Gymu Ostrava.**",
     "Začal jsem **u sebe** — léta jsem studoval, co opravdu funguje, a postavil postavu, kterou jsem chtěl. Bez zkratek, bez extrémních diet, bez magie.",
     "Pak se začali ptát **kamarádi** — co jíš, jak cvičíš, jak to děláš. Tak jsem začal pomáhat jim. Když to fungovalo opakovaně, došlo mi, že stejný systém můžu dát i lidem mimo svůj okruh.",
-    "Teď trénuju **klienty** v Elements Gymu a online po celé republice. Specializuju se na formování postavy, silový a kondiční trénink, powerlifting a kulturistiku včetně závodní přípravy.",
+    "Teď trénuju **klienty** v Elements Gymu a online po celé republice — formování postavy, sílu, powerlifting i kulturistiku včetně závodní přípravy.",
     "**Zdraví máte jen jedno.** O tělo se musí starat — nejde jen o váhu nebo postavu, jde o klouby, srdce, hlavu, spánek. Žádný cíl není moc malý a žádný čas není moc pozdě.",
-    "Pokud chceš jít na to vážně, **ozvi se**.",
+    "Jsi tu správně. **Jsem tvůj člověk.**",
   ],
 
   // ÚPRAVA: štítky pod textem (kvalifikace, místo)
@@ -203,7 +203,7 @@ export const curveCopy = {
 export const pillarsHeading = {
   title: "Čím se liším", // ÚPRAVA: nadpis sekce
   subtitle:
-    "Žádné výkřiky, žádné Instagram triky, žádné šablony stažené z internetu. **Jenom práce, která funguje.**", // ÚPRAVA: podtitulek (bold přes **text**)
+    "Žádné sliby. **Jenom systém postavený na šesti letech zkušeností.**", // ÚPRAVA: podtitulek (bold přes **text**)
 };
 
 export const pillars = [
@@ -211,7 +211,7 @@ export const pillars = [
     icon: "Target", // ikona z https://lucide.dev/icons
     title: "Systém, ne #fitnessjourney", // ÚPRAVA: nadpis pillaru
     description:
-      "Žádný hype, žádné výkřiky. Plán postavený na **tobě a tvém životě**, vyhodnocování každý týden. Reels nedělám.", // ÚPRAVA
+      "Žádný hype, žádné výkřiky. Plán postavený na **tobě a tvém životě**, vyhodnocování každý týden.", // ÚPRAVA
   },
   {
     icon: "Repeat2",
@@ -263,9 +263,9 @@ export const guarantee = {
 // URGENCY — krátká věta nad balíčky
 // -----------------------------------------------------------------
 export const urgency = {
-  // ÚPRAVA: krátká věta o omezené kapacitě
+  // ÚPRAVA: krátká věta o omezené kapacitě / exkluzivitě
   message:
-    "Můj čas je omezený. Nové klienty beru jen, když mám kapacitu — ozvi se a domluvíme se.",
+    "**Můj čas není digitální produkt.** Ceník je jen pro představu — nejdřív si dáme nezávaznou konzultaci, kde ti řeknu, který balíček ti sedne nejvíc.",
 };
 
 // -----------------------------------------------------------------
@@ -283,7 +283,7 @@ export const urgency = {
 export const packagesHeading = {
   title: "Spolupráce", // ÚPRAVA: nadpis sekce
   subtitle:
-    "Měsíční partnerství. **Vyber si intenzitu** podle toho, jak rychle chceš výsledek — nebo se ozvi a **domluvíme něco mimo ceník**.", // ÚPRAVA (bold přes **text**)
+    "Měsíční partnerství. Tohle nejsou produkty na klik — **každá spolupráce začíná konzultací**, kde se domluvíme, co ti sedí.", // ÚPRAVA (bold přes **text**)
 };
 
 export const packages = [
@@ -476,7 +476,6 @@ export const formCopy = {
 export const footer = {
   tagline: "Osobní trenér · Ostrava", // ÚPRAVA: tagline pod logem
   rightsLine: "© 2026 Petr Pustelník", // ÚPRAVA: copyright (změň rok, když je potřeba)
-  authorLine: "Web by Luke Přibyla", // pozor — neměň bez domluvy s Lukem
 };
 
 // -----------------------------------------------------------------
@@ -505,9 +504,9 @@ export const legal = {
   // ÚPRAVA: tvoje plné jméno (jak v živnosti)
   fullName: "Petr Pustelník",
   // ÚPRAVA: IČO ze živnostenského listu
-  ico: "[DOPLNIT IČO]",
+  ico: "22444661",
   // ÚPRAVA: tvoje sídlo (kam ti chodí pošta)
-  address: "[DOPLNIT ADRESU]",
+  address: "Holasická 1100/53, 747 05 Opava-Kateřinky",
   // ÚPRAVA: e-mail pro právní záležitosti (může být ten samý jako kontaktní)
   legalEmail: "petrpustelnikcoach@gmail.com",
   // ÚPRAVA: datum poslední aktualizace dokumentů

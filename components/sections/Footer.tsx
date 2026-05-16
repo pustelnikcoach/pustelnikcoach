@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Instagram, Mail, MapPin, Phone } from "lucide-react";
-import { contact, footer, nav } from "@/lib/content";
+import { contact, footer, legal, nav } from "@/lib/content";
 
 // TikTok / Facebook ikony jako jednoduché inline SVG (lucide nemá oficiální TikTok ikonu)
 function TikTokIcon({ className }: { className?: string }) {
@@ -122,7 +122,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 pt-6 border-t border-bone/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-mute">
+        <div className="mt-14 pt-6 border-t border-bone/5 flex flex-col gap-4 text-xs text-mute">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
             <span>{footer.rightsLine}</span>
             <Link
@@ -138,7 +138,9 @@ export function Footer() {
               Obchodní podmínky
             </Link>
           </div>
-          <span>{footer.authorLine}</span>
+          <span className="text-bone/40">
+            {legal.fullName} · IČO {legal.ico} · {legal.address}
+          </span>
         </div>
       </div>
     </footer>

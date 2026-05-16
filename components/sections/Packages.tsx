@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, Clock4 } from "lucide-react";
+import { Check, Handshake } from "lucide-react";
 import {
   oneTime,
   oneTimeHeading,
@@ -44,16 +44,20 @@ export function Packages() {
           </motion.p>
         </div>
 
-        {/* Urgency strip */}
+        {/* Exkluzivita + konzultace — hlavní hláška nad balíčky */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5 }}
-          className="mb-10 inline-flex items-start gap-3 rounded-xl border border-emerald/25 bg-emerald/[0.08] px-4 py-3 text-sm text-bone/85"
+          className="mb-12 flex items-start gap-4 rounded-2xl border border-emerald/40 bg-emerald/[0.08] p-5 sm:p-6"
         >
-          <Clock4 className="h-4 w-4 mt-0.5 text-emerald-light shrink-0" aria-hidden />
-          <span>{urgency.message}</span>
+          <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald/20 text-emerald-light">
+            <Handshake className="h-5 w-5" aria-hidden />
+          </div>
+          <p className="text-base sm:text-lg leading-relaxed text-bone/90">
+            {renderInline(urgency.message)}
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">

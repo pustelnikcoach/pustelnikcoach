@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Sparkles } from "lucide-react";
+import { ShieldCheck, Split } from "lucide-react";
 import { guarantee } from "@/lib/content";
 import { renderInline } from "@/lib/markdown";
 
@@ -69,7 +69,7 @@ export function Guarantee() {
             className="lg:col-span-2 rounded-2xl bg-graphite border border-bone/5 p-8 sm:p-10 flex flex-col"
           >
             <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-bone/[0.06] text-bone/80">
-              <Sparkles className="h-5 w-5" />
+              <Split className="h-5 w-5" />
             </div>
             <h3 className="mt-5 font-display text-2xl font-semibold text-bone leading-tight">
               {guarantee.customTitle}
