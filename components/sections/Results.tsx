@@ -41,8 +41,13 @@ export function Results() {
               <ResultMedia card={r} />
 
               <div className="p-6 sm:p-7">
-                <div className="text-xs uppercase tracking-[0.15em] text-mute mb-2">
-                  {r.name}
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <span className="text-xs uppercase tracking-[0.15em] text-mute">
+                    {r.name}
+                  </span>
+                  <span className="inline-flex items-center rounded-full bg-emerald/10 px-2.5 py-0.5 text-[0.65rem] uppercase tracking-[0.15em] text-emerald-light">
+                    {r.duration}
+                  </span>
                 </div>
                 <div className="font-display text-xl sm:text-2xl font-semibold text-bone leading-tight">
                   {r.kind === "ba" ? (
@@ -77,9 +82,6 @@ function ResultMedia({ card }: { card: ResultCard }) {
       <div className="relative grid grid-cols-2 gap-px bg-ink/40">
         <ImageTile src={card.before} alt={`${card.name} — před`} label="PŘED" />
         <ImageTile src={card.after} alt={`${card.name} — po`} label="PO" accent />
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full bg-ink/80 backdrop-blur px-3 py-1 text-[0.7rem] tracking-widest uppercase text-bone/80">
-          {card.duration}
-        </div>
       </div>
     );
   }
@@ -90,15 +92,12 @@ function ResultMedia({ card }: { card: ResultCard }) {
       <img
         src={card.image}
         alt={`${card.name} — výsledek spolupráce`}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/20 to-transparent pointer-events-none" />
-      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-ink/70 backdrop-blur px-3 py-1 text-[0.7rem] tracking-widest uppercase text-bone/80">
-        {card.duration}
-      </div>
     </div>
   );
 }
@@ -120,7 +119,7 @@ function ImageTile({
       <img
         src={src}
         alt={alt}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}

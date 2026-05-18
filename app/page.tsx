@@ -1,4 +1,5 @@
 import { About } from "@/components/sections/About";
+import { CustomCollab } from "@/components/sections/CustomCollab";
 import { Excuses } from "@/components/sections/Excuses";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/sections/Footer";
@@ -28,6 +29,7 @@ export default function HomePage() {
         <Excuses />
         <Guarantee />
         <Packages />
+        <CustomCollab />
         <ResultsCurve />
         <Process />
         <LeadFormSection />

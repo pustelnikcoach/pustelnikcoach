@@ -294,10 +294,10 @@ export const guarantee = {
 
   statNumber: "100 %",
   statLabel:
-    "klientů, kteří dodrželi plán **na 100 %**, dosáhli svého cíle. To není marketing — to je průměr za 6 let.",
+    "klientů, kteří dotáhli plán do konce, dosáhlo svého cíle. Není to marketing — je to průměr za šest let praxe.",
 
   promise:
-    "**Pokud po prvním měsíci nevidíš změnu** při dodržení plánu, **vrátím ti peníze.** Žádné podmínky, žádné výmluvy.",
+    "**Z mé strany udělám maximum, aby plán doručil to, co slibuje.** Tvoje práce je ho dodržet — moje práce je tě k tomu dovést.",
 
   customTitle: "Nesedí ti žádný balíček?",
   customBody:
@@ -455,7 +455,7 @@ export const faq = [
   },
   {
     q: "Co když to nevyjde / nezhubnu, jak chci?",
-    a: "**100 % klientů, kteří dodrželi plán na 100 %, dosáhlo svého cíle.** Pokud nevidíš pohyb, problém je v plánu, ne v tobě — upravíme. A pokud po prvním měsíci nejsi spokojený, vrátím ti peníze.",
+    a: "**100 % klientů, kteří plán opravdu dotáhli do konce, svého cíle dosáhlo.** Pokud nevidíš pohyb, problém je v plánu, ne v tobě — upravíme. Z mé strany udělám maximum, aby plán doručil to, co slibuje.",
   },
   {
     q: "Už jsem to zkoušel jinde a nevyšlo to.",
