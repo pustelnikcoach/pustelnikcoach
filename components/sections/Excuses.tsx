@@ -57,7 +57,7 @@ export function Excuses() {
               </p>
               <div className="mt-5 pt-5 border-t border-bone/5">
                 <div className="text-[0.7rem] uppercase tracking-[0.18em] text-emerald-light mb-2">
-                  Petis na to
+                  Petr na to
                 </div>
                 <p className="text-[1rem] leading-relaxed text-bone/85">
                   {renderInline(item.answer)}

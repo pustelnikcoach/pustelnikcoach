@@ -15,9 +15,10 @@
 // NAV — odkazy v horní liště
 // -----------------------------------------------------------------
 export const nav = {
-  brand: "PUSTELNIK", // ÚPRAVA: značka/logo text vlevo nahoře
+  brand: "PUSTELNIK", // ÚPRAVA: značka/logo text vlevo nahoře (tečka se přidá automaticky v zelené)
   links: [
     { label: "Výsledky", href: "#vysledky" },
+    { label: "Recenze", href: "#recenze" },
     { label: "O mně", href: "#o-mne" },
     { label: "Balíčky", href: "#balicky" },
     { label: "FAQ", href: "#faq" },
@@ -31,16 +32,16 @@ export const nav = {
 // -----------------------------------------------------------------
 export const hero = {
   // ÚPRAVA: malý text nad hlavním nadpisem (uppercase)
-  eyebrow: "OSOBNÍ TRENÉR · ELEMENTS GYM OSTRAVA",
+  eyebrow: "OSOBNÍ TRENÉR · ELEMENTS GYM OSTRAVA / OPAVA (OD ČERVNA)",
 
   // ÚPRAVA: hlavní nadpis — dva řádky
-  headlineLine1: "Trenér, který tě dovede k cíli.",
-  headlineLine2: "Ne k frustraci.",
+  headlineLine1: "Tvoje forma mluví",
+  headlineLine2: "dřív než ty.",
 
   // ÚPRAVA: podnadpis pod hlavním textem
   // (hvězdičkami **text** udělá tučně)
   subheadline:
-    "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy — jen **systém, který drží roky.**",
+    "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy — jen **jednoduchá cesta k vysněné formě**, postavená na selském rozumu.",
 
   ctaPrimary: "Začít teď", // ÚPRAVA: text hlavního tlačítka
   ctaSecondary: "Vidět výsledky", // ÚPRAVA: text druhého tlačítka
@@ -58,49 +59,115 @@ export const hero = {
 // Pokud je to text (např. "Orchard"), jenom se rozsvítí.
 // -----------------------------------------------------------------
 export const proof = [
-  { number: "6+", label: "let praxe v trénování" }, // ÚPRAVA: roky praxe
-  { number: "100+", label: "klientů dosáhlo cíle" }, // ÚPRAVA: počet klientů
-  { number: "99 %", label: "úspěšnost při dodržení plánu" }, // ÚPRAVA: úspěšnost
+  { number: "6+", label: "let praxe v trénování" },
+  { number: "100+", label: "klientů dosáhlo cíle" },
+  { number: "100 %", label: "úspěšnost klientů, kteří dodrželi plán" },
 ];
 
 // -----------------------------------------------------------------
 // VÝSLEDKY KLIENTŮ — karty s před/po
 // -----------------------------------------------------------------
+// Každá karta má pole `kind`:
+//   "ba"     = před / po (dvě fotky, `before` + `after`)
+//   "single" = jen jedna fotka (`image`)
+//
 // PŘIDÁNÍ NOVÉHO KLIENTA:
-// 1. Zkopíruj jeden objekt níže (od { po }).
+// 1. Zkopíruj jeden objekt níže.
 // 2. Vlož ho na konec pole (před závorkou ]).
-// 3. Vyplň údaje.
-// 4. Ulož fotku do public/images/results/[jmeno].jpg
+// 3. Ulož fotky do public/images/results/
 // -----------------------------------------------------------------
 export const resultsHeading = {
-  title: "Výsledky, ne sliby", // ÚPRAVA: nadpis sekce
-  subtitle: "Reálné fotky reálných klientů. Žádný photoshop, žádné stock fotky.", // ÚPRAVA
+  title: "Výsledky, ne sliby",
+  subtitle:
+    "Reálné fotky reálných klientů. Žádný photoshop, žádné stock fotky.",
 };
 
-export const results = [
+export type ResultCard =
+  | {
+      kind: "ba";
+      name: string;
+      before: string; // cesta k fotce „před"
+      after: string; // cesta k fotce „po"
+      duration: string;
+      quote?: string;
+    }
+  | {
+      kind: "single";
+      name: string;
+      image: string;
+      duration: string;
+      quote?: string;
+      // "top-zoom" = zoom na obličej (užitečné, když je fotka focená z dálky)
+      focus?: "top-zoom";
+    };
+
+export const results: ResultCard[] = [
   {
-    name: "Dominik J.", // ÚPRAVA: jméno klienta
-    before: "100 kg", // ÚPRAVA: stav před
-    after: "86 kg", // ÚPRAVA: stav po
-    duration: "5 měsíců", // ÚPRAVA: za jak dlouho
-    quote: "Konečně systém, který drží i po skončení spolupráce.", // ÚPRAVA: citát
-    image: "/images/results/dominik.jpg", // ÚPRAVA: cesta k fotce
+    kind: "ba",
+    name: "Tomáš Medek",
+    before: "/images/results/tomas-before.jpg",
+    after: "/images/results/tomas-after.jpg",
+    duration: "Dlouhodobá spolupráce",
+    quote:
+      "Díky coachingu se mi výrazně zvedlo sebevědomí a cítím se ve svém těle mnohem líp.",
   },
   {
-    name: "Jakub P.",
-    before: "125 kg",
-    after: "85 kg",
-    duration: "8 měsíců",
-    quote: "40 kilo dole. Petis ví, co dělá.",
-    image: "/images/results/jakub.jpg",
+    kind: "ba",
+    name: "Jan Neuwirth",
+    before: "/images/results/jan-before.jpg",
+    after: "/images/results/jan-after.jpg",
+    duration: "Postupná transformace",
   },
   {
+    kind: "single",
     name: "Justýna H.",
-    before: "Před",
-    after: "+10 kg svalu",
-    duration: "od ledna",
-    quote: "Forma, kterou jsem si nedokázala představit.",
     image: "/images/results/justyna.jpg",
+    duration: "4 měsíce",
+    quote:
+      "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
+    focus: "top-zoom",
+  },
+  {
+    kind: "single",
+    name: "Vali Rožošová",
+    image: "/images/results/vali.jpg",
+    duration: "Dlouhodobá spolupráce",
+    quote:
+      "Posunula jsem se psychicky, mám k sobě lepší vztah a cítím se silnější než dřív.",
+  },
+];
+
+// -----------------------------------------------------------------
+// TEXTOVÉ RECENZE — bez fotky, jen citát a jméno
+// -----------------------------------------------------------------
+// Pro klienty, kteří poslali text, ale nemají před/po fotku.
+// -----------------------------------------------------------------
+export const testimonialsHeading = {
+  title: "Co o mně říkají",
+  subtitle:
+    "Recenze od klientů, kteří prošli spoluprací. Vlastní slova, vlastní zkušenost.",
+};
+
+export const testimonials = [
+  {
+    name: "Metoděj Strachoň",
+    quote:
+      "Měl jsem přes 100 kg a hned při prvním tréninku mi Petr pomohl, aniž by za to cokoliv chtěl. Naučil mě jíst zdravě i pít dostatek vody a tréninky mě s ním vždycky bavily. Doporučil bych ho každému, kdo chce se sebou něco dělat.",
+  },
+  {
+    name: "Dominik Jedlička",
+    quote:
+      "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Určitě bych ho doporučil lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
+  },
+  {
+    name: "Patrik Wludyka",
+    quote:
+      "Oslovil jsem Petra kvůli přípravě na fyzické zkoušky do práce — chtěl jsem to vzít systematicky. Výrazně se mi zlepšila kondice i síla a mám v tréninku mnohem větší jistotu. Doporučil bych ho každému, kdo se chce cíleně připravit.",
+  },
+  {
+    name: "Luci Bogárová",
+    quote:
+      "Chtěla jsem se naučit cvičit a Petr mi byl sympatický — má smysl pro humor a přitom to bere vážně. Od té doby, co s ním cvičím, mám velký posun v technice. Doporučím všem, co si chtějí pokecat a u toho pořádně zacvičit.",
   },
 ];
 
@@ -108,11 +175,13 @@ export const results = [
 // O MNĚ — bio sekce
 // -----------------------------------------------------------------
 export const about = {
-  heading: "O mně", // ÚPRAVA: nadpis sekce
+  heading: "O mně",
 
   // ÚPRAVA: jednotlivé odstavce textu
   // Hvězdičky **text** udělají z textu tučně.
   paragraphs: [
+    "V roce **2021** mě jako **šestnáctiletého** srazilo na kole auto. Doktoři mi dávali **1% šanci na přežití**.",
+    "Když mi tělo dalo druhou šanci, slíbil jsem si, že ji **nepromarním** — a od toho dne beru zdraví i život **vážně**.",
     "**Šest let cvičím. Rok trénuju klienty v Elements Gymu Ostrava.**",
     "Začal jsem **u sebe** — léta jsem studoval, co opravdu funguje, a postavil postavu, kterou jsem chtěl. Bez zkratek, bez extrémních diet, bez magie.",
     "Pak se začali ptát **kamarádi** — co jíš, jak cvičíš, jak to děláš. Tak jsem začal pomáhat jim. Když to fungovalo opakovaně, došlo mi, že stejný systém můžu dát i lidem mimo svůj okruh.",
@@ -126,7 +195,7 @@ export const about = {
     "Fitness trenér / instruktor fitness",
     "Sestavování jídelníčků",
     "6+ let praxe v cvičení",
-    "Elements Gym Ostrava",
+    "Elements Gym Ostrava / Opava",
   ],
 
   // ÚPRAVA: cesta k portrétní fotce (poměr 4:5)
@@ -137,20 +206,17 @@ export const about = {
 // -----------------------------------------------------------------
 // EXCUSES — sekce "Možná si říkáš…" — boří nejčastější výmluvy
 // -----------------------------------------------------------------
-// Klienti často přicházejí s obavami, které je drží zpátky.
-// Tato sekce je vyjmenuje a krátce na ně odpoví.
-// -----------------------------------------------------------------
 export const excusesHeading = {
-  title: "Možná si říkáš…", // ÚPRAVA: nadpis sekce
+  title: "Možná si říkáš…",
   subtitle:
-    "Většinu lidí brzdí jedna z těchhle vět. Ne argument — **strach z neúspěchu** v hávu logiky.", // ÚPRAVA
+    "Většinu lidí brzdí jedna z těchhle vět. Ne argument — **strach z neúspěchu** v hávu logiky.",
 };
 
 export const excuses = [
   {
-    excuse: "„Mám 100 kilo, to už je pozdě.“", // ÚPRAVA: výmluva v uvozovkách
+    excuse: "„Mám 100 kilo, to už je pozdě.“",
     answer:
-      "**Smysl to má vždycky.** Sundat 5–10 kg ve 100 kg = větší úleva pro klouby, srdce a spánek než z 80 na 75. **Zdraví máte jen jedno** — a o tělo se musí starat bez ohledu na věk a startovní stav.", // ÚPRAVA: odpověď
+      "**Smysl to má vždycky.** Sundat 5–10 kg ve 100 kg = větší úleva pro klouby, srdce a spánek než z 80 na 75. **Zdraví máte jen jedno** — a o tělo se musí starat bez ohledu na věk a startovní stav.",
   },
   {
     excuse: "„Nemám čas, mám práci a rodinu.“",
@@ -172,24 +238,18 @@ export const excuses = [
 // -----------------------------------------------------------------
 // CURVE — křivka výsledků (hokejka)
 // -----------------------------------------------------------------
-// Vysvětluje psychologii spolupráce: většina lidí čeká lineární
-// progres, ale realita je exponenciální. Většina lidí to vzdá
-// v "ploché" fázi — předtím, než výsledky přijdou.
-// -----------------------------------------------------------------
 export const curveHeading = {
-  title: "Proč většina lidí nikdy neuvidí výsledek", // ÚPRAVA: nadpis sekce
-  subtitle:
-    "Většina ti slíbí lineární cestu. Realita vypadá takhle:", // ÚPRAVA
+  title: "Proč většina lidí nikdy neuvidí výsledek",
+  subtitle: "Většina ti slíbí lineární cestu. Realita vypadá takhle:",
 };
 
 export const curveCopy = {
   // ÚPRAVA: popisky bodů křivky
-  expectedLabel: "Co ti slíbili",
+  expectedLabel: "Co ti slíbili ostatní",
   realityLabel: "Realita",
   quitZoneLabel: "Tady končí 85 % lidí",
   payoffZoneLabel: "Tady přicházejí výsledky",
 
-  // ÚPRAVA: vysvětlující odstavec pod grafem
   body:
     "**Většina lidí ukončí spolupráci v týdnu 4–8** — ve chvíli, kdy ještě nevidí výsledky, ale tělo už dělá tvrdou práci v pozadí. Moje práce je **dotáhnout tě přes tuhle fázi**. Sleduju, kontroluju, povzbuzuju, upravuju. Jakmile se dostaneš za zlom, výsledky přijdou samy a rychle.",
 };
@@ -197,21 +257,18 @@ export const curveCopy = {
 // -----------------------------------------------------------------
 // PILLARS — jak pracuju, čím se liším od ostatních trenérů
 // -----------------------------------------------------------------
-// Ikona musí být jeden z názvů z https://lucide.dev/icons
-// (např. "Target", "Repeat2", "ShieldCheck", "UserCheck").
-// -----------------------------------------------------------------
 export const pillarsHeading = {
-  title: "Čím se liším", // ÚPRAVA: nadpis sekce
+  title: "Čím se liším",
   subtitle:
-    "Žádné sliby. **Jenom systém postavený na šesti letech zkušeností.**", // ÚPRAVA: podtitulek (bold přes **text**)
+    "Žádné sliby. **Jenom jednoduchost, selský rozum a šest let zkušeností.**",
 };
 
 export const pillars = [
   {
-    icon: "Target", // ikona z https://lucide.dev/icons
-    title: "Systém, ne #fitnessjourney", // ÚPRAVA: nadpis pillaru
+    icon: "Lightbulb",
+    title: "Jednoduchost a selský rozum",
     description:
-      "Žádný hype, žádné výkřiky. Plán postavený na **tobě a tvém životě**, vyhodnocování každý týden.", // ÚPRAVA
+      "Žádné triky, žádné zázračné suplementy, žádné módní diety. **Co dává smysl, drží roky** — všechno ostatní je marketing.",
   },
   {
     icon: "Repeat2",
@@ -236,26 +293,19 @@ export const pillars = [
 // -----------------------------------------------------------------
 // GARANCE & SPOLUPRÁCE NA MÍRU — risk reversal sekce
 // -----------------------------------------------------------------
-// Tahle sekce řeší obavu "co když mi to nevyjde" a otevírá dveře
-// klientům, kterým nesedí žádný balíček z ceníku.
-// -----------------------------------------------------------------
 export const guarantee = {
-  // ÚPRAVA: velký nadpis sekce
   heading: "Garantuju ti výsledek. Ne sliby.",
 
-  // ÚPRAVA: hlavní statistika nahoře (např. "99 %")
-  statNumber: "99 %",
+  statNumber: "100 %",
   statLabel:
-    "klientů, kteří dodrželi plán, dosáhli svého cíle. To není marketing — to je průměr za 6 let.",
+    "klientů, kteří dotáhli plán do konce, dosáhlo svého cíle. Není to marketing — je to průměr za šest let praxe.",
 
-  // ÚPRAVA: text garance (zvýrazněný box)
   promise:
-    "**Pokud po prvním měsíci nevidíš změnu** při dodržení plánu, **vrátím ti peníze.** Žádné podmínky, žádné výmluvy.",
+    "**Z mé strany udělám maximum, aby plán doručil to, co slibuje.** Tvoje práce je ho dodržet — moje práce je tě k tomu dovést.",
 
-  // ÚPRAVA: druhá část — spolupráce mimo ceník
   customTitle: "Nesedí ti žádný balíček?",
   customBody:
-    "Není nutné si vybrat balíček z ceníku. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Petou — společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
+    "Není nutné si vybrat balíček z ceníku. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Peťou — společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
   customCta: "Domluvit spolupráci na míru",
 };
 
@@ -263,7 +313,6 @@ export const guarantee = {
 // URGENCY — krátká věta nad balíčky
 // -----------------------------------------------------------------
 export const urgency = {
-  // ÚPRAVA: krátká věta o omezené kapacitě / exkluzivitě
   message:
     "**Můj čas není digitální produkt.** Ceník je jen pro představu — nejdřív si dáme nezávaznou konzultaci, kde ti řeknu, který balíček ti sedne nejvíc.",
 };
@@ -271,28 +320,19 @@ export const urgency = {
 // -----------------------------------------------------------------
 // BALÍČKY — měsíční spolupráce (4 hlavní balíčky)
 // -----------------------------------------------------------------
-// ZMĚNA CENY:
-// Najdi balíček podle name (Hybrid, Hybrid Pro, ...) a změň price.
-//
-// PŘIDÁNÍ BALÍČKU:
-// Zkopíruj jeden objekt a vlož na konec pole.
-//
-// TAG "NEJOBLÍBENĚJŠÍ" / "MAX VÝSLEDEK":
-// Změň pole tag. Doporučuju mít max 1-2 zvýrazněné balíčky.
-// -----------------------------------------------------------------
 export const packagesHeading = {
-  title: "Spolupráce", // ÚPRAVA: nadpis sekce
+  title: "Spolupráce",
   subtitle:
-    "Měsíční partnerství. Tohle nejsou produkty na klik — **každá spolupráce začíná konzultací**, kde se domluvíme, co ti sedí.", // ÚPRAVA (bold přes **text**)
+    "Měsíční partnerství. Tohle nejsou produkty na klik — **každá spolupráce začíná konzultací**, kde se domluvíme, co ti sedí.",
 };
 
 export const packages = [
   {
-    name: "Online Coaching", // ÚPRAVA: název balíčku
-    price: "2 290", // ÚPRAVA: cena měsíčně v Kč
+    name: "Online Coaching",
+    price: "2 290",
     period: "/měsíc",
-    tag: "PRO LIDI MIMO OSTRAVU", // ÚPRAVA: badge nahoře — null nebo "..."
-    bestFor: "Máš disciplínu, ale chceš plán a kontrolu.", // ÚPRAVA: pro koho je
+    tag: "PRO LIDI MIMO OSTRAVU",
+    bestFor: "Máš disciplínu, ale chceš plán a kontrolu.",
     features: [
       "Online komunikace",
       "2× měsíčně kontrola",
@@ -351,7 +391,7 @@ export const packages = [
 // -----------------------------------------------------------------
 // JEDNORÁZOVKY — služby, co se neprodávají měsíčně
 // -----------------------------------------------------------------
-export const oneTimeHeading = "Jednorázové služby"; // ÚPRAVA: nadpis sekce
+export const oneTimeHeading = "Jednorázové služby";
 
 export const oneTime = [
   { name: "1 osobní trénink", price: "590", note: "studenti 500" },
@@ -367,21 +407,17 @@ export const oneTime = [
 // -----------------------------------------------------------------
 // PROCES — jak spolupráce probíhá (transformační oblouk)
 // -----------------------------------------------------------------
-// Tohle nejsou kroky tvojí strany (vyplníš formulář, ozvu se...),
-// ale milníky výsledků klienta. Posouvá to focus z procesu na výsledek.
-// -----------------------------------------------------------------
 export const processHeading = {
-  title: "Jak to probíhá", // ÚPRAVA: nadpis sekce
-  subtitle:
-    "Tohle je oblouk, kterým si projdeš. Není to slib, je to průměr.", // ÚPRAVA
+  title: "Jak to probíhá",
+  subtitle: "Tohle je oblouk, kterým si projdeš. Není to slib, je to průměr.",
 };
 
 export const process = [
   {
     step: "Týden 1",
-    title: "Audit, plán, start", // ÚPRAVA: nadpis kroku
+    title: "Audit, plán, start",
     description:
-      "**Měření, focení, plán šitý tobě.** Tréninkový program, jídelníček, suplementace. První trénink ještě ten týden.", // ÚPRAVA: popis kroku
+      "**Měření, focení, plán šitý tobě.** Tréninkový program, jídelníček, suplementace. První trénink ještě ten týden.",
   },
   {
     step: "Týden 4",
@@ -399,20 +435,17 @@ export const process = [
     step: "Měsíc 6+",
     title: "Trvalá forma",
     description:
-      "Forma, kterou jsi nečekal. A hlavně **systém, který drží i bez mě** — návyky, technika, vědomí, co tělo potřebuje.",
+      "**Forma, kterou jsi nečekal.** A hlavně **systém, který drží i bez mě.** Tohle je cíl.",
   },
 ];
 
 // -----------------------------------------------------------------
 // FAQ — nejčastější otázky a námitky
 // -----------------------------------------------------------------
-// PŘIDÁNÍ OTÁZKY: zkopíruj objekt a vlož na konec pole.
-// Pokud chceš část odpovědi tučně, zabal slovo do **hvězdiček**.
-// -----------------------------------------------------------------
 export const faqHeading = {
-  title: "Časté otázky", // ÚPRAVA: nadpis sekce
+  title: "Časté otázky",
   subtitle:
-    "Většina lidí mě řeší jednu z těchhle věcí. Pokud chybí tvoje, ozvi se.", // ÚPRAVA
+    "Většina lidí mě řeší jednu z těchhle věcí. Pokud chybí tvoje, ozvi se.",
 };
 
 export const faq = [
@@ -426,7 +459,7 @@ export const faq = [
   },
   {
     q: "Co když to nevyjde / nezhubnu, jak chci?",
-    a: "**Při dodržení plánu 99 % klientů dosáhne cíle.** Pokud nevidíš pohyb, problém je v plánu, ne v tobě — upravíme. A pokud po prvním měsíci nejsi spokojený, vrátím ti peníze.",
+    a: "**100 % klientů, kteří plán opravdu dotáhli do konce, svého cíle dosáhlo.** Pokud nevidíš pohyb, problém je v plánu, ne v tobě — upravíme. Z mé strany udělám maximum, aby plán doručil to, co slibuje.",
   },
   {
     q: "Už jsem to zkoušel jinde a nevyšlo to.",
@@ -434,11 +467,11 @@ export const faq = [
   },
   {
     q: "Musím chodit do gymu?",
-    a: "**Online Coaching** děláš odkudkoliv — gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v Elements Gymu (Ostrava). Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
+    a: "**Online Coaching** děláš odkudkoliv — gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v Elements Gymu — Ostrava, a od června i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
   },
   {
     q: "Co když nesedí žádný balíček z ceníku?",
-    a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků — s Petou jsme šli mimo standard a fungovalo to.",
+    a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků — s Peťou jsme šli mimo standard a fungovalo to.",
   },
   {
     q: "Můžu nejdřív vyzkoušet jeden trénink?",
@@ -450,19 +483,15 @@ export const faq = [
 // FORMULÁŘ — texty a popisky kroků (🔒 strukturu kroků NEMĚŇ)
 // -----------------------------------------------------------------
 export const formCopy = {
-  // ÚPRAVA: nadpis sekce s formulářem
   sectionTitle: "Pojďme začít",
   sectionSubtitle:
     "Vyplň formulář, ozvu se ti do 48 hodin. Žádný prodejní tlak, jen krátký call.",
 
-  // ÚPRAVA: text tlačítka pod formulářem
   submit: "Odeslat poptávku",
   submitting: "Odesílám…",
 
-  // ÚPRAVA: mikrokopie pod tlačítkem
-  microcopy: "Ozvu se ti do 48 hodin. — Petis",
+  microcopy: "Ozvu se ti do 48 hodin. — Petr",
 
-  // ÚPRAVA: text na úspěšné obrazovce
   success: {
     title: "Tvoje poptávka je u mě.",
     subtitle: "Ozvu se ti do 48 hodin.",
@@ -474,54 +503,45 @@ export const formCopy = {
 // FOOTER — patička webu
 // -----------------------------------------------------------------
 export const footer = {
-  tagline: "Osobní trenér · Ostrava", // ÚPRAVA: tagline pod logem
-  rightsLine: "© 2026 Petr Pustelník", // ÚPRAVA: copyright (změň rok, když je potřeba)
+  tagline: "Osobní trenér · Ostrava / Opava",
+  rightsLine: "© 2026 Petr Pustelník",
 };
 
 // -----------------------------------------------------------------
-// KONTAKT — telefon, e-mail, socky (objevuje se v hero, footru i formuláři)
+// KONTAKT — telefon, e-mail, socky
 // -----------------------------------------------------------------
 export const contact = {
-  phone: "702 169 863", // ÚPRAVA: telefon
-  phoneHref: "+420702169863", // ÚPRAVA: telefon ve formátu pro tel: link (bez mezer, s předvolbou)
-  email: "petrpustelnikcoach@gmail.com", // ÚPRAVA: e-mail
-  instagram: "petrpustelnikcoach", // ÚPRAVA: IG handle (bez @)
-  instagramUrl: "https://instagram.com/petrpustelnikcoach", // ÚPRAVA: URL na IG profil
-  tiktok: "petrpustelnikcoach", // ÚPRAVA: TikTok handle (bez @)
-  tiktokUrl: "https://www.tiktok.com/@petrpustelnikcoach", // ÚPRAVA: URL na TikTok profil
-  facebook: "Petr Pustelník", // ÚPRAVA: zobrazené jméno na FB
-  facebookUrl: "https://www.facebook.com/petr.pustelnik.13", // ÚPRAVA: URL na Facebook profil
-  gym: "Elements Gym Ostrava", // ÚPRAVA: gym
+  phone: "702 169 863",
+  phoneHref: "+420702169863",
+  email: "petrpustelnikcoach@gmail.com",
+  instagram: "petrpustelnikcoach",
+  instagramUrl: "https://instagram.com/petrpustelnikcoach",
+  tiktok: "petrpustelnikcoach",
+  tiktokUrl: "https://www.tiktok.com/@petrpustelnikcoach",
+  facebook: "Petr Pustelník",
+  facebookUrl: "https://www.facebook.com/petr.pustelnik.13",
+  gym: "Elements Gym Ostrava / Opava (od června)",
 };
 
 // -----------------------------------------------------------------
 // PRÁVNÍ — odkazy a obsah pro GDPR / obchodní podmínky
 // -----------------------------------------------------------------
-// Tyto údaje se objevují v patičce a v právních stránkách.
-// IČO a adresu MUSÍŠ doplnit, jakmile budeš mít živnostenský list.
-// -----------------------------------------------------------------
 export const legal = {
-  // ÚPRAVA: tvoje plné jméno (jak v živnosti)
   fullName: "Petr Pustelník",
-  // ÚPRAVA: IČO ze živnostenského listu
   ico: "22444661",
-  // ÚPRAVA: tvoje sídlo (kam ti chodí pošta)
   address: "Holasická 1100/53, 747 05 Opava-Kateřinky",
-  // ÚPRAVA: e-mail pro právní záležitosti (může být ten samý jako kontaktní)
   legalEmail: "petrpustelnikcoach@gmail.com",
-  // ÚPRAVA: datum poslední aktualizace dokumentů
-  updatedAt: "16. 5. 2026",
+  updatedAt: "18. 5. 2026",
 };
 
 // -----------------------------------------------------------------
 // SEO — co se zobrazí v Google a při sdílení na sítích
 // -----------------------------------------------------------------
 export const seo = {
-  // ÚPRAVA: titulek záložky v prohlížeči a v Google
-  title: "Petr Pustelník — Osobní trenér Ostrava | Elements Gym",
-  // ÚPRAVA: popis pod titulkem v Google (ideálně do 160 znaků)
+  title: "Petr Pustelník — Osobní trenér Ostrava / Opava | Elements Gym",
   description:
-    "Osobní trenér v Ostravě (Elements Gym). 6+ let praxe, přes 100 klientů, 99 % úspěšnost. Hubnutí, nabírání svalů, formování postavy. Online i osobní spolupráce.",
-  ogTitle: "Petr Pustelník — Osobní trenér Ostrava",
-  ogDescription: "Trenér, který tě dovede k cíli. Ne k frustraci.",
+    "Osobní trenér v Ostravě a od června v Opavě (Elements Gym). 6+ let praxe, přes 100 klientů, 100 % úspěšnost při dodržení plánu. Hubnutí, nabírání svalů, formování postavy.",
+  ogTitle: "Petr Pustelník — Osobní trenér Ostrava / Opava",
+  ogDescription:
+    "Tvoje forma mluví dřív než ty. Jednoduchá cesta k vysněné formě, postavená na selském rozumu.",
 };

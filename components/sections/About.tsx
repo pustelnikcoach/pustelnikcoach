@@ -21,7 +21,7 @@ export function About() {
             <img
               src={about.image}
               alt={about.imageAlt}
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover object-top"
               onError={(e) => {
                 (e.currentTarget as HTMLImageElement).style.display = "none";
               }}
@@ -40,7 +40,7 @@ export function About() {
             {about.heading}
           </h2>
 
-          <div className="space-y-5 text-[1.0625rem] leading-relaxed text-bone/75">
+          <div className="space-y-5 text-[1.0625rem] leading-relaxed text-bone/75 [&>p:nth-child(3)]:mt-10 [&>p:nth-child(3)]:pt-6 [&>p:nth-child(3)]:border-t [&>p:nth-child(3)]:border-bone/10">
             {about.paragraphs.map((p, i) => (
               <p key={i}>{renderInline(p)}</p>
             ))}
