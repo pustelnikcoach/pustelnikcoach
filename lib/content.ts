@@ -97,6 +97,8 @@ export type ResultCard =
       image: string;
       duration: string;
       quote?: string;
+      // "top-zoom" = zoom na obličej (užitečné, když je fotka focená z dálky)
+      focus?: "top-zoom";
     };
 
 export const results: ResultCard[] = [
@@ -123,6 +125,7 @@ export const results: ResultCard[] = [
     duration: "4 měsíce",
     quote:
       "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
+    focus: "top-zoom",
   },
   {
     kind: "single",

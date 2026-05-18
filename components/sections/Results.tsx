@@ -86,13 +86,19 @@ function ResultMedia({ card }: { card: ResultCard }) {
     );
   }
 
+  const isTopZoom = card.focus === "top-zoom";
   return (
     <div className="relative aspect-[4/5] bg-ink/50 overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={card.image}
         alt={`${card.name} — výsledek spolupráce`}
-        className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+        className={
+          "absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] " +
+          (isTopZoom
+            ? "object-top scale-[1.35] origin-top"
+            : "object-center")
+        }
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
@@ -119,7 +125,7 @@ function ImageTile({
       <img
         src={src}
         alt={alt}
-        className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
