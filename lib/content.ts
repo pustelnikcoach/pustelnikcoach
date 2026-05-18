@@ -435,7 +435,7 @@ export const process = [
     step: "Měsíc 6+",
     title: "Trvalá forma",
     description:
-      "**Tady přichází to, kvůli čemu jsme začali.** Forma, kterou jsi nečekal — a hlavně **systém, který drží i bez mě.** Návyky, technika, vědomí, co tělo potřebuje. Tohle je cíl.",
+      "**Forma, kterou jsi nečekal.** A hlavně **systém, který drží i bez mě.** Tohle je cíl.",
   },
 ];
 

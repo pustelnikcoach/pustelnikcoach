@@ -96,7 +96,7 @@ function ResultMedia({ card }: { card: ResultCard }) {
         className={
           "absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] " +
           (isTopZoom
-            ? "object-top scale-[1.35] origin-top"
+            ? "object-[50%_15%] scale-[1.1] origin-top"
             : "object-center")
         }
         onError={(e) => {
