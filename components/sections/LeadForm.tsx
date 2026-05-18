@@ -266,7 +266,7 @@ export function LeadForm() {
           {currentStep === "timeline" && (
             <Step
               title="Do kdy chceš výsledek?"
-              subtitle="Realistický odhad. Petis ti potvrdí nebo upraví na callu."
+              subtitle="Realistický odhad. Petr ti potvrdí nebo upraví na callu."
             >
               <Controller
                 control={control}

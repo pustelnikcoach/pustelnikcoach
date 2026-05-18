@@ -37,11 +37,11 @@ export function Nav() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
           <a
             href="#"
-            className="flex items-center gap-2 font-display text-lg font-semibold tracking-wider text-bone"
-            aria-label={nav.brand}
+            className="font-display text-lg font-semibold tracking-wider text-bone"
+            aria-label={`${nav.brand}.`}
           >
-            <span>{nav.brand}</span>
-            <span className="block h-1.5 w-1.5 rounded-full bg-emerald-light" />
+            {nav.brand}
+            <span className="text-emerald-light">.</span>
           </a>
 
           <nav className="hidden md:flex items-center gap-8">
@@ -79,7 +79,7 @@ export function Nav() {
           <div className="px-5 sm:px-8 h-16 flex items-center justify-between">
             <span className="font-display text-lg font-semibold tracking-wider text-bone">
               {nav.brand}
-              <span className="ml-2 inline-block h-1.5 w-1.5 rounded-full bg-emerald-light align-middle" />
+              <span className="text-emerald-light">.</span>
             </span>
             <button
               type="button"

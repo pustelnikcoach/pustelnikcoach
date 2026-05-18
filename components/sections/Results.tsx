@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { results, resultsHeading } from "@/lib/content";
+import { results, resultsHeading, type ResultCard } from "@/lib/content";
 
 export function Results() {
   return (
@@ -28,7 +28,7 @@ export function Results() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
           {results.map((r, i) => (
             <motion.article
               key={r.name}
@@ -38,41 +38,104 @@ export function Results() {
               transition={{ duration: 0.6, delay: i * 0.08 }}
               className="group bg-graphite rounded-2xl overflow-hidden border border-bone/5 hover:border-emerald/30 transition-colors duration-300"
             >
-              <div className="relative aspect-[4/5] bg-ink/50 overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={r.image}
-                  alt={`${r.name} — výsledek spolupráce`}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.display = "none";
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/20 to-transparent pointer-events-none" />
-                <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-ink/70 backdrop-blur px-3 py-1 text-[0.7rem] tracking-widest uppercase text-bone/80">
-                  {r.duration}
-                </div>
-              </div>
+              <ResultMedia card={r} />
 
               <div className="p-6 sm:p-7">
                 <div className="text-xs uppercase tracking-[0.15em] text-mute mb-2">
                   {r.name}
                 </div>
-                <div className="font-display text-2xl font-semibold text-bone leading-tight">
-                  {r.before}{" "}
-                  <span className="text-mute mx-1" aria-hidden>
-                    →
-                  </span>{" "}
-                  <span className="text-emerald-light">{r.after}</span>
+                <div className="font-display text-xl sm:text-2xl font-semibold text-bone leading-tight">
+                  {r.kind === "ba" ? (
+                    <>
+                      Před{" "}
+                      <span className="text-mute mx-1" aria-hidden>
+                        →
+                      </span>{" "}
+                      <span className="text-emerald-light">Po</span>
+                    </>
+                  ) : (
+                    <span className="text-emerald-light">Reálný výsledek</span>
+                  )}
                 </div>
-                <blockquote className="mt-4 pt-4 border-t border-bone/5 text-[0.95rem] text-bone/70 leading-relaxed">
-                  &ldquo;{r.quote}&rdquo;
-                </blockquote>
+                {r.quote && (
+                  <blockquote className="mt-4 pt-4 border-t border-bone/5 text-[0.95rem] text-bone/70 leading-relaxed">
+                    &ldquo;{r.quote}&rdquo;
+                  </blockquote>
+                )}
               </div>
             </motion.article>
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ResultMedia({ card }: { card: ResultCard }) {
+  if (card.kind === "ba") {
+    return (
+      <div className="relative grid grid-cols-2 gap-px bg-ink/40">
+        <ImageTile src={card.before} alt={`${card.name} — před`} label="PŘED" />
+        <ImageTile src={card.after} alt={`${card.name} — po`} label="PO" accent />
+        <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10 inline-flex items-center gap-2 rounded-full bg-ink/80 backdrop-blur px-3 py-1 text-[0.7rem] tracking-widest uppercase text-bone/80">
+          {card.duration}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative aspect-[4/5] bg-ink/50 overflow-hidden">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={card.image}
+        alt={`${card.name} — výsledek spolupráce`}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/20 to-transparent pointer-events-none" />
+      <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-ink/70 backdrop-blur px-3 py-1 text-[0.7rem] tracking-widest uppercase text-bone/80">
+        {card.duration}
+      </div>
+    </div>
+  );
+}
+
+function ImageTile({
+  src,
+  alt,
+  label,
+  accent = false,
+}: {
+  src: string;
+  alt: string;
+  label: string;
+  accent?: boolean;
+}) {
+  return (
+    <div className="relative aspect-[4/5] overflow-hidden bg-ink/60">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={alt}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        onError={(e) => {
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/10 to-transparent pointer-events-none" />
+      <div
+        className={
+          "absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[0.65rem] tracking-[0.18em] uppercase backdrop-blur " +
+          (accent
+            ? "bg-emerald/80 text-bone"
+            : "bg-ink/70 text-bone/80")
+        }
+      >
+        {label}
+      </div>
+    </div>
   );
 }

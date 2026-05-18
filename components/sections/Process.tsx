@@ -122,7 +122,10 @@ export function Process() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: i * 0.15 }}
                   className={cn(
-                    "rounded-2xl bg-ink/60 border border-bone/10 p-5 backdrop-blur-sm",
+                    "rounded-2xl p-5 backdrop-blur-sm transition-all",
+                    isLast
+                      ? "bg-emerald/[0.08] border-2 border-emerald/50 shadow-[0_0_40px_-12px_rgba(26,107,82,0.6)] ring-1 ring-emerald/20"
+                      : "bg-ink/60 border border-bone/10",
                     pos.row === 0 ? "row-start-1" : "row-start-2"
                   )}
                   style={{ gridColumnStart: pos.col + 1 }}
@@ -130,22 +133,44 @@ export function Process() {
                   <div className="flex items-center gap-2 mb-3">
                     <span
                       className={cn(
-                        "inline-flex h-7 w-7 items-center justify-center rounded-full text-[0.7rem] font-medium",
+                        "inline-flex items-center justify-center rounded-full text-[0.7rem] font-medium",
                         isLast
-                          ? "bg-emerald text-bone"
-                          : "bg-emerald/15 text-emerald-light"
+                          ? "h-9 w-9 bg-emerald text-bone shadow-lg shadow-emerald/40"
+                          : "h-7 w-7 bg-emerald/15 text-emerald-light"
                       )}
                     >
-                      {isLast ? <Flag className="h-3.5 w-3.5" /> : i + 1}
+                      {isLast ? <Flag className="h-4 w-4" /> : i + 1}
                     </span>
-                    <span className="font-display text-base font-semibold text-emerald-light">
+                    <span
+                      className={cn(
+                        "font-display font-semibold text-emerald-light",
+                        isLast ? "text-lg" : "text-base"
+                      )}
+                    >
                       {step.step}
                     </span>
+                    {isLast && (
+                      <span className="ml-auto inline-flex items-center rounded-full bg-emerald/20 px-2 py-0.5 text-[0.6rem] uppercase tracking-[0.15em] text-emerald-light">
+                        Cíl
+                      </span>
+                    )}
                   </div>
-                  <h3 className="font-semibold text-bone leading-snug">
+                  <h3
+                    className={cn(
+                      "font-semibold leading-snug",
+                      isLast ? "text-lg text-bone" : "text-bone"
+                    )}
+                  >
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-bone/65">
+                  <p
+                    className={cn(
+                      "mt-2 leading-relaxed",
+                      isLast
+                        ? "text-[0.95rem] text-bone/80"
+                        : "text-sm text-bone/65"
+                    )}
+                  >
                     {renderInline(step.description)}
                   </p>
                 </motion.div>
@@ -171,19 +196,50 @@ export function Process() {
                 <span
                   className={cn(
                     "absolute left-0 top-2 inline-flex h-9 w-9 items-center justify-center rounded-full",
-                    isLast ? "bg-emerald text-bone" : "bg-emerald/15 text-emerald-light border border-emerald/40"
+                    isLast
+                      ? "bg-emerald text-bone shadow-lg shadow-emerald/40"
+                      : "bg-emerald/15 text-emerald-light border border-emerald/40"
                   )}
                 >
                   {isLast ? <Flag className="h-4 w-4" /> : i + 1}
                 </span>
-                <div className="rounded-2xl bg-ink/60 border border-bone/5 p-5">
-                  <div className="font-display text-sm font-semibold text-emerald-light mb-1">
-                    {step.step}
+                <div
+                  className={cn(
+                    "rounded-2xl p-5",
+                    isLast
+                      ? "bg-emerald/[0.08] border-2 border-emerald/50 shadow-[0_0_40px_-12px_rgba(26,107,82,0.5)]"
+                      : "bg-ink/60 border border-bone/5"
+                  )}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span
+                      className={cn(
+                        "font-display font-semibold text-emerald-light",
+                        isLast ? "text-base" : "text-sm"
+                      )}
+                    >
+                      {step.step}
+                    </span>
+                    {isLast && (
+                      <span className="inline-flex items-center rounded-full bg-emerald/20 px-2 py-0.5 text-[0.6rem] uppercase tracking-[0.15em] text-emerald-light">
+                        Cíl
+                      </span>
+                    )}
                   </div>
-                  <h3 className="font-semibold text-bone leading-snug">
+                  <h3
+                    className={cn(
+                      "font-semibold text-bone leading-snug",
+                      isLast && "text-lg"
+                    )}
+                  >
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-bone/65">
+                  <p
+                    className={cn(
+                      "mt-2 leading-relaxed",
+                      isLast ? "text-[0.95rem] text-bone/80" : "text-sm text-bone/65"
+                    )}
+                  >
                     {renderInline(step.description)}
                   </p>
                 </div>

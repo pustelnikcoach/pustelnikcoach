@@ -73,7 +73,7 @@ export const KG_LABELS: Record<(typeof KG_BUCKETS)[number], string> = {
 };
 
 export const TIMELINE_LABELS: Record<(typeof TIMELINES)[number], string> = {
-  "3m": "3 měsíce",
+  "3m": "Do 90 dnů",
   "6m": "6 měsíců",
   "12m": "12 měsíců",
   nespecham: "Nespěchám",

@@ -125,13 +125,13 @@ export function renderAutoresponderEmail(data: LeadInput): string {
               <p style="margin:0 0 24px 0;">
                 <a href="https://instagram.com/petrpustelnikcoach" style="color:${bone};text-decoration:underline;">@petrpustelnikcoach</a>
               </p>
-              <p style="margin:24px 0 0 0;">Petis</p>
+              <p style="margin:24px 0 0 0;">Petr</p>
             </td>
           </tr>
           <tr>
             <td style="padding:16px 32px 32px 32px;border-top:1px solid rgba(232,230,225,0.08);font-size:13px;color:${mute};">
               <strong style="color:${bone};">Petr Pustelník</strong><br/>
-              Osobní trenér · Orchard Gym Ostrava
+              Osobní trenér · Elements Gym Ostrava / Opava
             </td>
           </tr>
         </table>
@@ -152,10 +152,10 @@ zavolám na ${data.phone} nebo napíšu na tento e-mail.
 Mezitím se mrkni, co tě čeká, na mém Instagramu:
 https://instagram.com/petrpustelnikcoach
 
-Petis
+Petr
 
 Petr Pustelník
-Osobní trenér · Orchard Gym Ostrava
+Osobní trenér · Elements Gym Ostrava / Opava
 `;
 }
 

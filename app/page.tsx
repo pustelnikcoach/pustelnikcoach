@@ -12,6 +12,7 @@ import { ProofBar } from "@/components/sections/ProofBar";
 import { Process } from "@/components/sections/Process";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
+import { Testimonials } from "@/components/sections/Testimonials";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
         <Hero />
         <ProofBar />
         <Results />
+        <Testimonials />
         <About />
         <Pillars />
         <Excuses />

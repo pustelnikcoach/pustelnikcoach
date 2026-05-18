@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import {
   Compass,
+  Lightbulb,
   Repeat2,
   Settings2,
   ShieldCheck,
@@ -19,6 +20,7 @@ const iconMap: Record<string, LucideIcon> = {
   TrendingUp,
   Settings2,
   Compass,
+  Lightbulb,
   Repeat2,
   ShieldCheck,
   UserCheck,

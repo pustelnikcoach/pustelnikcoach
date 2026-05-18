@@ -49,7 +49,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         error:
-          "E-mail server zatím není nastavený. Ozvi se Petisovi přímo na petrpustelnikcoach@gmail.com.",
+          "E-mail server zatím není nastavený. Ozvi se Petrovi přímo na petrpustelnikcoach@gmail.com.",
       },
       { status: 503 }
     );
@@ -70,7 +70,7 @@ export async function POST(req: Request) {
         html: renderLeadEmail(data, now),
       }),
       resend.emails.send({
-        from: `Petis Pustelník <${fromEmail}>`,
+        from: `Petr Pustelník <${fromEmail}>`,
         to: [data.email],
         replyTo: toEmail,
         subject: "Mám tvoji poptávku — ozvu se do 48 hodin",
