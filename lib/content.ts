@@ -177,7 +177,8 @@ export const about = {
   // ÚPRAVA: jednotlivé odstavce textu
   // Hvězdičky **text** udělají z textu tučně.
   paragraphs: [
-    "**V roce 2021 mě jako šestnáctiletého srazilo na kole auto. Doktoři mi dávali jednoprocentní šanci, že přežiju.** Když mi tělo dalo druhou šanci, slíbil jsem si, že ji nepromarním — a od toho dne beru zdraví i život vážně.",
+    "V roce **2021** mě jako **šestnáctiletého** srazilo na kole auto. Doktoři mi dávali **1% šanci na přežití**.",
+    "Když mi tělo dalo druhou šanci, slíbil jsem si, že ji **nepromarním** — a od toho dne beru zdraví i život **vážně**.",
     "**Šest let cvičím. Rok trénuju klienty v Elements Gymu Ostrava.**",
     "Začal jsem **u sebe** — léta jsem studoval, co opravdu funguje, a postavil postavu, kterou jsem chtěl. Bez zkratek, bez extrémních diet, bez magie.",
     "Pak se začali ptát **kamarádi** — co jíš, jak cvičíš, jak to děláš. Tak jsem začal pomáhat jim. Když to fungovalo opakovaně, došlo mi, že stejný systém můžu dát i lidem mimo svůj okruh.",
