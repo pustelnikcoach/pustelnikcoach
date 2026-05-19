@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import Script from "next/script";
 import { seo } from "@/lib/content";
 import "./globals.css";
+
+// Google Analytics 4 Measurement ID — pokud chceš změnit GA property, uprav jen tuhle hodnotu.
+const GA_ID = "G-R562N8TS0Y";
 
 const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
@@ -68,6 +72,18 @@ export default function RootLayout({
           Přeskočit na obsah
         </a>
         {children}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );
