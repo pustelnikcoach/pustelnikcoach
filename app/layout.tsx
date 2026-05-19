@@ -20,13 +20,23 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: seo.title,
   description: seo.description,
-  metadataBase: new URL("https://pustelnikcoach.vercel.app"),
+  metadataBase: new URL("https://pustelnikcoach.cz"),
   openGraph: {
     title: seo.ogTitle,
     description: seo.ogDescription,
+    url: "https://pustelnikcoach.cz",
+    siteName: "Pustelnik Coach",
     locale: "cs_CZ",
     type: "website",
-    images: ["/og-image.jpg"],
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 1200,
+        alt: "Petr Pustelník — Osobní trenér Ostrava / Opava",
+        type: "image/jpeg",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
