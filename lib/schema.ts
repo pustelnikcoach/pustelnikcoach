@@ -28,8 +28,8 @@ export const REASONS = [
   "jine",
 ] as const;
 
-// CZ telefon — povolíme +420 prefix nebo bez něj, mezery jsou ok
-const phoneRegex = /^(\+?420)?\s?[0-9]{3}\s?[0-9]{3}\s?[0-9]{3}$/;
+// CZ telefon — povolíme +420 / 420 / 0 prefix nebo bez něj, mezery i pomlčky ok
+const phoneRegex = /^(\+?420|0)?[\s-]?[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{3}$/;
 
 export const LeadSchema = z.object({
   goal: z.enum(GOALS, { required_error: "Vyber cíl" }),
