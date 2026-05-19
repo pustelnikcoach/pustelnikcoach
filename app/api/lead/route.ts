@@ -8,6 +8,7 @@ import {
   renderAutoresponderEmail,
   renderAutoresponderText,
   renderLeadEmail,
+  renderLeadText,
 } from "@/lib/email-template";
 
 export const runtime = "nodejs";
@@ -68,12 +69,13 @@ export async function POST(req: Request) {
         replyTo: data.email,
         subject,
         html: renderLeadEmail(data, now),
+        text: renderLeadText(data, now),
       }),
       resend.emails.send({
         from: `Petr Pustelník <${fromEmail}>`,
         to: [data.email],
         replyTo: toEmail,
-        subject: "Mám tvoji poptávku — ozvu se do 48 hodin",
+        subject: "Děkuju za zájem o spolupráci — ozvu se do 48 hodin",
         html: renderAutoresponderEmail(data),
         text: renderAutoresponderText(data),
       }),
