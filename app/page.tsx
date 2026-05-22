@@ -21,6 +21,7 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
+        <LeadFormSection />
         <ProofBar />
         <Results />
         <Testimonials />
@@ -32,7 +33,6 @@ export default function HomePage() {
         <CustomCollab />
         <ResultsCurve />
         <Process />
-        <LeadFormSection />
         <FAQ />
       </main>
       <Footer />

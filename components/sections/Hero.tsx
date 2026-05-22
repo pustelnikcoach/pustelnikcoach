@@ -17,6 +17,14 @@ export function Hero() {
     >
       <div className="absolute inset-0 bg-hero-radial pointer-events-none" aria-hidden />
 
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/logo-petr.png"
+        alt=""
+        aria-hidden
+        className="absolute right-6 bottom-6 sm:right-10 sm:bottom-10 w-24 sm:w-32 opacity-20 pointer-events-none select-none"
+      />
+
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
         <div className="order-2 md:order-1">
           <motion.p

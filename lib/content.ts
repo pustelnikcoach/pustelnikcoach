@@ -101,7 +101,41 @@ export type ResultCard =
       focus?: "top-zoom";
     };
 
-export const results: ResultCard[] = [
+// HLAVNÍ VÝSLEDKY — zobrazí se na úvodní stránce
+export const featuredResults: ResultCard[] = [
+  {
+    kind: "single",
+    name: "Justýna H.",
+    image: "/images/results/justyna.jpg",
+    duration: "4 měsíce",
+    quote:
+      "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
+    focus: "top-zoom",
+  },
+  {
+    kind: "single",
+    name: "Felix Kuba",
+    image: "/images/results/felix-kuba.jpg",
+    duration: "Dlouhodobá spolupráce",
+  },
+  {
+    kind: "single",
+    name: "Jakub Pustelník",
+    image: "/images/results/jakub-pustelnik.jpg",
+    duration: "Dlouhodobá spolupráce",
+  },
+  {
+    kind: "single",
+    name: "Dominik Jedlička",
+    image: "/images/results/dominik-jedlicka.jpg",
+    duration: "Dlouhodobá spolupráce",
+    quote:
+      "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Určitě bych ho doporučil lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
+  },
+];
+
+// ARCHIV — zobrazí se jen na podstránce /vysledky
+export const archivedResults: ResultCard[] = [
   {
     kind: "ba",
     name: "Tomáš Medek",
@@ -116,16 +150,7 @@ export const results: ResultCard[] = [
     name: "Jan Neuwirth",
     before: "/images/results/jan-before.jpg",
     after: "/images/results/jan-after.jpg",
-    duration: "Postupná transformace",
-  },
-  {
-    kind: "single",
-    name: "Justýna H.",
-    image: "/images/results/justyna.jpg",
-    duration: "4 měsíce",
-    quote:
-      "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
-    focus: "top-zoom",
+    duration: "Změna návyků",
   },
   {
     kind: "single",
@@ -136,6 +161,12 @@ export const results: ResultCard[] = [
       "Posunula jsem se psychicky, mám k sobě lepší vztah a cítím se silnější než dřív.",
   },
 ];
+
+// VŠECHNY VÝSLEDKY (pro subpage)
+export const allResults: ResultCard[] = [...featuredResults, ...archivedResults];
+
+// Zpětná kompatibilita pro existující kód
+export const results = featuredResults;
 
 // -----------------------------------------------------------------
 // TEXTOVÉ RECENZE — bez fotky, jen citát a jméno
@@ -153,11 +184,6 @@ export const testimonials = [
     name: "Metoděj Strachoň",
     quote:
       "Měl jsem přes 100 kg a hned při prvním tréninku mi Petr pomohl, aniž by za to cokoliv chtěl. Naučil mě jíst zdravě i pít dostatek vody a tréninky mě s ním vždycky bavily. Doporučil bych ho každému, kdo chce se sebou něco dělat.",
-  },
-  {
-    name: "Dominik Jedlička",
-    quote:
-      "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Určitě bych ho doporučil lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
   },
   {
     name: "Patrik Wludyka",
@@ -260,7 +286,7 @@ export const curveCopy = {
 export const pillarsHeading = {
   title: "Čím se liším",
   subtitle:
-    "Žádné sliby. **Jenom jednoduchost, selský rozum a šest let zkušeností.**",
+    "Žádné sliby. **Jednoduchost, selský rozum a šest let zkušeností.**",
 };
 
 export const pillars = [

@@ -43,9 +43,9 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <div className="flex items-center gap-2 font-display text-xl font-bold tracking-wider text-bone">
-              <span>{nav.brand}</span>
-              <span className="block h-1.5 w-1.5 rounded-full bg-emerald-light" />
+            <div className="font-display text-xl font-bold tracking-wider text-bone">
+              {nav.brand}
+              <span className="text-emerald-light">.</span>
             </div>
             <p className="mt-3 text-sm text-mute">{footer.tagline}</p>
           </div>

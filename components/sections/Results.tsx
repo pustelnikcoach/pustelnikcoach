@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { results, resultsHeading, type ResultCard } from "@/lib/content";
+import { featuredResults, resultsHeading, type ResultCard } from "@/lib/content";
 
 export function Results() {
   return (
@@ -29,7 +30,7 @@ export function Results() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
-          {results.map((r, i) => (
+          {featuredResults.map((r, i) => (
             <motion.article
               key={r.name}
               initial={{ opacity: 0, y: 24 }}
@@ -71,12 +72,30 @@ export function Results() {
             </motion.article>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-12 flex justify-center"
+        >
+          <Link
+            href="/vysledky"
+            className="group inline-flex items-center gap-2 h-14 px-7 rounded-xl bg-transparent border border-bone/15 text-bone hover:border-emerald/40 hover:bg-bone/[0.03] font-medium transition-all duration-200"
+          >
+            Zobrazit všechny výsledky
+            <span className="transition-transform group-hover:translate-x-1" aria-hidden>
+              →
+            </span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
 }
 
-function ResultMedia({ card }: { card: ResultCard }) {
+export function ResultMedia({ card }: { card: ResultCard }) {
   if (card.kind === "ba") {
     return (
       <div className="relative grid grid-cols-2 gap-px bg-ink/40">
