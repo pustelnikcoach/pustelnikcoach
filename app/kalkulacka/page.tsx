@@ -28,12 +28,12 @@ export default function KalkulackaPage() {
 
           <header className="max-w-2xl mb-12 sm:mb-16">
             <h1 className="font-display font-semibold text-display-lg text-bone">
-              Kalkulačka kalorií a času k cíli
+              Spočítej si reálný čas k cíli
             </h1>
             <p className="mt-4 text-[1.0625rem] text-bone/65 leading-relaxed">
-              Žádné magické rovnice. Mifflin-St Jeor, realistický týdenní rozsah
-              a poctivý odhad, ne marketingový slib. Když chceš to samé na
-              míru, dej vědět.
+              Vidíš rovnou orientační časový horizont, denní příjem a vizuální
+              představu, jak může vypadat tvoje postava po dosažení cíle. Žádné
+              marketingové sliby. Poctivý odhad, ne magie.
             </p>
           </header>
 
