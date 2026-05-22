@@ -1,4 +1,5 @@
 import { About } from "@/components/sections/About";
+import { Calculator } from "@/components/sections/Calculator";
 import { CustomCollab } from "@/components/sections/CustomCollab";
 import { Excuses } from "@/components/sections/Excuses";
 import { FAQ } from "@/components/sections/FAQ";
@@ -29,6 +30,7 @@ export default function HomePage() {
         <About />
         <Pillars />
         <Excuses />
+        <Calculator />
         <Guarantee />
         <Packages />
         <CustomCollab />
