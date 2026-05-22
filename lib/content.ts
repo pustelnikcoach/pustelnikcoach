@@ -331,7 +331,7 @@ export const guarantee = {
 
   customTitle: "Nesedí ti žádný balíček?",
   customBody:
-    "Není nutné si vybrat balíček z ceníku. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Peťou. Společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
+    "Není nutné si vybrat balíček z ceníku. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Lukášem Přibylou. Společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
   customCta: "Domluvit spolupráci na míru",
 };
 
@@ -497,7 +497,7 @@ export const faq = [
   },
   {
     q: "Co když nesedí žádný balíček z ceníku?",
-    a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků. S Peťou jsme šli mimo standard a fungovalo to.",
+    a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků. S Lukášem Přibylou jsme šli mimo standard a fungovalo to.",
   },
   {
     q: "Můžu nejdřív vyzkoušet jeden trénink?",

@@ -21,8 +21,8 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
-        <LeadFormSection />
         <ProofBar />
+        <LeadFormSection />
         <Results />
         <ResultsCurve />
         <Testimonials />

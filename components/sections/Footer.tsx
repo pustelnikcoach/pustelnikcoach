@@ -43,9 +43,17 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <div className="font-display text-xl font-bold tracking-wider text-bone">
-              {nav.brand}
-              <span className="text-emerald-light">.</span>
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo-petr.png"
+                alt="Petr Pustelník logo"
+                className="h-10 w-10 object-contain"
+              />
+              <div className="font-display text-xl font-bold tracking-wider text-bone">
+                {nav.brand}
+                <span className="text-emerald-light">.</span>
+              </div>
             </div>
             <p className="mt-3 text-sm text-mute">{footer.tagline}</p>
           </div>
