@@ -24,6 +24,7 @@ export default function HomePage() {
         <LeadFormSection />
         <ProofBar />
         <Results />
+        <ResultsCurve />
         <Testimonials />
         <About />
         <Pillars />
@@ -31,7 +32,6 @@ export default function HomePage() {
         <Guarantee />
         <Packages />
         <CustomCollab />
-        <ResultsCurve />
         <Process />
         <FAQ />
       </main>

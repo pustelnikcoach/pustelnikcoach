@@ -41,14 +41,14 @@ export const hero = {
   // ÚPRAVA: podnadpis pod hlavním textem
   // (hvězdičkami **text** udělá tučně)
   subheadline:
-    "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy — jen **jednoduchá cesta k vysněné formě**, postavená na selském rozumu.",
+    "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy. Jen **jednoduchá cesta k vysněné formě**, postavená na selském rozumu.",
 
   ctaPrimary: "Začít teď", // ÚPRAVA: text hlavního tlačítka
   ctaSecondary: "Vidět výsledky", // ÚPRAVA: text druhého tlačítka
 
   // ÚPRAVA: cesta k hero fotce (poměr 4:5, ulož do public/images/)
   image: "/images/hero.jpg",
-  imageAlt: "Petr Pustelník — osobní trenér",
+  imageAlt: "Petr Pustelník, osobní trenér",
 };
 
 // -----------------------------------------------------------------
@@ -188,12 +188,12 @@ export const testimonials = [
   {
     name: "Patrik Wludyka",
     quote:
-      "Oslovil jsem Petra kvůli přípravě na fyzické zkoušky do práce — chtěl jsem to vzít systematicky. Výrazně se mi zlepšila kondice i síla a mám v tréninku mnohem větší jistotu. Doporučil bych ho každému, kdo se chce cíleně připravit.",
+      "Oslovil jsem Petra kvůli přípravě na fyzické zkoušky do práce, chtěl jsem to vzít systematicky. Výrazně se mi zlepšila kondice i síla a mám v tréninku mnohem větší jistotu. Doporučil bych ho každému, kdo se chce cíleně připravit.",
   },
   {
     name: "Luci Bogárová",
     quote:
-      "Chtěla jsem se naučit cvičit a Petr mi byl sympatický — má smysl pro humor a přitom to bere vážně. Od té doby, co s ním cvičím, mám velký posun v technice. Doporučím všem, co si chtějí pokecat a u toho pořádně zacvičit.",
+      "Chtěla jsem se naučit cvičit a Petr mi byl sympatický. Má smysl pro humor a přitom to bere vážně. Od té doby, co s ním cvičím, mám velký posun v technice. Doporučím všem, co si chtějí pokecat a u toho pořádně zacvičit.",
   },
 ];
 
@@ -207,12 +207,12 @@ export const about = {
   // Hvězdičky **text** udělají z textu tučně.
   paragraphs: [
     "V roce **2021** mě jako **šestnáctiletého** srazilo na kole auto. Doktoři mi dávali **1% šanci na přežití**.",
-    "Když mi tělo dalo druhou šanci, slíbil jsem si, že ji **nepromarním** — a od toho dne beru zdraví i život **vážně**.",
+    "Když mi tělo dalo druhou šanci, slíbil jsem si, že ji **nepromarním**. Od toho dne beru zdraví i život **vážně**.",
     "**Šest let cvičím. Rok trénuju klienty v Elements Gymu Ostrava.**",
-    "Začal jsem **u sebe** — léta jsem studoval, co opravdu funguje, a postavil postavu, kterou jsem chtěl. Bez zkratek, bez extrémních diet, bez magie.",
-    "Pak se začali ptát **kamarádi** — co jíš, jak cvičíš, jak to děláš. Tak jsem začal pomáhat jim. Když to fungovalo opakovaně, došlo mi, že stejný systém můžu dát i lidem mimo svůj okruh.",
-    "Teď trénuju **klienty** v Elements Gymu a online po celé republice — formování postavy, sílu, powerlifting i kulturistiku včetně závodní přípravy.",
-    "**Zdraví máte jen jedno.** O tělo se musí starat — nejde jen o váhu nebo postavu, jde o klouby, srdce, hlavu, spánek. Žádný cíl není moc malý a žádný čas není moc pozdě.",
+    "Začal jsem **u sebe**. Léta jsem studoval, co opravdu funguje, a postavil postavu, kterou jsem chtěl. Bez zkratek, bez extrémních diet, bez magie.",
+    "Pak se začali ptát **kamarádi**. Co jíš, jak cvičíš, jak to děláš. Tak jsem začal pomáhat jim. Když to fungovalo opakovaně, došlo mi, že stejný systém můžu dát i lidem mimo svůj okruh.",
+    "Teď trénuju **klienty** v Elements Gymu a online po celé republice. Formování postavy, sílu, powerlifting i kulturistiku včetně závodní přípravy.",
+    "**Zdraví máte jen jedno.** O tělo se musí starat, nejde jen o váhu nebo postavu, jde o klouby, srdce, hlavu, spánek. Žádný cíl není moc malý a žádný čas není moc pozdě.",
     "Jsi tu správně. **Jsem tvůj člověk.**",
   ],
 
@@ -235,14 +235,14 @@ export const about = {
 export const excusesHeading = {
   title: "Možná si říkáš…",
   subtitle:
-    "Většinu lidí brzdí jedna z těchhle vět. Ne argument — **strach z neúspěchu** v hávu logiky.",
+    "Většinu lidí brzdí jedna z těchhle vět. Není to argument. Je to **strach z neúspěchu**.",
 };
 
 export const excuses = [
   {
     excuse: "„Mám 100 kilo, to už je pozdě.“",
     answer:
-      "**Smysl to má vždycky.** Sundat 5–10 kg ve 100 kg = větší úleva pro klouby, srdce a spánek než z 80 na 75. **Zdraví máte jen jedno** — a o tělo se musí starat bez ohledu na věk a startovní stav.",
+      "**Smysl to má vždycky.** Sundat 5–10 kg ve 100 kg = větší úleva pro klouby, srdce a spánek než z 80 na 75. **Zdraví máte jen jedno.** O tělo se musí starat bez ohledu na věk a startovní stav.",
   },
   {
     excuse: "„Nemám čas, mám práci a rodinu.“",
@@ -252,12 +252,12 @@ export const excuses = [
   {
     excuse: "„Už jsem to zkoušel. Vždy mi to vydrží 2 měsíce.“",
     answer:
-      "Protože ti chybí **systém a kontrola.** Krátkodobé výzvy jsou navržené tak, aby se vrátily. Tady **držím nad tebou ruku** — a stavíme habity, ne dietu.",
+      "Protože ti chybí **systém a kontrola.** Krátkodobé výzvy jsou navržené tak, aby se vrátily. Tady **držím nad tebou ruku** a stavíme habity, ne dietu.",
   },
   {
     excuse: "„Jsem moc starý / moc začátečník.“",
     answer:
-      "Začátečníky mám rád — **žádné zlozvyky k odbourání.** Věk je proměnná, ne překážka. Trénuju lidi od 18 do 60+. Postup se přizpůsobí, cíl ne.",
+      "Začátečníky mám rád. **Žádné zlozvyky k odbourání.** Věk je proměnná, ne překážka. Trénuju lidi od 18 do 60+. Postup se přizpůsobí, cíl ne.",
   },
 ];
 
@@ -277,7 +277,7 @@ export const curveCopy = {
   payoffZoneLabel: "Tady přicházejí výsledky",
 
   body:
-    "**Většina lidí ukončí spolupráci v týdnu 4–8** — ve chvíli, kdy ještě nevidí výsledky, ale tělo už dělá tvrdou práci v pozadí. Moje práce je **dotáhnout tě přes tuhle fázi**. Sleduju, kontroluju, povzbuzuju, upravuju. Jakmile se dostaneš za zlom, výsledky přijdou samy a rychle.",
+    "**Většina lidí ukončí spolupráci v týdnu 4–8**, ve chvíli, kdy ještě nevidí výsledky, ale tělo už dělá tvrdou práci v pozadí. Moje práce je **dotáhnout tě přes tuhle fázi**. Sleduju, kontroluju, povzbuzuju, upravuju. Jakmile se dostaneš za zlom, výsledky přijdou samy a rychle.",
 };
 
 // -----------------------------------------------------------------
@@ -294,13 +294,13 @@ export const pillars = [
     icon: "Lightbulb",
     title: "Jednoduchost a selský rozum",
     description:
-      "Žádné triky, žádné zázračné suplementy, žádné módní diety. **Co dává smysl, drží roky** — všechno ostatní je marketing.",
+      "Žádné triky, žádné zázračné suplementy, žádné módní diety. **Co dává smysl, drží roky.** Všechno ostatní je marketing.",
   },
   {
     icon: "Repeat2",
     title: "Trvalá změna, ne 6týdenní detox",
     description:
-      "Stavíme **návyky, které drží roky** po skončení spolupráce — ne kila, která se za měsíc vrátí. Cokoliv, co se musí 'vydržet', mě nezajímá.",
+      "Stavíme **návyky, které drží roky** po skončení spolupráce, ne kila, která se za měsíc vrátí. Cokoliv, co se musí 'vydržet', mě nezajímá.",
   },
   {
     icon: "ShieldCheck",
@@ -324,14 +324,14 @@ export const guarantee = {
 
   statNumber: "100 %",
   statLabel:
-    "klientů, kteří dotáhli plán do konce, dosáhlo svého cíle. Není to marketing — je to průměr za šest let praxe.",
+    "klientů, kteří dotáhli plán do konce, dosáhlo svého cíle. Není to marketing. Je to průměr za šest let praxe.",
 
   promise:
-    "**Z mé strany udělám maximum, aby plán doručil to, co slibuje.** Tvoje práce je ho dodržet — moje práce je tě k tomu dovést.",
+    "**Z mé strany udělám maximum, aby plán doručil to, co slibuje.** Tvoje práce je ho dodržet, moje práce je tě k tomu dovést.",
 
   customTitle: "Nesedí ti žádný balíček?",
   customBody:
-    "Není nutné si vybrat balíček z ceníku. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Peťou — společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
+    "Není nutné si vybrat balíček z ceníku. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Peťou. Společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
   customCta: "Domluvit spolupráci na míru",
 };
 
@@ -340,7 +340,7 @@ export const guarantee = {
 // -----------------------------------------------------------------
 export const urgency = {
   message:
-    "**Můj čas není digitální produkt.** Ceník je jen pro představu — nejdřív si dáme nezávaznou konzultaci, kde ti řeknu, který balíček ti sedne nejvíc.",
+    "**Můj čas není digitální produkt.** Ceník je jen pro představu. Nejdřív si dáme nezávaznou konzultaci, kde ti řeknu, který balíček ti sedne nejvíc.",
 };
 
 // -----------------------------------------------------------------
@@ -349,7 +349,7 @@ export const urgency = {
 export const packagesHeading = {
   title: "Spolupráce",
   subtitle:
-    "Měsíční partnerství. Tohle nejsou produkty na klik — **každá spolupráce začíná konzultací**, kde se domluvíme, co ti sedí.",
+    "Měsíční partnerství. Tohle nejsou produkty na klik. **Každá spolupráce začíná konzultací**, kde se domluvíme, co ti sedí.",
 };
 
 export const packages = [
@@ -378,7 +378,7 @@ export const packages = [
       "1× osobní konzultace",
       "2× osobní tréninky",
       "Tréninkový plán",
-      "Jídelníček — 4 varianty",
+      "Jídelníček, 4 varianty",
       "Suplementace",
     ],
   },
@@ -393,7 +393,7 @@ export const packages = [
       "1× osobní konzultace",
       "4× osobní tréninky",
       "Tréninkový plán",
-      "Jídelníček — 4 varianty",
+      "Jídelníček, 4 varianty",
       "Suplementace",
     ],
   },
@@ -408,7 +408,7 @@ export const packages = [
       "1× osobní konzultace",
       "8× osobních tréninků",
       "Tréninkový plán",
-      "Jídelníček — 4 varianty",
+      "Jídelníček, 4 varianty",
       "Suplementace",
     ],
   },
@@ -449,7 +449,7 @@ export const process = [
     step: "Týden 4",
     title: "První viditelné změny",
     description:
-      "Tělo začne reagovat. **Plán se ladí** podle toho, jak na to reaguješ — ne podle šablony.",
+      "Tělo začne reagovat. **Plán se ladí** podle toho, jak na to reaguješ, ne podle šablony.",
   },
   {
     step: "Měsíc 3",
@@ -477,15 +477,15 @@ export const faqHeading = {
 export const faq = [
   {
     q: "Funguje to, i když mám hodně práce?",
-    a: "Online Coaching je postavený pro lidi se dvěma hodinami týdně. Plán, jídelníček a kontrola se vejdou do obědové pauzy. **Hybrid je intenzivnější, ale flexibilní** — tréninky plánujeme podle tebe, ne podle mě.",
+    a: "Online Coaching je postavený pro lidi se dvěma hodinami týdně. Plán, jídelníček a kontrola se vejdou do obědové pauzy. **Hybrid je intenzivnější, ale flexibilní.** Tréninky plánujeme podle tebe, ne podle mě.",
   },
   {
     q: "Co když budu cestovat?",
-    a: "Tréninkový plán umím udělat na cokoliv — **gym, hotelové fitko, vlastní váha doma**. Komunikace zůstává stejná, ať jsi v Ostravě nebo v Thajsku.",
+    a: "Tréninkový plán umím udělat na cokoliv: **gym, hotelové fitko, vlastní váha doma**. Komunikace zůstává stejná, ať jsi v Ostravě nebo v Thajsku.",
   },
   {
     q: "Co když to nevyjde / nezhubnu, jak chci?",
-    a: "**100 % klientů, kteří plán opravdu dotáhli do konce, svého cíle dosáhlo.** Pokud nevidíš pohyb, problém je v plánu, ne v tobě — upravíme. Z mé strany udělám maximum, aby plán doručil to, co slibuje.",
+    a: "**100 % klientů, kteří plán opravdu dotáhli do konce, svého cíle dosáhlo.** Pokud nevidíš pohyb, problém je v plánu, ne v tobě. Upravíme. Z mé strany udělám maximum, aby plán doručil to, co slibuje.",
   },
   {
     q: "Už jsem to zkoušel jinde a nevyšlo to.",
@@ -493,11 +493,11 @@ export const faq = [
   },
   {
     q: "Musím chodit do gymu?",
-    a: "**Online Coaching** děláš odkudkoliv — gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v Elements Gymu — Ostrava, a od června i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
+    a: "**Online Coaching** děláš odkudkoliv: gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v Elements Gymu Ostrava, a od června i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
   },
   {
     q: "Co když nesedí žádný balíček z ceníku?",
-    a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků — s Peťou jsme šli mimo standard a fungovalo to.",
+    a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků. S Peťou jsme šli mimo standard a fungovalo to.",
   },
   {
     q: "Můžu nejdřív vyzkoušet jeden trénink?",
@@ -516,7 +516,7 @@ export const formCopy = {
   submit: "Odeslat poptávku",
   submitting: "Odesílám…",
 
-  microcopy: "Ozvu se ti do 48 hodin. — Petr",
+  microcopy: "Ozvu se ti do 48 hodin. Petr",
 
   success: {
     title: "Tvoje poptávka je u mě.",
@@ -564,10 +564,10 @@ export const legal = {
 // SEO — co se zobrazí v Google a při sdílení na sítích
 // -----------------------------------------------------------------
 export const seo = {
-  title: "Petr Pustelník — Osobní trenér Ostrava / Opava | Elements Gym",
+  title: "Petr Pustelník | Osobní trenér Ostrava / Opava | Elements Gym",
   description:
     "Osobní trenér v Ostravě a od června v Opavě (Elements Gym). 6+ let praxe, přes 100 klientů, 100 % úspěšnost při dodržení plánu. Hubnutí, nabírání svalů, formování postavy.",
-  ogTitle: "Petr Pustelník — Osobní trenér Ostrava / Opava",
+  ogTitle: "Petr Pustelník | Osobní trenér Ostrava / Opava",
   ogDescription:
     "Tvoje forma mluví dřív než ty. Jednoduchá cesta k vysněné formě, postavená na selském rozumu.",
 };

@@ -81,7 +81,7 @@ export default function GdprPage() {
       </h2>
       <p>
         Údaje uchovávám maximálně po dobu <strong className="text-bone">24 měsíců</strong>{" "}
-        od odeslání formuláře, nebo dokud souhlas neodvoláš — podle toho, co
+        od odeslání formuláře, nebo dokud souhlas neodvoláš, podle toho, co
         nastane dřív. Pokud spolu uzavřeme spolupráci, uchovávám údaje po dobu
         trvání smluvního vztahu a následně po dobu vyžadovanou zákonem
         (typicky účetní doklady 5–10 let).
@@ -125,7 +125,7 @@ export default function GdprPage() {
         <li>na omezení zpracování,</li>
         <li>na přenositelnost údajů,</li>
         <li>
-          kdykoliv odvolat souhlas — stačí napsat na{" "}
+          kdykoliv odvolat souhlas, stačí napsat na{" "}
           <a
             href={`mailto:${legal.legalEmail}`}
             className="text-emerald-light hover:underline"
@@ -135,7 +135,7 @@ export default function GdprPage() {
           ,
         </li>
         <li>
-          podat stížnost u dozorového úřadu — Úřad pro ochranu osobních údajů
+          podat stížnost u dozorového úřadu. Úřad pro ochranu osobních údajů
           (
           <a
             href="https://www.uoou.cz"

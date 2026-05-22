@@ -322,7 +322,7 @@ export function LeadForm() {
           {currentStep === "package" && (
             <Step
               title="Co tě zaujalo?"
-              subtitle="Vyber balíček, nebo nech to na mě — poradím ti."
+              subtitle="Vyber balíček, nebo nech to na mě. Poradím ti."
             >
               <Controller
                 control={control}
@@ -356,7 +356,7 @@ export function LeadForm() {
           {currentStep === "source" && (
             <Step
               title="Odkud jsi se o mně dozvěděl?"
-              subtitle="Pomáhá mi vědět, co funguje — ať vím, kam dál cílit."
+              subtitle="Pomáhá mi vědět, co funguje. Ať vím, kam dál cílit."
             >
               <Controller
                 control={control}
@@ -384,7 +384,7 @@ export function LeadForm() {
           {currentStep === "reason" && (
             <Step
               title="Proč jsi vybral zrovna mě?"
-              subtitle="Nemusíš si vymýšlet — vyber, co tě sem opravdu přivedlo."
+              subtitle="Nemusíš si vymýšlet. Vyber, co tě sem opravdu přivedlo."
             >
               <Controller
                 control={control}
@@ -412,7 +412,7 @@ export function LeadForm() {
           {currentStep === "contact" && (
             <Step
               title="Skoro hotovo. Kam se mám ozvat?"
-              subtitle="Telefon používám primárně — call je rychlejší než řetězec e-mailů."
+              subtitle="Telefon používám primárně, call je rychlejší než řetězec e-mailů."
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="sm:col-span-2">
@@ -471,7 +471,7 @@ export function LeadForm() {
                     />
                     <span className="text-sm text-bone/75 leading-relaxed">
                       Souhlasím se zpracováním osobních údajů za účelem
-                      kontaktu — podrobnosti v{" "}
+                      kontaktu, podrobnosti v{" "}
                       <a
                         href="/gdpr"
                         target="_blank"

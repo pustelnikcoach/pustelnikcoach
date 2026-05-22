@@ -60,7 +60,7 @@ export async function POST(req: Request) {
   const now = new Date();
 
   try {
-    const subject = `🎯 Nový lead: ${data.name} — ${GOAL_LABELS[data.goal]} — ${data.package}`;
+    const subject = `🎯 Nový lead: ${data.name} · ${GOAL_LABELS[data.goal]} · ${data.package}`;
 
     const [notifyRes, autoRes] = await Promise.all([
       resend.emails.send({
@@ -75,7 +75,7 @@ export async function POST(req: Request) {
         from: `Petr Pustelník <${fromEmail}>`,
         to: [data.email],
         replyTo: toEmail,
-        subject: "Děkuju za zájem o spolupráci — ozvu se do 48 hodin",
+        subject: "Děkuju za zájem o spolupráci, ozvu se do 48 hodin",
         html: renderAutoresponderEmail(data),
         text: renderAutoresponderText(data),
       }),

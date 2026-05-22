@@ -121,7 +121,7 @@ export function renderAutoresponderEmail(data: LeadInput): string {
           <tr>
             <td style="padding:0 32px 24px 32px;font-size:16px;line-height:1.6;color:${bone};">
               <p style="margin:0 0 16px 0;">děkuju ti za zájem o spolupráci.</p>
-              <p style="margin:0 0 16px 0;">Beru aktuálně jen omezený počet nových klientů, ale <strong>do 48 hodin si na tebe najdu čas</strong> — zavolám na ${escape(data.phone)} nebo napíšu na tento e-mail.</p>
+              <p style="margin:0 0 16px 0;">Beru aktuálně jen omezený počet nových klientů, ale <strong>do 48 hodin si na tebe najdu čas</strong>. Zavolám na ${escape(data.phone)} nebo napíšu na tento e-mail.</p>
               <p style="margin:0 0 24px 0;">Mezitím mrkni na můj Instagram, ať víš, co tě čeká:</p>
               <p style="margin:0 0 28px 0;">
                 <a href="https://instagram.com/petrpustelnikcoach" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:12px 20px;border-radius:10px;font-size:15px;font-weight:600;">
@@ -151,7 +151,7 @@ export function renderLeadText(data: LeadInput, receivedAt: Date): string {
     timeStyle: "short",
     timeZone: "Europe/Prague",
   });
-  return `Nový lead z webu — ${data.name}
+  return `Nový lead z webu · ${data.name}
 ${GOAL_LABELS[data.goal]} · ${data.package}
 
 Jméno: ${data.name}
@@ -177,7 +177,7 @@ export function renderAutoresponderText(data: LeadInput): string {
 děkuju ti za zájem o spolupráci.
 
 Beru aktuálně jen omezený počet nových klientů, ale do 48 hodin
-si na tebe najdu čas — zavolám na ${data.phone} nebo napíšu
+si na tebe najdu čas. Zavolám na ${data.phone} nebo napíšu
 na tento e-mail.
 
 Mezitím mrkni na můj Instagram, ať víš, co tě čeká:

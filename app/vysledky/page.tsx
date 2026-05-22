@@ -9,7 +9,7 @@ import { allResults } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Výsledky klientů | Petr Pustelník",
   description:
-    "Reálné výsledky klientů Petra Pustelníka — před/po fotky a transformace z dlouhodobé spolupráce. Žádný photoshop, žádné stock fotky.",
+    "Reálné výsledky klientů Petra Pustelníka. Před/po fotky a transformace z dlouhodobé spolupráce. Žádný photoshop, žádné stock fotky.",
   robots: { index: true, follow: true },
 };
 
@@ -33,7 +33,7 @@ export default function VysledkyPage() {
             </h1>
             <p className="mt-4 text-[1.0625rem] text-bone/65 leading-relaxed">
               Reálné fotky reálných klientů. Žádný photoshop, žádné stock fotky.
-              Tady najdeš úplný přehled spoluprací — od krátkodobých transformací
+              Tady najdeš úplný přehled spoluprací, od krátkodobých transformací
               po dlouhodobé partnerství.
             </p>
           </header>
