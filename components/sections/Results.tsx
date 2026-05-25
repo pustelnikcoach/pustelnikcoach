@@ -99,13 +99,25 @@ export function ResultMedia({ card }: { card: ResultCard }) {
   if (card.kind === "ba") {
     return (
       <div className="relative grid grid-cols-2 gap-px bg-ink/40">
-        <ImageTile src={card.before} alt={`${card.name} — před`} label="PŘED" />
-        <ImageTile src={card.after} alt={`${card.name} — po`} label="PO" accent />
+        <ImageTile
+          src={card.before}
+          alt={`${card.name} — před`}
+          label="PŘED"
+          position={card.beforePosition}
+        />
+        <ImageTile
+          src={card.after}
+          alt={`${card.name} — po`}
+          label="PO"
+          accent
+          position={card.afterPosition}
+        />
       </div>
     );
   }
 
   const isTopZoom = card.focus === "top-zoom";
+  const hasZoom = typeof card.zoom === "number" && card.zoom !== 1;
   return (
     <div className="relative aspect-[4/5] bg-ink/50 overflow-hidden">
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -113,11 +125,18 @@ export function ResultMedia({ card }: { card: ResultCard }) {
         src={card.image}
         alt={`${card.name} — výsledek spolupráce`}
         className={
-          "absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] " +
+          "absolute inset-0 h-full w-full object-cover transition-transform duration-700 " +
           (isTopZoom
-            ? "object-[50%_15%] scale-[1.1] origin-top"
-            : "object-center")
+            ? "scale-[1.1] origin-top group-hover:scale-[1.03]"
+            : hasZoom
+              ? ""
+              : "group-hover:scale-[1.03]")
         }
+        style={{
+          objectPosition:
+            card.objectPosition ?? (isTopZoom ? "50% 15%" : "50% 50%"),
+          transform: hasZoom ? `scale(${card.zoom})` : undefined,
+        }}
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
@@ -132,11 +151,13 @@ function ImageTile({
   alt,
   label,
   accent = false,
+  position,
 }: {
   src: string;
   alt: string;
   label: string;
   accent?: boolean;
+  position?: string;
 }) {
   return (
     <div className="relative aspect-[4/5] overflow-hidden bg-ink/60">
@@ -144,7 +165,8 @@ function ImageTile({
       <img
         src={src}
         alt={alt}
-        className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+        style={{ objectPosition: position ?? "50% 50%" }}
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}

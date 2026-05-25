@@ -90,6 +90,9 @@ export type ResultCard =
       after: string; // cesta k fotce „po"
       duration: string;
       quote?: string;
+      // Vycentrování ořezu fotky, např. "50% 30%" (vlevo-vpravo % mezera nahoře-dole %)
+      beforePosition?: string;
+      afterPosition?: string;
     }
   | {
       kind: "single";
@@ -99,30 +102,39 @@ export type ResultCard =
       quote?: string;
       // "top-zoom" = zoom na obličej (užitečné, když je fotka focená z dálky)
       focus?: "top-zoom";
+      // Vycentrování ořezu fotky, např. "50% 30%" (vlevo-vpravo % mezera nahoře-dole %)
+      objectPosition?: string;
+      // Přiblížení fotky (1 = bez zoomu, 1.3 = přiblížit o 30 %) — ořízne okraje
+      zoom?: number;
     };
 
 // HLAVNÍ VÝSLEDKY — zobrazí se na úvodní stránce
+// Pozn.: karty „před/po" a jednotlivé fotky jsou seskupené po dvojicích,
+// aby si řady ve dvousloupcové mřížce výškově seděly.
 export const featuredResults: ResultCard[] = [
   {
-    kind: "single",
+    kind: "ba",
     name: "Justýna H.",
-    image: "/images/results/justyna.jpg",
+    before: "/images/results/justyna-before.png",
+    after: "/images/results/justyna-after.png",
     duration: "4 měsíce",
     quote:
       "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
-    focus: "top-zoom",
+  },
+  {
+    kind: "ba",
+    name: "Jakub Pustelník",
+    before: "/images/results/jakub-before.png",
+    after: "/images/results/jakub-after.jpg",
+    duration: "Dlouhodobá spolupráce",
   },
   {
     kind: "single",
     name: "Felix Kuba",
     image: "/images/results/felix-kuba.jpg",
-    duration: "Dlouhodobá spolupráce",
-  },
-  {
-    kind: "single",
-    name: "Jakub Pustelník",
-    image: "/images/results/jakub-pustelnik.jpg",
-    duration: "Dlouhodobá spolupráce",
+    duration: "Výherce Deadlift Masterclass 2025",
+    quote:
+      "Po měsíci spolupráce s Petrem jsem se naučil spoustu nových věcí. 100 % doporučuju.",
   },
   {
     kind: "single",
@@ -130,7 +142,9 @@ export const featuredResults: ResultCard[] = [
     image: "/images/results/dominik-jedlicka.jpg",
     duration: "Dlouhodobá spolupráce",
     quote:
-      "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Určitě bych ho doporučil lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
+      "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Doporučil bych ho lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
+    objectPosition: "55% 42%",
+    zoom: 1.35,
   },
 ];
 
@@ -206,9 +220,9 @@ export const about = {
   // ÚPRAVA: jednotlivé odstavce textu
   // Hvězdičky **text** udělají z textu tučně.
   paragraphs: [
-    "V roce **2021** mě jako **šestnáctiletého** srazilo na kole auto. Doktoři mi dávali **1% šanci na přežití**.",
+    "V roce **2021** mě jako **šestnáctiletého** srazilo auto. Doktoři mi dávali **1% šanci na přežití**.",
     "Když mi tělo dalo druhou šanci, slíbil jsem si, že ji **nepromarním**. Od toho dne beru zdraví i život **vážně**.",
-    "**Šest let cvičím. Rok trénuju klienty v Elements Gymu Ostrava.**",
+    "**Šest let cvičím. Dva roky trénuju klienty v Elements Gymu Ostrava.**",
     "Začal jsem **u sebe**. Léta jsem studoval, co opravdu funguje, a postavil postavu, kterou jsem chtěl. Bez zkratek, bez extrémních diet, bez magie.",
     "Pak se začali ptát **kamarádi**. Co jíš, jak cvičíš, jak to děláš. Tak jsem začal pomáhat jim. Když to fungovalo opakovaně, došlo mi, že stejný systém můžu dát i lidem mimo svůj okruh.",
     "Teď trénuju **klienty** v Elements Gymu a online po celé republice. Formování postavy, sílu, powerlifting i kulturistiku včetně závodní přípravy.",
@@ -252,7 +266,7 @@ export const excuses = [
   {
     excuse: "„Už jsem to zkoušel. Vždy mi to vydrží 2 měsíce.“",
     answer:
-      "Protože ti chybí **systém a kontrola.** Krátkodobé výzvy jsou navržené tak, aby se vrátily. Tady **držím nad tebou ruku** a stavíme habity, ne dietu.",
+      "Protože ti chybí **systém a kontrola.** Krátkodobé výzvy jsou navržené tak, aby se vrátily. Tady **držím nad tebou ruku** a stavíme návyky, ne dietu.",
   },
   {
     excuse: "„Jsem moc starý / moc začátečník.“",
@@ -357,7 +371,7 @@ export const packages = [
     name: "Online Coaching",
     price: "2 290",
     period: "/měsíc",
-    tag: "PRO LIDI MIMO OSTRAVU",
+    tag: null,
     bestFor: "Máš disciplínu, ale chceš plán a kontrolu.",
     features: [
       "Online komunikace",
@@ -453,13 +467,13 @@ export const process = [
   },
   {
     step: "Měsíc 3",
-    title: "Habity jedou samy",
+    title: "Systém funguje sám",
     description:
       "Trénink a jídlo už nejsou rozhodnutí, jsou **návyk**. Viditelný pokrok, ostatní si toho začínají všímat.",
   },
   {
     step: "Měsíc 6+",
-    title: "Trvalá forma",
+    title: "Vysněná forma",
     description:
       "**Forma, kterou jsi nečekal.** A hlavně **systém, který drží i bez mě.** Tohle je cíl.",
   },
@@ -511,7 +525,7 @@ export const faq = [
 export const formCopy = {
   sectionTitle: "Pojďme začít",
   sectionSubtitle:
-    "Vyplň formulář, ozvu se ti do 48 hodin. Žádný prodejní tlak, jen krátký call.",
+    "Vyplň formulář, ozvu se ti do 48 hodin. Žádný prodejní tlak, jen krátký hovor.",
 
   submit: "Odeslat poptávku",
   submitting: "Odesílám…",

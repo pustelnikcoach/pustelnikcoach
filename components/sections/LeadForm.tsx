@@ -238,7 +238,7 @@ export function LeadForm() {
           {currentStep === "kg" && (
             <Step
               title="O kolik kg ti jde?"
-              subtitle="Není to závazek. Realisticky to upřesníme na callu."
+              subtitle="Není to závazek. Realisticky to upřesníme na hovoru."
             >
               <Controller
                 control={control}
@@ -266,7 +266,7 @@ export function LeadForm() {
           {currentStep === "timeline" && (
             <Step
               title="Do kdy chceš výsledek?"
-              subtitle="Realistický odhad. Petr ti potvrdí nebo upraví na callu."
+              subtitle="Realistický odhad. Petr ti potvrdí nebo upraví na hovoru."
             >
               <Controller
                 control={control}
@@ -344,7 +344,7 @@ export function LeadForm() {
                       selected={field.value === "Nevim"}
                       onClick={() => field.onChange("Nevim")}
                       title="Ještě nevím, poraď mi"
-                      subtitle="Probereme na callu."
+                      subtitle="Probereme na hovoru."
                     />
                   </div>
                 )}
@@ -412,7 +412,7 @@ export function LeadForm() {
           {currentStep === "contact" && (
             <Step
               title="Skoro hotovo. Kam se mám ozvat?"
-              subtitle="Telefon používám primárně, call je rychlejší než řetězec e-mailů."
+              subtitle="Telefon používám primárně, hovor je rychlejší než řetězec e-mailů."
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="sm:col-span-2">
