@@ -32,7 +32,7 @@ export const nav = {
 // -----------------------------------------------------------------
 export const hero = {
   // ÚPRAVA: malý text nad hlavním nadpisem (uppercase)
-  eyebrow: "OSOBNÍ TRENÉR · ELEMENTS GYM OSTRAVA / OPAVA (OD ČERVNA)",
+  eyebrow: "OSOBNÍ TRENÉR · ELEMENTS GYM OSTRAVA / OPAVA",
 
   // ÚPRAVA: hlavní nadpis — dva řádky
   headlineLine1: "Tvoje forma mluví",
@@ -505,7 +505,7 @@ export const faq = [
   },
   {
     q: "Musím chodit do gymu?",
-    a: "**Online Coaching** děláš odkudkoliv: gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v Elements Gymu Ostrava, a od června i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
+    a: "**Online Coaching** děláš odkudkoliv: gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v Elements Gymu Ostrava i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
   },
   {
     q: "Co když nesedí žádný balíček z ceníku?",
@@ -558,7 +558,7 @@ export const contact = {
   tiktokUrl: "https://www.tiktok.com/@petrpustelnikcoach",
   facebook: "Petr Pustelník",
   facebookUrl: "https://www.facebook.com/petr.pustelnik.13",
-  gym: "Elements Gym Ostrava / Opava (od června)",
+  gym: "Elements Gym Ostrava / Opava",
 };
 
 // -----------------------------------------------------------------
@@ -578,7 +578,7 @@ export const legal = {
 export const seo = {
   title: "Petr Pustelník | Osobní trenér Ostrava / Opava | Elements Gym",
   description:
-    "Osobní trenér v Ostravě a od června v Opavě (Elements Gym). 6+ let praxe, přes 100 klientů, 100 % úspěšnost při dodržení plánu. Hubnutí, nabírání svalů, formování postavy.",
+    "Osobní trenér v Ostravě a Opavě (Elements Gym). 6+ let praxe, přes 100 klientů, 100 % úspěšnost při dodržení plánu. Hubnutí, nabírání svalů, formování postavy.",
   ogTitle: "Petr Pustelník | Osobní trenér Ostrava / Opava",
   ogDescription:
     "Tvoje forma mluví dřív než ty. Jednoduchá cesta k vysněné formě, postavená na selském rozumu.",
