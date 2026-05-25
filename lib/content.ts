@@ -125,13 +125,13 @@ export const featuredResults: ResultCard[] = [
     kind: "ba",
     name: "Jakub Pustelník",
     before: "/images/results/jakub-before.png",
-    after: "/images/results/jakub-after.jpg",
+    after: "/images/results/jakub-after.png",
     duration: "Dlouhodobá spolupráce",
   },
   {
     kind: "single",
     name: "Felix Kuba",
-    image: "/images/results/felix-kuba.jpg",
+    image: "/images/results/felix-kuba.png",
     duration: "Výherce Deadlift Masterclass 2025",
     quote:
       "Po měsíci spolupráce s Petrem jsem se naučil spoustu nových věcí. 100 % doporučuju.",
@@ -139,12 +139,10 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "single",
     name: "Dominik Jedlička",
-    image: "/images/results/dominik-jedlicka.jpg",
+    image: "/images/results/dominik-jedlicka.png",
     duration: "Dlouhodobá spolupráce",
     quote:
       "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Doporučil bych ho lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
-    objectPosition: "55% 42%",
-    zoom: 1.35,
   },
 ];
 
