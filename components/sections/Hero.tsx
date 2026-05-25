@@ -13,7 +13,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative min-h-[90vh] pt-28 pb-20 sm:pt-32 sm:pb-24 bg-ink-graphite overflow-hidden"
+      className="relative pt-28 pb-16 sm:pt-32 sm:pb-20 bg-ink-graphite overflow-hidden"
     >
       <div className="absolute inset-0 bg-hero-radial pointer-events-none" aria-hidden />
 

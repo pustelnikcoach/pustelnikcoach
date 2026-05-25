@@ -23,8 +23,8 @@ export default function HomePage() {
       <main>
         <Hero />
         <ProofBar />
-        <Results />
         <Calculator />
+        <Results />
         <ResultsCurve />
         <Testimonials />
         <About />
