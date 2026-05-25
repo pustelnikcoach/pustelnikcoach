@@ -23,18 +23,18 @@ export default function HomePage() {
       <main>
         <Hero />
         <ProofBar />
-        <LeadFormSection />
         <Results />
+        <Calculator />
         <ResultsCurve />
         <Testimonials />
         <About />
         <Pillars />
         <Excuses />
-        <Calculator />
         <Guarantee />
         <Packages />
         <CustomCollab />
         <Process />
+        <LeadFormSection />
         <FAQ />
       </main>
       <Footer />
