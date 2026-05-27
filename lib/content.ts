@@ -118,6 +118,7 @@ export const featuredResults: ResultCard[] = [
     before: "/images/results/justyna-before.png",
     after: "/images/results/justyna-after.png",
     duration: "4 měsíce",
+    afterPosition: "50% 70%",
     quote:
       "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
   },
