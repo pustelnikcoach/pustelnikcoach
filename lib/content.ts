@@ -127,6 +127,8 @@ export const featuredResults: ResultCard[] = [
     before: "/images/results/jakub-before.png",
     after: "/images/results/jakub-after.png",
     duration: "Dlouhodobá spolupráce",
+    quote:
+      "Brácha Petr mě připravil na soutěž v kulturistice (starší dorost, Morava a Slezsko), kterou jsem vyhrál. Vřele ho doporučuju.",
   },
   {
     kind: "single",
