@@ -28,10 +28,10 @@ export function Nav() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-300 border-b",
           scrolled
-            ? "bg-ink/85 backdrop-blur-md border-b border-bone/5"
-            : "bg-transparent"
+            ? "bg-ink/85 backdrop-blur-md border-bone/5"
+            : "bg-transparent border-transparent"
         )}
       >
         <div className="relative max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
@@ -54,8 +54,8 @@ export function Nav() {
           <a
             href="#"
             className={cn(
-              "absolute left-1/2 -translate-x-1/2 transition-all duration-300",
-              scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+              "absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out",
+              scrolled ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
             )}
             aria-label="PUSTELNIK — zpět nahoru"
             tabIndex={scrolled ? 0 : -1}
@@ -73,7 +73,6 @@ export function Nav() {
                   width: "108px",
                   height: "auto",
                   marginLeft: "-27px",
-                  mixBlendMode: "screen",
                 }}
               />
             </div>

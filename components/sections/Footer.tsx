@@ -57,7 +57,6 @@ export function Footer() {
                     width: "151px",
                     height: "auto",
                     marginLeft: "-38px",
-                    mixBlendMode: "screen",
                   }}
                 />
               </div>
