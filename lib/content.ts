@@ -165,6 +165,8 @@ export const archivedResults: ResultCard[] = [
     before: "/images/results/jan-before.jpg",
     after: "/images/results/jan-after.jpg",
     duration: "Změna návyků",
+    quote:
+      "Pochopil jsem, jak funguje moje tělo, a vidím výsledky. Proto Petra doporučuju.",
   },
   {
     kind: "single",
