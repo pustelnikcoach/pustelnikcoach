@@ -37,9 +37,31 @@ export function Nav() {
         <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
           <a
             href="#"
-            className="font-display text-lg font-semibold tracking-wider text-bone"
+            className="flex items-center font-display text-lg font-semibold tracking-wider text-bone"
             aria-label={`${nav.brand}.`}
           >
+            <div
+              className="overflow-hidden flex-shrink-0 transition-all duration-300"
+              style={{
+                height: "28px",
+                width: scrolled ? "38px" : "0px",
+                opacity: scrolled ? 1 : 0,
+                marginRight: scrolled ? "8px" : "0px",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo-petr.png"
+                alt=""
+                aria-hidden
+                style={{
+                  width: "76px",
+                  height: "auto",
+                  marginLeft: "-19px",
+                  mixBlendMode: "screen",
+                }}
+              />
+            </div>
             {nav.brand}
             <span className="text-emerald-light">.</span>
           </a>
