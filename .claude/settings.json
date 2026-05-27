@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)"
+    ],
+    "deny": [
+      "Edit(components/sections/LeadForm.tsx)",
+      "Write(components/sections/LeadForm.tsx)",
+      "Edit(components/form/**)",
+      "Write(components/form/**)",
+      "Edit(app/api/lead/route.ts)",
+      "Write(app/api/lead/route.ts)",
+      "Edit(lib/schema.ts)",
+      "Write(lib/schema.ts)",
+      "Edit(lib/email-template.tsx)",
+      "Write(lib/email-template.tsx)",
+      "Edit(tailwind.config.ts)",
+      "Write(tailwind.config.ts)",
+      "Read(.env)",
+      "Read(.env.*)",
+      "Edit(.env)",
+      "Edit(.env.*)",
+      "Write(.env)",
+      "Write(.env.*)"
+    ]
+  }
+}
