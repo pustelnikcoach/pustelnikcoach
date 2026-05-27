@@ -34,20 +34,35 @@ export function Nav() {
             : "bg-transparent"
         )}
       >
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+        <div className="relative max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+
+          {/* Značka vlevo — zmizí po scrollu */}
           <a
             href="#"
-            className="flex items-center font-display text-lg font-semibold tracking-wider text-bone"
+            className={cn(
+              "font-display text-lg font-semibold tracking-wider text-bone transition-all duration-300",
+              scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+            )}
             aria-label={`${nav.brand}.`}
+            tabIndex={scrolled ? -1 : 0}
+          >
+            {nav.brand}
+            <span className="text-emerald-light">.</span>
+          </a>
+
+          {/* Logo vycentrované — ukáže se po scrollu */}
+          <a
+            href="#"
+            className={cn(
+              "absolute left-1/2 -translate-x-1/2 transition-all duration-300",
+              scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+            )}
+            aria-label="PUSTELNIK — zpět nahoru"
+            tabIndex={scrolled ? 0 : -1}
           >
             <div
-              className="overflow-hidden flex-shrink-0 transition-all duration-300"
-              style={{
-                height: "28px",
-                width: scrolled ? "38px" : "0px",
-                opacity: scrolled ? 1 : 0,
-                marginRight: scrolled ? "8px" : "0px",
-              }}
+              className="overflow-hidden"
+              style={{ height: "36px", width: "54px" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -55,23 +70,28 @@ export function Nav() {
                 alt=""
                 aria-hidden
                 style={{
-                  width: "76px",
+                  width: "108px",
                   height: "auto",
-                  marginLeft: "-19px",
+                  marginLeft: "-27px",
                   mixBlendMode: "screen",
                 }}
               />
             </div>
-            {nav.brand}
-            <span className="text-emerald-light">.</span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8">
+          {/* Navigační odkazy vpravo — zmizí po scrollu */}
+          <nav
+            className={cn(
+              "hidden md:flex items-center gap-8 transition-all duration-300",
+              scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+            )}
+          >
             {nav.links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 className="text-sm text-bone/75 hover:text-bone transition-colors"
+                tabIndex={scrolled ? -1 : 0}
               >
                 {link.label}
               </a>
@@ -79,17 +99,23 @@ export function Nav() {
             <a
               href="#kontakt"
               className="ml-2 inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-emerald hover:bg-emerald-light text-bone text-sm font-medium transition-colors"
+              tabIndex={scrolled ? -1 : 0}
             >
               {nav.cta}
               <span aria-hidden>→</span>
             </a>
           </nav>
 
+          {/* Tlačítko mobilního menu — zmizí po scrollu */}
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-lg text-bone hover:bg-bone/5"
+            className={cn(
+              "md:hidden h-10 w-10 inline-flex items-center justify-center rounded-lg text-bone hover:bg-bone/5 transition-all duration-300",
+              scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
+            )}
             aria-label="Otevřít menu"
+            tabIndex={scrolled ? -1 : 0}
           >
             <Menu className="h-5 w-5" />
           </button>
