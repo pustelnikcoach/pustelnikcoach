@@ -45,21 +45,12 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <div
-                className="overflow-hidden flex-shrink-0"
-                style={{ height: "56px", width: "76px" }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/images/logo-petr.png"
-                  alt="Petr Pustelník logo"
-                  style={{
-                    width: "151px",
-                    height: "auto",
-                    marginLeft: "-38px",
-                  }}
-                />
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logo-transparent.png"
+                alt="Petr Pustelník logo"
+                style={{ height: "48px", width: "auto" }}
+              />
               <div className="font-display text-xl font-bold tracking-wider text-bone">
                 {nav.brand}
                 <span className="text-emerald-light">.</span>

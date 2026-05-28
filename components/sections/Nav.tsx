@@ -10,7 +10,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -19,32 +19,28 @@ export function Nav() {
   useEffect(() => {
     if (!open) return;
     document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
+    return () => { document.body.style.overflow = ""; };
   }, [open]);
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-[background-color,border-color] duration-300 border-b",
-          scrolled
-            ? "bg-ink/85 backdrop-blur-md border-bone/5"
-            : "bg-transparent border-transparent"
-        )}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50">
+
+        {/* Tmavé pozadí lišty — plynule se objeví po scrollu */}
+        <div
+          className="absolute inset-0 bg-ink/90 backdrop-blur-md border-b border-bone/5 transition-opacity duration-300"
+          style={{ opacity: scrolled ? 1 : 0 }}
+        />
+
         <div className="relative max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
 
           {/* Značka vlevo — zmizí po scrollu */}
           <a
             href="#"
-            className={cn(
-              "font-display text-lg font-semibold tracking-wider text-bone transition-all duration-300",
-              scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
-            )}
-            aria-label={`${nav.brand}.`}
+            className="font-display text-lg font-semibold tracking-wider text-bone transition-opacity duration-300"
+            style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? "none" : "auto" }}
             tabIndex={scrolled ? -1 : 0}
+            aria-label={`${nav.brand}.`}
           >
             {nav.brand}
             <span className="text-emerald-light">.</span>
@@ -53,37 +49,28 @@ export function Nav() {
           {/* Logo vycentrované — ukáže se po scrollu */}
           <a
             href="#"
-            className={cn(
-              "absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out",
-              scrolled ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
-            )}
-            aria-label="PUSTELNIK — zpět nahoru"
+            className="absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out"
+            style={{
+              opacity: scrolled ? 1 : 0,
+              transform: `translateX(-50%) scale(${scrolled ? 1 : 0.85})`,
+              pointerEvents: scrolled ? "auto" : "none",
+            }}
+            aria-label="Zpět nahoru"
             tabIndex={scrolled ? 0 : -1}
           >
-            <div
-              className="overflow-hidden"
-              style={{ height: "36px", width: "54px" }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/logo-petr.png"
-                alt=""
-                aria-hidden
-                style={{
-                  width: "108px",
-                  height: "auto",
-                  marginLeft: "-27px",
-                }}
-              />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo-transparent.png"
+              alt=""
+              aria-hidden
+              style={{ height: "36px", width: "auto" }}
+            />
           </a>
 
-          {/* Navigační odkazy vpravo — zmizí po scrollu */}
+          {/* Navigační odkazy — zmizí po scrollu */}
           <nav
-            className={cn(
-              "hidden md:flex items-center gap-8 transition-all duration-300",
-              scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
-            )}
+            className="hidden md:flex items-center gap-8 transition-opacity duration-300"
+            style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? "none" : "auto" }}
           >
             {nav.links.map((link) => (
               <a
@@ -109,10 +96,8 @@ export function Nav() {
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className={cn(
-              "md:hidden h-10 w-10 inline-flex items-center justify-center rounded-lg text-bone hover:bg-bone/5 transition-all duration-300",
-              scrolled ? "opacity-0 pointer-events-none" : "opacity-100"
-            )}
+            className="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-lg text-bone hover:bg-bone/5 transition-opacity duration-300"
+            style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? "none" : "auto" }}
             aria-label="Otevřít menu"
             tabIndex={scrolled ? -1 : 0}
           >
@@ -125,8 +110,7 @@ export function Nav() {
         <div className="fixed inset-0 z-[60] bg-ink md:hidden">
           <div className="px-5 sm:px-8 h-16 flex items-center justify-between">
             <span className="font-display text-lg font-semibold tracking-wider text-bone">
-              {nav.brand}
-              <span className="text-emerald-light">.</span>
+              {nav.brand}<span className="text-emerald-light">.</span>
             </span>
             <button
               type="button"
