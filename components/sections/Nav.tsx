@@ -63,7 +63,7 @@ export function Nav() {
               src="/images/logo-transparent.png"
               alt=""
               aria-hidden
-              style={{ height: "36px", width: "auto" }}
+              style={{ height: "56px", width: "auto" }}
             />
           </a>
 
