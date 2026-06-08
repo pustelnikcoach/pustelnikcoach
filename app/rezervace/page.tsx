@@ -42,9 +42,9 @@ export default function RezervacePage() {
               Rezervuj si termín
             </h1>
             <p className="mt-4 text-[1.0625rem] text-bone/65 leading-relaxed">
-              Vyber si termín <strong className="text-bone">konzultace zdarma</strong>.
-              Vyplníš pár údajů a termín se objeví v tvém i mém kalendáři — i s
-              připomínkou, ať na nic nezapomeneš.
+              Vyber si termín <strong className="text-bone">konzultace ZDARMA!</strong>{" "}
+              Vyplníš pár údajů a termín se uloží do tvého i mého kalendáře.
+              Přijde ti i připomínka, ať na nic nezapomeneš.
             </p>
           </header>
 
