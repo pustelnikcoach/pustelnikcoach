@@ -25,6 +25,12 @@ export const nav = {
     { label: "Kontakt", href: "#kontakt" },
   ],
   cta: "Začít teď", // ÚPRAVA: text hlavního tlačítka v navigaci
+
+  // REZERVACE — skrytá záložka. Až bude hotová, přepni `showReservations` na
+  // true a v liště (i v mobilním menu) se objeví odkaz "Rezervace" → /rezervace.
+  showReservations: false,
+  reservationsLabel: "Rezervace",
+  reservationsHref: "/rezervace",
 };
 
 // -----------------------------------------------------------------

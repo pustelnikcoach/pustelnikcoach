@@ -82,6 +82,15 @@ export function Nav() {
                 {link.label}
               </a>
             ))}
+            {nav.showReservations && (
+              <a
+                href={nav.reservationsHref}
+                className="text-sm text-bone/75 hover:text-bone transition-colors"
+                tabIndex={scrolled ? -1 : 0}
+              >
+                {nav.reservationsLabel}
+              </a>
+            )}
             <a
               href="#kontakt"
               className="ml-2 inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-emerald hover:bg-emerald-light text-bone text-sm font-medium transition-colors"
@@ -132,6 +141,15 @@ export function Nav() {
                 {link.label}
               </a>
             ))}
+            {nav.showReservations && (
+              <a
+                href={nav.reservationsHref}
+                onClick={() => setOpen(false)}
+                className="font-display text-3xl font-semibold py-3 text-bone hover:text-emerald-light transition-colors"
+              >
+                {nav.reservationsLabel}
+              </a>
+            )}
             <a
               href="#kontakt"
               onClick={() => setOpen(false)}
