@@ -4,15 +4,11 @@ import { ArrowLeft } from "lucide-react";
 import { Footer } from "@/components/sections/Footer";
 import { Nav } from "@/components/sections/Nav";
 
-// ⚠️ SKRYTÁ STRÁNKA — záměrně není v menu a Google ji neindexuje.
-// Dostane se sem jen ten, kdo zná odkaz /rezervace (na ukázku týmu).
-// Až bude hotová: v lib/content.ts přepni `nav.showReservations` na true
-// a změň `robots` níže na { index: true, follow: true }.
 export const metadata: Metadata = {
-  title: "Rezervace | Petr Pustelník",
+  title: "Rezervace konzultace zdarma | Petr Pustelník",
   description:
     "Rezervuj si termín konzultace zdarma. Vyber si čas, vyplň pár údajů a termín se ti i mně objeví v kalendáři.",
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 };
 
 // Calendly odkaz na event „Konzultace" (zdarma). Barvy sladěné s webem.
