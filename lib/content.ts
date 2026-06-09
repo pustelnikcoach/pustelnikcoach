@@ -17,9 +17,9 @@
 export const nav = {
   brand: "PUSTELNIK", // ÚPRAVA: značka/logo text vlevo nahoře (tečka se přidá automaticky v zelené)
   links: [
+    { label: "O mně", href: "#o-mne" },
     { label: "Výsledky", href: "#vysledky" },
     { label: "Recenze", href: "#recenze" },
-    { label: "O mně", href: "#o-mne" },
     { label: "Balíčky", href: "#balicky" },
     { label: "FAQ", href: "#faq" },
     { label: "Kontakt", href: "#kontakt" },
@@ -28,7 +28,7 @@ export const nav = {
 
   // REZERVACE — skrytá záložka. Až bude hotová, přepni `showReservations` na
   // true a v liště (i v mobilním menu) se objeví odkaz "Rezervace" → /rezervace.
-  showReservations: false,
+  showReservations: true,
   reservationsLabel: "Rezervace",
   reservationsHref: "/rezervace",
 };
