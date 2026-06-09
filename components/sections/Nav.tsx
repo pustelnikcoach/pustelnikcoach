@@ -49,10 +49,10 @@ export function Nav() {
           {/* Logo vycentrované — ukáže se po scrollu */}
           <a
             href="#"
-            className="absolute left-1/2 -translate-x-1/2 transition-all duration-500 ease-out"
+            className="absolute left-1/2 top-1/2 transition-all duration-500 ease-out"
             style={{
               opacity: scrolled ? 1 : 0,
-              transform: `translateX(-50%) scale(${scrolled ? 1 : 0.85})`,
+              transform: `translate(-50%, -50%) scale(${scrolled ? 1 : 0.85})`,
               pointerEvents: scrolled ? "auto" : "none",
             }}
             aria-label="Zpět nahoru"
@@ -63,7 +63,7 @@ export function Nav() {
               src="/images/logo-transparent.png"
               alt=""
               aria-hidden
-              style={{ height: "128px", width: "auto" }}
+              style={{ height: "128px", width: "auto", display: "block" }}
             />
           </a>
 
