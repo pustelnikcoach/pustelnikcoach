@@ -32,7 +32,7 @@ export function Nav() {
           style={{ opacity: scrolled ? 1 : 0 }}
         />
 
-        <div className="relative max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+        <div className="relative max-w-6xl mx-auto px-5 sm:px-8 h-24 flex items-center justify-between">
 
           {/* Značka vlevo — zmizí po scrollu */}
           <a
@@ -63,7 +63,7 @@ export function Nav() {
               src="/images/logo-transparent.png"
               alt=""
               aria-hidden
-              style={{ height: "80px", width: "auto" }}
+              style={{ height: "104px", width: "auto" }}
             />
           </a>
 
