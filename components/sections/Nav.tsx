@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { nav } from "@/lib/content";
 import { cn } from "@/lib/utils";
@@ -8,6 +9,12 @@ import { cn } from "@/lib/utils";
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Na homepage kotvy plynule scrollují (#sekce). Na podstránkách (např. /rezervace)
+  // musí odkaz skočit na homepage a teprve tam dorolovat → /#sekce.
+  const isHome = usePathname() === "/";
+  const to = (hash: string) => (isHome ? hash : `/${hash}`);
+  const homeHref = isHome ? "#top" : "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -36,7 +43,7 @@ export function Nav() {
 
           {/* Značka vlevo — zmizí po scrollu */}
           <a
-            href="#"
+            href={homeHref}
             className="font-display text-lg font-semibold tracking-wider text-bone transition-opacity duration-300"
             style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? "none" : "auto" }}
             tabIndex={scrolled ? -1 : 0}
@@ -48,7 +55,7 @@ export function Nav() {
 
           {/* Logo vycentrované — ukáže se po scrollu */}
           <a
-            href="#"
+            href={homeHref}
             className="absolute left-1/2 top-1/2 transition-all duration-500 ease-out"
             style={{
               opacity: scrolled ? 1 : 0,
@@ -75,7 +82,7 @@ export function Nav() {
             {nav.links.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={to(link.href)}
                 className="text-sm text-bone/75 hover:text-bone transition-colors"
                 tabIndex={scrolled ? -1 : 0}
               >
@@ -92,7 +99,7 @@ export function Nav() {
               </a>
             )}
             <a
-              href="#kontakt"
+              href={to("#kontakt")}
               className="ml-2 inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-emerald hover:bg-emerald-light text-bone text-sm font-medium transition-colors"
               tabIndex={scrolled ? -1 : 0}
             >
@@ -134,7 +141,7 @@ export function Nav() {
             {nav.links.map((link) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={to(link.href)}
                 onClick={() => setOpen(false)}
                 className="font-display text-3xl font-semibold py-3 text-bone hover:text-emerald-light transition-colors"
               >
@@ -151,7 +158,7 @@ export function Nav() {
               </a>
             )}
             <a
-              href="#kontakt"
+              href={to("#kontakt")}
               onClick={() => setOpen(false)}
               className="mt-6 inline-flex items-center justify-center gap-2 h-14 rounded-xl bg-emerald hover:bg-emerald-light text-bone font-medium"
             >
