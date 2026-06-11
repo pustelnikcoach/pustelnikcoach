@@ -12,8 +12,8 @@ export function ResultsCurve() {
 
   // Viewbox dimensions (uvnitř paddingu)
   const W = 720;
-  const H = 360;
-  const PAD = { top: 36, right: 40, bottom: 56, left: 40 };
+  const H = 430;
+  const PAD = { top: 40, right: 40, bottom: 64, left: 40 };
   const innerW = W - PAD.left - PAD.right;
   const innerH = H - PAD.top - PAD.bottom;
 
@@ -57,7 +57,7 @@ export function ResultsCurve() {
   const monthLabels = ["Týden 1", "Měsíc 2", "Měsíc 3", "Měsíc 4", "Měsíc 5", "Měsíc 6+"];
 
   return (
-    <section className="py-20 sm:py-28 bg-graphite">
+    <section className="pt-20 pb-10 sm:py-28 bg-graphite">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
         <div className="max-w-2xl mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 rounded-full bg-emerald/10 text-emerald-light px-3 py-1 text-xs uppercase tracking-[0.15em] mb-5">
@@ -88,7 +88,7 @@ export function ResultsCurve() {
 
         <div
           ref={ref}
-          className="relative rounded-2xl bg-ink/60 border border-bone/5 p-5 sm:p-8 overflow-hidden"
+          className="relative rounded-2xl bg-ink/60 border border-bone/5 p-3 sm:p-8 overflow-hidden"
         >
           <svg
             viewBox={`0 0 ${W} ${H}`}
@@ -157,9 +157,9 @@ export function ResultsCurve() {
                 <text
                   key={label}
                   x={x}
-                  y={PAD.top + innerH + 22}
-                  fontSize="11"
-                  fill="rgba(232,230,225,0.4)"
+                  y={PAD.top + innerH + 28}
+                  fontSize="17"
+                  fill="rgba(232,230,225,0.5)"
                   textAnchor={i === 0 ? "start" : i === monthLabels.length - 1 ? "end" : "middle"}
                   fontFamily="system-ui, sans-serif"
                 >
@@ -171,11 +171,11 @@ export function ResultsCurve() {
             {/* Y-axis label */}
             <text
               x={PAD.left}
-              y={PAD.top - 14}
-              fontSize="10"
-              fill="rgba(232,230,225,0.4)"
+              y={PAD.top - 16}
+              fontSize="14"
+              fill="rgba(232,230,225,0.45)"
               fontFamily="system-ui, sans-serif"
-              letterSpacing="0.15em"
+              letterSpacing="0.12em"
             >
               VIDITELNÉ VÝSLEDKY →
             </text>
@@ -187,8 +187,8 @@ export function ResultsCurve() {
               x2={expectedEnd.x}
               y2={expectedEnd.y}
               stroke="rgba(232,230,225,0.35)"
-              strokeWidth={1.5}
-              strokeDasharray="6 6"
+              strokeWidth={2.5}
+              strokeDasharray="7 7"
               initial={{ pathLength: 0 }}
               animate={{ pathLength: inView ? 1 : 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
@@ -208,7 +208,7 @@ export function ResultsCurve() {
               d={realityPath.join(" ")}
               fill="none"
               stroke="#1A6B52"
-              strokeWidth={3}
+              strokeWidth={4.5}
               strokeLinecap="round"
               strokeLinejoin="round"
               initial={{ pathLength: 0 }}
@@ -225,28 +225,28 @@ export function ResultsCurve() {
               <circle
                 cx={quitMarkerX}
                 cy={quitMarkerY}
-                r={6}
+                r={7}
                 fill="#0B0F0D"
                 stroke="#7A8580"
-                strokeWidth={2}
+                strokeWidth={2.5}
               />
               <line
                 x1={quitMarkerX}
-                y1={quitMarkerY - 8}
+                y1={quitMarkerY - 10}
                 x2={quitMarkerX}
-                y2={quitMarkerY - 48}
+                y2={quitMarkerY - 52}
                 stroke="rgba(122,133,128,0.5)"
-                strokeWidth={1}
+                strokeWidth={1.25}
                 strokeDasharray="3 3"
               />
               <text
                 x={quitMarkerX}
-                y={quitMarkerY - 56}
-                fontSize="11"
-                fill="#7A8580"
+                y={quitMarkerY - 62}
+                fontSize="16"
+                fill="#9AA39E"
                 textAnchor="middle"
                 fontFamily="system-ui, sans-serif"
-                fontWeight="500"
+                fontWeight="600"
               >
                 {curveCopy.quitZoneLabel}
               </text>
@@ -261,28 +261,28 @@ export function ResultsCurve() {
               <circle
                 cx={payoffX}
                 cy={payoffY}
-                r={7}
+                r={8}
                 fill="#1A6B52"
                 stroke="#0B0F0D"
-                strokeWidth={2}
+                strokeWidth={2.5}
               />
               <line
                 x1={payoffX}
-                y1={payoffY + 10}
+                y1={payoffY + 12}
                 x2={payoffX}
-                y2={payoffY + 42}
+                y2={payoffY + 46}
                 stroke="rgba(26,107,82,0.7)"
-                strokeWidth={1}
+                strokeWidth={1.25}
                 strokeDasharray="3 3"
               />
               <text
                 x={payoffX}
-                y={payoffY + 58}
-                fontSize="11"
-                fill="#1A6B52"
+                y={payoffY + 64}
+                fontSize="16"
+                fill="#2E9C78"
                 textAnchor="end"
                 fontFamily="system-ui, sans-serif"
-                fontWeight="600"
+                fontWeight="700"
               >
                 {curveCopy.payoffZoneLabel}
               </text>
@@ -290,11 +290,11 @@ export function ResultsCurve() {
 
             {/* Legend */}
             <g transform={`translate(${PAD.left + 8}, ${PAD.top + 8})`}>
-              <rect width="170" height="48" rx="6" fill="rgba(11,15,13,0.7)" />
-              <line x1="14" y1="18" x2="34" y2="18" stroke="rgba(232,230,225,0.35)" strokeWidth={1.5} strokeDasharray="4 4" />
-              <text x="42" y="22" fontSize="11" fill="rgba(232,230,225,0.7)" fontFamily="system-ui, sans-serif">{curveCopy.expectedLabel}</text>
-              <line x1="14" y1="36" x2="34" y2="36" stroke="#1A6B52" strokeWidth={2.5} />
-              <text x="42" y="40" fontSize="11" fill="rgba(232,230,225,0.95)" fontFamily="system-ui, sans-serif" fontWeight="600">{curveCopy.realityLabel}</text>
+              <rect width="235" height="64" rx="8" fill="rgba(11,15,13,0.72)" />
+              <line x1="16" y1="24" x2="42" y2="24" stroke="rgba(232,230,225,0.35)" strokeWidth={2} strokeDasharray="5 5" />
+              <text x="52" y="29" fontSize="15" fill="rgba(232,230,225,0.7)" fontFamily="system-ui, sans-serif">{curveCopy.expectedLabel}</text>
+              <line x1="16" y1="48" x2="42" y2="48" stroke="#1A6B52" strokeWidth={3.5} />
+              <text x="52" y="53" fontSize="15" fill="rgba(232,230,225,0.95)" fontFamily="system-ui, sans-serif" fontWeight="600">{curveCopy.realityLabel}</text>
             </g>
           </svg>
         </div>

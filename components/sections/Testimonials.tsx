@@ -6,7 +6,7 @@ import { testimonials, testimonialsHeading } from "@/lib/content";
 
 export function Testimonials() {
   return (
-    <section id="recenze" className="py-20 sm:py-28 bg-graphite relative overflow-hidden">
+    <section id="recenze" className="pt-10 pb-20 sm:py-28 bg-graphite relative overflow-hidden">
       <div className="absolute -bottom-32 -right-32 h-[420px] w-[420px] rounded-full bg-emerald/[0.05] blur-3xl pointer-events-none" />
 
       <div className="relative max-w-6xl mx-auto px-5 sm:px-8">
