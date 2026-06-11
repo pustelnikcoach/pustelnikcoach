@@ -1,60 +1,352 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
+import { useInView } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 import { curveCopy, curveHeading } from "@/lib/content";
 import { renderInline } from "@/lib/markdown";
 
-export function ResultsCurve() {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+// Konfigurace grafu — jiná pro mobil (vyšší formát, velké písmo, méně popisků)
+// a pro desktop (širší, jemnější). Geometrie se počítá z těchto čísel.
+type ChartCfg = {
+  W: number;
+  H: number;
+  pad: { top: number; right: number; bottom: number; left: number };
+  fMonth: number;
+  fAxis: number;
+  fMarker: number;
+  fLegend: number;
+  sReality: number;
+  sExpected: number;
+  legendW: number;
+  legendH: number;
+  rQuit: number;
+  rPayoff: number;
+  markerLine: number; // délka vodítka od bodu k popisku
+  showLegend: boolean;
+  payoffLabelUp: boolean; // popisek „výsledky" nad bodem (mobil) vs pod ním (desktop)
+  months: { label: string; t: number }[];
+};
 
-  // Viewbox dimensions (uvnitř paddingu)
-  const W = 720;
-  const H = 430;
-  const PAD = { top: 40, right: 40, bottom: 64, left: 40 };
-  const innerW = W - PAD.left - PAD.right;
-  const innerH = H - PAD.top - PAD.bottom;
+const DESKTOP: ChartCfg = {
+  W: 720,
+  H: 430,
+  pad: { top: 40, right: 40, bottom: 64, left: 40 },
+  fMonth: 16,
+  fAxis: 13,
+  fMarker: 15,
+  fLegend: 14,
+  sReality: 4,
+  sExpected: 2.25,
+  legendW: 215,
+  legendH: 60,
+  rQuit: 7,
+  rPayoff: 8,
+  markerLine: 50,
+  showLegend: true,
+  payoffLabelUp: false,
+  months: [
+    { label: "Týden 1", t: 0 },
+    { label: "Měsíc 2", t: 0.2 },
+    { label: "Měsíc 3", t: 0.4 },
+    { label: "Měsíc 4", t: 0.6 },
+    { label: "Měsíc 5", t: 0.8 },
+    { label: "Měsíc 6+", t: 1 },
+  ],
+};
 
-  // Realita: hokejka. 0–6 měsíc, y od 0 do 1 (relativní výsledek).
-  // První 4-5 měsíců plochý růst, pak strmý zlom.
-  const realityPoints = (t: number) => {
-    // Mírně exponenciální křivka
-    return Math.pow(t, 3.4);
-  };
+const MOBILE: ChartCfg = {
+  W: 600,
+  H: 540,
+  pad: { top: 54, right: 30, bottom: 88, left: 30 },
+  fMonth: 28,
+  fAxis: 23,
+  fMarker: 25,
+  fLegend: 24,
+  sReality: 7,
+  sExpected: 4,
+  legendW: 330,
+  legendH: 98,
+  rQuit: 11,
+  rPayoff: 12,
+  markerLine: 74,
+  showLegend: false,
+  payoffLabelUp: true,
+  months: [
+    { label: "Týden 1", t: 0 },
+    { label: "Měsíc 3", t: 0.5 },
+    { label: "Měsíc 6+", t: 1 },
+  ],
+};
+
+function Chart({ cfg, inView }: { cfg: ChartCfg; inView: boolean }) {
+  const { W, H, pad } = cfg;
+  const innerW = W - pad.left - pad.right;
+  const innerH = H - pad.top - pad.bottom;
+
+  // Realita: hokejka (mírně exponenciální křivka)
+  const realityPoints = (t: number) => Math.pow(t, 3.4);
 
   const steps = 60;
   const realityPath: string[] = [];
   for (let i = 0; i <= steps; i++) {
     const t = i / steps;
-    const x = PAD.left + t * innerW;
-    const y = PAD.top + innerH - realityPoints(t) * innerH;
+    const x = pad.left + t * innerW;
+    const y = pad.top + innerH - realityPoints(t) * innerH;
     realityPath.push(`${i === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`);
   }
 
-  // Lineární očekávání
-  const expectedStart = { x: PAD.left, y: PAD.top + innerH };
-  const expectedEnd = { x: PAD.left + innerW, y: PAD.top };
+  const expectedStart = { x: pad.left, y: pad.top + innerH };
+  const expectedEnd = { x: pad.left + innerW, y: pad.top };
 
-  // Quit zone: cca t = 0.3 – 0.55
   const quitT0 = 0.32;
   const quitT1 = 0.55;
-  const quitX0 = PAD.left + quitT0 * innerW;
-  const quitX1 = PAD.left + quitT1 * innerW;
+  const quitX0 = pad.left + quitT0 * innerW;
+  const quitX1 = pad.left + quitT1 * innerW;
 
-  // Bod kde končí "většina lidí" — t = 0.45
   const quitMarkerT = 0.45;
-  const quitMarkerX = PAD.left + quitMarkerT * innerW;
-  const quitMarkerY = PAD.top + innerH - realityPoints(quitMarkerT) * innerH;
+  const quitMarkerX = pad.left + quitMarkerT * innerW;
+  const quitMarkerY = pad.top + innerH - realityPoints(quitMarkerT) * innerH;
 
-  // Bod kde výsledky přicházejí — t = 0.85
   const payoffT = 0.85;
-  const payoffX = PAD.left + payoffT * innerW;
-  const payoffY = PAD.top + innerH - realityPoints(payoffT) * innerH;
+  const payoffX = pad.left + payoffT * innerW;
+  const payoffY = pad.top + innerH - realityPoints(payoffT) * innerH;
 
-  // Časové popisky
-  const monthLabels = ["Týden 1", "Měsíc 2", "Měsíc 3", "Měsíc 4", "Měsíc 5", "Měsíc 6+"];
+  return (
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      className="w-full h-auto"
+      role="img"
+      aria-label="Graf: očekávaný lineární vs reálný exponenciální růst výsledků"
+    >
+      <defs>
+        <linearGradient id="realityFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#1A6B52" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#1A6B52" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="quitZoneFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#7A8580" stopOpacity="0.16" />
+          <stop offset="100%" stopColor="#7A8580" stopOpacity="0.04" />
+        </linearGradient>
+      </defs>
+
+      {/* Mřížka */}
+      {[0.25, 0.5, 0.75].map((t) => (
+        <line
+          key={t}
+          x1={pad.left}
+          x2={pad.left + innerW}
+          y1={pad.top + innerH - t * innerH}
+          y2={pad.top + innerH - t * innerH}
+          stroke="rgba(232,230,225,0.05)"
+          strokeWidth={1}
+        />
+      ))}
+
+      {/* Quit zone */}
+      <motion.rect
+        x={quitX0}
+        y={pad.top}
+        width={quitX1 - quitX0}
+        height={innerH}
+        fill="url(#quitZoneFill)"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView ? 1 : 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      />
+
+      {/* Osy */}
+      <line
+        x1={pad.left}
+        x2={pad.left + innerW}
+        y1={pad.top + innerH}
+        y2={pad.top + innerH}
+        stroke="rgba(232,230,225,0.15)"
+        strokeWidth={1}
+      />
+      <line
+        x1={pad.left}
+        x2={pad.left}
+        y1={pad.top}
+        y2={pad.top + innerH}
+        stroke="rgba(232,230,225,0.15)"
+        strokeWidth={1}
+      />
+
+      {/* Popisky času (X) */}
+      {cfg.months.map((m, i) => {
+        const x = pad.left + m.t * innerW;
+        return (
+          <text
+            key={m.label}
+            x={x}
+            y={pad.top + innerH + cfg.fMonth + 12}
+            fontSize={cfg.fMonth}
+            fill="rgba(232,230,225,0.5)"
+            textAnchor={i === 0 ? "start" : i === cfg.months.length - 1 ? "end" : "middle"}
+            fontFamily="system-ui, sans-serif"
+          >
+            {m.label}
+          </text>
+        );
+      })}
+
+      {/* Popisek osy Y */}
+      <text
+        x={pad.left}
+        y={pad.top - 16}
+        fontSize={cfg.fAxis}
+        fill="rgba(232,230,225,0.45)"
+        fontFamily="system-ui, sans-serif"
+        letterSpacing="0.12em"
+      >
+        VIDITELNÉ VÝSLEDKY →
+      </text>
+
+      {/* Očekávání (lineární, čárkované) */}
+      <motion.line
+        x1={expectedStart.x}
+        y1={expectedStart.y}
+        x2={expectedEnd.x}
+        y2={expectedEnd.y}
+        stroke="rgba(232,230,225,0.35)"
+        strokeWidth={cfg.sExpected}
+        strokeDasharray="7 7"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: inView ? 1 : 0 }}
+        transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+      />
+
+      {/* Realita — výplň */}
+      <motion.path
+        d={`${realityPath.join(" ")} L ${pad.left + innerW} ${pad.top + innerH} L ${pad.left} ${pad.top + innerH} Z`}
+        fill="url(#realityFill)"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView ? 1 : 0 }}
+        transition={{ duration: 0.8, delay: 1.4 }}
+      />
+
+      {/* Realita — čára */}
+      <motion.path
+        d={realityPath.join(" ")}
+        fill="none"
+        stroke="#1A6B52"
+        strokeWidth={cfg.sReality}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: inView ? 1 : 0 }}
+        transition={{ duration: 1.6, delay: 0.6, ease: "easeOut" }}
+      />
+
+      {/* Bod „tady končí většina" */}
+      <motion.g
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView ? 1 : 0 }}
+        transition={{ duration: 0.5, delay: 1.8 }}
+      >
+        <circle cx={quitMarkerX} cy={quitMarkerY} r={cfg.rQuit} fill="#0B0F0D" stroke="#7A8580" strokeWidth={2.5} />
+        <line
+          x1={quitMarkerX}
+          y1={quitMarkerY - cfg.rQuit - 4}
+          x2={quitMarkerX}
+          y2={quitMarkerY - cfg.markerLine}
+          stroke="rgba(122,133,128,0.5)"
+          strokeWidth={1.25}
+          strokeDasharray="3 3"
+        />
+        <text
+          x={quitMarkerX}
+          y={quitMarkerY - cfg.markerLine - 8}
+          fontSize={cfg.fMarker}
+          fill="#9AA39E"
+          textAnchor="middle"
+          fontFamily="system-ui, sans-serif"
+          fontWeight="600"
+        >
+          {curveCopy.quitZoneLabel}
+        </text>
+      </motion.g>
+
+      {/* Bod „tady přicházejí výsledky" */}
+      <motion.g
+        initial={{ opacity: 0 }}
+        animate={{ opacity: inView ? 1 : 0 }}
+        transition={{ duration: 0.5, delay: 2.1 }}
+      >
+        <circle cx={payoffX} cy={payoffY} r={cfg.rPayoff} fill="#1A6B52" stroke="#0B0F0D" strokeWidth={2.5} />
+        <line
+          x1={payoffX}
+          y1={cfg.payoffLabelUp ? payoffY - cfg.rPayoff - 4 : payoffY + cfg.rPayoff + 4}
+          x2={payoffX}
+          y2={cfg.payoffLabelUp ? payoffY - cfg.markerLine : payoffY + cfg.markerLine}
+          stroke="rgba(26,107,82,0.7)"
+          strokeWidth={1.25}
+          strokeDasharray="3 3"
+        />
+        <text
+          x={payoffX}
+          y={cfg.payoffLabelUp ? payoffY - cfg.markerLine - 8 : payoffY + cfg.markerLine + cfg.fMarker}
+          fontSize={cfg.fMarker}
+          fill="#2E9C78"
+          textAnchor="end"
+          fontFamily="system-ui, sans-serif"
+          fontWeight="700"
+        >
+          {curveCopy.payoffZoneLabel}
+        </text>
+      </motion.g>
+
+      {/* Legenda — jen desktop (na mobilu by se prala o místo) */}
+      {cfg.showLegend && (
+      <g transform={`translate(${pad.left + 8}, ${pad.top + 8})`}>
+        <rect width={cfg.legendW} height={cfg.legendH} rx="8" fill="rgba(11,15,13,0.72)" />
+        <line
+          x1={cfg.legendH * 0.28}
+          y1={cfg.legendH * 0.36}
+          x2={cfg.legendH * 0.72}
+          y2={cfg.legendH * 0.36}
+          stroke="rgba(232,230,225,0.35)"
+          strokeWidth={cfg.sExpected}
+          strokeDasharray="5 5"
+        />
+        <text
+          x={cfg.legendH * 0.86}
+          y={cfg.legendH * 0.36 + cfg.fLegend * 0.36}
+          fontSize={cfg.fLegend}
+          fill="rgba(232,230,225,0.7)"
+          fontFamily="system-ui, sans-serif"
+        >
+          {curveCopy.expectedLabel}
+        </text>
+        <line
+          x1={cfg.legendH * 0.28}
+          y1={cfg.legendH * 0.72}
+          x2={cfg.legendH * 0.72}
+          y2={cfg.legendH * 0.72}
+          stroke="#1A6B52"
+          strokeWidth={cfg.sReality * 0.8}
+        />
+        <text
+          x={cfg.legendH * 0.86}
+          y={cfg.legendH * 0.72 + cfg.fLegend * 0.36}
+          fontSize={cfg.fLegend}
+          fill="rgba(232,230,225,0.95)"
+          fontFamily="system-ui, sans-serif"
+          fontWeight="600"
+        >
+          {curveCopy.realityLabel}
+        </text>
+      </g>
+      )}
+    </svg>
+  );
+}
+
+export function ResultsCurve() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section className="pt-20 pb-10 sm:py-28 bg-graphite">
@@ -88,215 +380,16 @@ export function ResultsCurve() {
 
         <div
           ref={ref}
-          className="relative rounded-2xl bg-ink/60 border border-bone/5 p-3 sm:p-8 overflow-hidden"
+          className="relative rounded-2xl bg-ink/60 border border-bone/5 p-2 sm:p-8 overflow-hidden"
         >
-          <svg
-            viewBox={`0 0 ${W} ${H}`}
-            className="w-full h-auto"
-            role="img"
-            aria-label="Graf: očekávaný lineární vs reálný exponenciální růst výsledků"
-          >
-            <defs>
-              <linearGradient id="realityFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#1A6B52" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#1A6B52" stopOpacity="0" />
-              </linearGradient>
-              <linearGradient id="quitZoneFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#7A8580" stopOpacity="0.16" />
-                <stop offset="100%" stopColor="#7A8580" stopOpacity="0.04" />
-              </linearGradient>
-            </defs>
-
-            {/* Mřížka (horizontální linky) */}
-            {[0.25, 0.5, 0.75].map((t) => (
-              <line
-                key={t}
-                x1={PAD.left}
-                x2={PAD.left + innerW}
-                y1={PAD.top + innerH - t * innerH}
-                y2={PAD.top + innerH - t * innerH}
-                stroke="rgba(232,230,225,0.05)"
-                strokeWidth={1}
-              />
-            ))}
-
-            {/* Quit zone */}
-            <motion.rect
-              x={quitX0}
-              y={PAD.top}
-              width={quitX1 - quitX0}
-              height={innerH}
-              fill="url(#quitZoneFill)"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: inView ? 1 : 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            />
-
-            {/* Axes */}
-            <line
-              x1={PAD.left}
-              x2={PAD.left + innerW}
-              y1={PAD.top + innerH}
-              y2={PAD.top + innerH}
-              stroke="rgba(232,230,225,0.15)"
-              strokeWidth={1}
-            />
-            <line
-              x1={PAD.left}
-              x2={PAD.left}
-              y1={PAD.top}
-              y2={PAD.top + innerH}
-              stroke="rgba(232,230,225,0.15)"
-              strokeWidth={1}
-            />
-
-            {/* X-axis labels */}
-            {monthLabels.map((label, i) => {
-              const x = PAD.left + (i / (monthLabels.length - 1)) * innerW;
-              return (
-                <text
-                  key={label}
-                  x={x}
-                  y={PAD.top + innerH + 28}
-                  fontSize="17"
-                  fill="rgba(232,230,225,0.5)"
-                  textAnchor={i === 0 ? "start" : i === monthLabels.length - 1 ? "end" : "middle"}
-                  fontFamily="system-ui, sans-serif"
-                >
-                  {label}
-                </text>
-              );
-            })}
-
-            {/* Y-axis label */}
-            <text
-              x={PAD.left}
-              y={PAD.top - 16}
-              fontSize="14"
-              fill="rgba(232,230,225,0.45)"
-              fontFamily="system-ui, sans-serif"
-              letterSpacing="0.12em"
-            >
-              VIDITELNÉ VÝSLEDKY →
-            </text>
-
-            {/* Expected (linear, dashed) */}
-            <motion.line
-              x1={expectedStart.x}
-              y1={expectedStart.y}
-              x2={expectedEnd.x}
-              y2={expectedEnd.y}
-              stroke="rgba(232,230,225,0.35)"
-              strokeWidth={2.5}
-              strokeDasharray="7 7"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: inView ? 1 : 0 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-            />
-
-            {/* Reality fill */}
-            <motion.path
-              d={`${realityPath.join(" ")} L ${PAD.left + innerW} ${PAD.top + innerH} L ${PAD.left} ${PAD.top + innerH} Z`}
-              fill="url(#realityFill)"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: inView ? 1 : 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-            />
-
-            {/* Reality line */}
-            <motion.path
-              d={realityPath.join(" ")}
-              fill="none"
-              stroke="#1A6B52"
-              strokeWidth={4.5}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: inView ? 1 : 0 }}
-              transition={{ duration: 1.6, delay: 0.6, ease: "easeOut" }}
-            />
-
-            {/* Quit marker */}
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: inView ? 1 : 0 }}
-              transition={{ duration: 0.5, delay: 1.8 }}
-            >
-              <circle
-                cx={quitMarkerX}
-                cy={quitMarkerY}
-                r={7}
-                fill="#0B0F0D"
-                stroke="#7A8580"
-                strokeWidth={2.5}
-              />
-              <line
-                x1={quitMarkerX}
-                y1={quitMarkerY - 10}
-                x2={quitMarkerX}
-                y2={quitMarkerY - 52}
-                stroke="rgba(122,133,128,0.5)"
-                strokeWidth={1.25}
-                strokeDasharray="3 3"
-              />
-              <text
-                x={quitMarkerX}
-                y={quitMarkerY - 62}
-                fontSize="16"
-                fill="#9AA39E"
-                textAnchor="middle"
-                fontFamily="system-ui, sans-serif"
-                fontWeight="600"
-              >
-                {curveCopy.quitZoneLabel}
-              </text>
-            </motion.g>
-
-            {/* Payoff marker */}
-            <motion.g
-              initial={{ opacity: 0 }}
-              animate={{ opacity: inView ? 1 : 0 }}
-              transition={{ duration: 0.5, delay: 2.1 }}
-            >
-              <circle
-                cx={payoffX}
-                cy={payoffY}
-                r={8}
-                fill="#1A6B52"
-                stroke="#0B0F0D"
-                strokeWidth={2.5}
-              />
-              <line
-                x1={payoffX}
-                y1={payoffY + 12}
-                x2={payoffX}
-                y2={payoffY + 46}
-                stroke="rgba(26,107,82,0.7)"
-                strokeWidth={1.25}
-                strokeDasharray="3 3"
-              />
-              <text
-                x={payoffX}
-                y={payoffY + 64}
-                fontSize="16"
-                fill="#2E9C78"
-                textAnchor="end"
-                fontFamily="system-ui, sans-serif"
-                fontWeight="700"
-              >
-                {curveCopy.payoffZoneLabel}
-              </text>
-            </motion.g>
-
-            {/* Legend */}
-            <g transform={`translate(${PAD.left + 8}, ${PAD.top + 8})`}>
-              <rect width="235" height="64" rx="8" fill="rgba(11,15,13,0.72)" />
-              <line x1="16" y1="24" x2="42" y2="24" stroke="rgba(232,230,225,0.35)" strokeWidth={2} strokeDasharray="5 5" />
-              <text x="52" y="29" fontSize="15" fill="rgba(232,230,225,0.7)" fontFamily="system-ui, sans-serif">{curveCopy.expectedLabel}</text>
-              <line x1="16" y1="48" x2="42" y2="48" stroke="#1A6B52" strokeWidth={3.5} />
-              <text x="52" y="53" fontSize="15" fill="rgba(232,230,225,0.95)" fontFamily="system-ui, sans-serif" fontWeight="600">{curveCopy.realityLabel}</text>
-            </g>
-          </svg>
+          {/* Mobil: vyšší formát, velké písmo */}
+          <div className="sm:hidden">
+            <Chart cfg={MOBILE} inView={inView} />
+          </div>
+          {/* Desktop: širší, jemnější */}
+          <div className="hidden sm:block">
+            <Chart cfg={DESKTOP} inView={inView} />
+          </div>
         </div>
 
         <motion.p
