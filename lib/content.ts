@@ -127,7 +127,7 @@ export const featuredResults: ResultCard[] = [
     after: "/images/results/jakub-pribyla-after.jpg",
     duration: "Dlouhodobá spolupráce",
     quote:
-      "Začínal jsem na 115 kg a ve svém těle jsem se necítil dobře. Petr mi dal řád v tréninku i v jídle a držel mě i ve chvílích, kdy se mi nechtělo. Dneska jsem někdo úplně jiný a to z velké části díky němu.",
+      "Začínal jsem na 115 kg a ve svém těle jsem se necítil dobře. Dneska jsem někdo úplně jiný a to z velké části díky němu.",
   },
   {
     kind: "ba",
@@ -152,6 +152,7 @@ export const featuredResults: ResultCard[] = [
     name: "Dominik Jedlička",
     image: "/images/results/dominik-jedlicka.png",
     duration: "Dlouhodobá spolupráce",
+    wide: true,
     quote:
       "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Doporučil bych ho lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
   },

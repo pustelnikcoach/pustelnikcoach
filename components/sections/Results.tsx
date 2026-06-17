@@ -130,17 +130,21 @@ export function ResultMedia({ card }: { card: ResultCard }) {
         src={card.image}
         alt={`${card.name} — výsledek spolupráce`}
         className={
-          "absolute inset-0 h-full w-full object-cover transition-transform duration-700 " +
-          (isTopZoom
-            ? "scale-[1.1] origin-top group-hover:scale-[1.03]"
-            : hasZoom
-              ? ""
-              : "group-hover:scale-[1.03]")
+          "absolute inset-0 h-full w-full transition-transform duration-700 " +
+          (card.wide
+            ? "object-contain"
+            : "object-cover " +
+              (isTopZoom
+                ? "scale-[1.1] origin-top group-hover:scale-[1.03]"
+                : hasZoom
+                  ? ""
+                  : "group-hover:scale-[1.03]"))
         }
         style={{
-          objectPosition:
-            card.objectPosition ?? (isTopZoom ? "50% 15%" : "50% 50%"),
-          transform: hasZoom ? `scale(${card.zoom})` : undefined,
+          objectPosition: card.wide
+            ? undefined
+            : card.objectPosition ?? (isTopZoom ? "50% 15%" : "50% 50%"),
+          transform: !card.wide && hasZoom ? `scale(${card.zoom})` : undefined,
         }}
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
