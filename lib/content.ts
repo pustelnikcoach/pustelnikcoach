@@ -132,10 +132,9 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
     name: "Justýna H.",
-    before: "/images/results/justyna-before.png",
-    after: "/images/results/justyna-after.png",
+    before: "/images/results/justyna-before.jpg",
+    after: "/images/results/justyna-after.jpg",
     duration: "4 měsíce",
-    afterPosition: "50% 70%",
     quote:
       "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
   },
@@ -151,9 +150,8 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "single",
     name: "Dominik Jedlička",
-    image: "/images/results/dominik-jedlicka-wide.jpg",
+    image: "/images/results/dominik-jedlicka.png",
     duration: "Dlouhodobá spolupráce",
-    wide: true,
     quote:
       "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Doporučil bych ho lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
   },
