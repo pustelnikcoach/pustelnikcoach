@@ -119,7 +119,12 @@ export function ResultMedia({ card }: { card: ResultCard }) {
   const isTopZoom = card.focus === "top-zoom";
   const hasZoom = typeof card.zoom === "number" && card.zoom !== 1;
   return (
-    <div className="relative aspect-[4/5] bg-ink/50 overflow-hidden">
+    <div
+      className={
+        "relative bg-ink/50 overflow-hidden " +
+        (card.wide ? "aspect-[8/5]" : "aspect-[4/5]")
+      }
+    >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={card.image}

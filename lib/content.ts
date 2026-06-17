@@ -112,6 +112,8 @@ export type ResultCard =
       objectPosition?: string;
       // Přiblížení fotky (1 = bez zoomu, 1.3 = přiblížit o 30 %) — ořízne okraje
       zoom?: number;
+      // Široký formát (8:5) — stejná výška jako karta „před/po", aby řady seděly
+      wide?: boolean;
     };
 
 // HLAVNÍ VÝSLEDKY — zobrazí se na úvodní stránce
@@ -138,18 +140,20 @@ export const featuredResults: ResultCard[] = [
       "Brácha Petr mě připravil na soutěž v kulturistice (starší dorost, Morava a Slezsko), kterou jsem vyhrál. Vřele ho doporučuju.",
   },
   {
-    kind: "single",
-    name: "Felix Kuba",
-    image: "/images/results/felix-kuba.png",
-    duration: "Výherce Deadlift Masterclass 2025",
+    kind: "ba",
+    name: "Jakub Přibyla",
+    before: "/images/results/jakub-pribyla-before.jpg",
+    after: "/images/results/jakub-pribyla-after.jpg",
+    duration: "Dlouhodobá spolupráce",
     quote:
-      "Po měsíci spolupráce s Petrem jsem se naučil spoustu nových věcí. 100 % doporučuju.",
+      "Začínal jsem na 115 kg a ve svém těle se necítil dobře. Petr mi dal řád v tréninku i v jídle a držel mě i ve chvílích, kdy se mi nechtělo. Dneska jsem úplně někdo jiný — postavou i hlavou.",
   },
   {
     kind: "single",
     name: "Dominik Jedlička",
-    image: "/images/results/dominik-jedlicka.png",
+    image: "/images/results/dominik-jedlicka-wide.jpg",
     duration: "Dlouhodobá spolupráce",
+    wide: true,
     quote:
       "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Doporučil bych ho lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
   },
@@ -182,6 +186,14 @@ export const archivedResults: ResultCard[] = [
     duration: "Dlouhodobá spolupráce",
     quote:
       "Posunula jsem se psychicky, mám k sobě lepší vztah a cítím se silnější než dřív.",
+  },
+  {
+    kind: "single",
+    name: "Felix Kuba",
+    image: "/images/results/felix-kuba.png",
+    duration: "Výherce Deadlift Masterclass 2025",
+    quote:
+      "Po měsíci spolupráce s Petrem jsem se naučil spoustu nových věcí. 100 % doporučuju.",
   },
 ];
 
