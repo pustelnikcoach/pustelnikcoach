@@ -122,6 +122,15 @@ export type ResultCard =
 export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
+    name: "Jakub Přibyla",
+    before: "/images/results/jakub-pribyla-before.jpg",
+    after: "/images/results/jakub-pribyla-after.jpg",
+    duration: "Dlouhodobá spolupráce",
+    quote:
+      "Začínal jsem na 115 kg a ve svém těle jsem se necítil dobře. Petr mi dal řád v tréninku i v jídle a držel mě i ve chvílích, kdy se mi nechtělo. Dneska jsem někdo úplně jiný a to z velké části díky němu.",
+  },
+  {
+    kind: "ba",
     name: "Justýna H.",
     before: "/images/results/justyna-before.png",
     after: "/images/results/justyna-after.png",
@@ -138,15 +147,6 @@ export const featuredResults: ResultCard[] = [
     duration: "Dlouhodobá spolupráce",
     quote:
       "Brácha Petr mě připravil na soutěž v kulturistice (starší dorost, Morava a Slezsko), kterou jsem vyhrál. Vřele ho doporučuju.",
-  },
-  {
-    kind: "ba",
-    name: "Jakub Přibyla",
-    before: "/images/results/jakub-pribyla-before.jpg",
-    after: "/images/results/jakub-pribyla-after.jpg",
-    duration: "Dlouhodobá spolupráce",
-    quote:
-      "Začínal jsem na 115 kg a ve svém těle se necítil dobře. Petr mi dal řád v tréninku i v jídle a držel mě i ve chvílích, kdy se mi nechtělo. Dneska jsem úplně někdo jiný — postavou i hlavou.",
   },
   {
     kind: "single",
