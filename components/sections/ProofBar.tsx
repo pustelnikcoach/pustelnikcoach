@@ -6,13 +6,18 @@ import { proof } from "@/lib/content";
 
 // Animuje numerickou část stringu (např. "100+", "99 %") od 0.
 // Pokud number nezačíná číslicí, jen ho fade-rozsvítí.
-function useCountUp(raw: string, duration: number = 1400) {
+function useCountUp(raw: string) {
   const ref = useRef<HTMLDivElement | null>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   const match = raw.match(/^(\d+)(.*)$/);
   const target = match ? parseInt(match[1], 10) : null;
   const suffix = match ? match[2] : "";
+
+  // Malé číslo (6) běží pomalu po krocích (~280 ms / číslo → 1,2,3,4,5,6 a zůstane),
+  // velká čísla (100) rychle naběhnou.
+  const duration =
+    target === null ? 0 : target >= 100 ? 1100 : Math.max(900, target * 280);
 
   const [value, setValue] = useState(target === null ? null : 0);
 
@@ -23,9 +28,8 @@ function useCountUp(raw: string, duration: number = 1400) {
     const tick = (t: number) => {
       if (startTime === null) startTime = t;
       const elapsed = t - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      setValue(Math.round(eased * target));
+      const progress = Math.min(elapsed / duration, 1); // lineární → rovnoměrné kroky
+      setValue(Math.round(progress * target));
       if (progress < 1) frameId = requestAnimationFrame(tick);
     };
     frameId = requestAnimationFrame(tick);
