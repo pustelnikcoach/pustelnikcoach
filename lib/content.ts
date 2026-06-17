@@ -183,6 +183,7 @@ export const archivedResults: ResultCard[] = [
     name: "Vali Rožošová",
     image: "/images/results/vali.jpg",
     duration: "Dlouhodobá spolupráce",
+    wide: true,
     quote:
       "Posunula jsem se psychicky, mám k sobě lepší vztah a cítím se silnější než dřív.",
   },
@@ -191,6 +192,7 @@ export const archivedResults: ResultCard[] = [
     name: "Felix Kuba",
     image: "/images/results/felix-kuba.png",
     duration: "Výherce Deadlift Masterclass 2025",
+    wide: true,
     quote:
       "Po měsíci spolupráce s Petrem jsem se naučil spoustu nových věcí. 100 % doporučuju.",
   },
