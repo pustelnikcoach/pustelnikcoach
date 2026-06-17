@@ -132,8 +132,8 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
     name: "Justýna H.",
-    before: "/images/results/justyna-before.jpg",
-    after: "/images/results/justyna-after.jpg",
+    before: "/images/results/justyna-before-v2.jpg",
+    after: "/images/results/justyna-after-v2.jpg",
     duration: "4 měsíce",
     quote:
       "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
