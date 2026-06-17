@@ -11,7 +11,16 @@ export function LeadFormSection() {
             {formCopy.sectionTitle}
           </h2>
           <p className="mt-4 text-[1.0625rem] text-bone/65 leading-relaxed">
-            {formCopy.sectionSubtitle}
+            {formCopy.sectionSubtitle.split("48").map((part, i, arr) =>
+              i < arr.length - 1 ? (
+                <span key={i}>
+                  {part}
+                  <strong className="text-emerald-light font-bold">48</strong>
+                </span>
+              ) : (
+                <span key={i}>{part}</span>
+              )
+            )}
           </p>
         </div>
         <LeadForm />

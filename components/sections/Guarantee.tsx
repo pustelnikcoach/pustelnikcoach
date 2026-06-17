@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 import { guarantee } from "@/lib/content";
 import { renderInline } from "@/lib/markdown";
+import { CountUp } from "@/components/CountUp";
 
 export function Guarantee() {
   return (
@@ -35,8 +36,8 @@ export function Guarantee() {
                 <ShieldCheck className="h-3.5 w-3.5" />
                 Garance
               </div>
-              <div className="mt-6 font-display text-7xl sm:text-8xl font-semibold text-emerald-light leading-none">
-                {guarantee.statNumber}
+              <div className="mt-6 font-display text-7xl sm:text-8xl font-semibold text-emerald-light leading-none tabular-nums">
+                <CountUp value={guarantee.statNumber} />
               </div>
             </div>
 
