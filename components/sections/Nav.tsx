@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { nav } from "@/lib/content";
@@ -8,7 +8,11 @@ import { cn } from "@/lib/utils";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  // showLogo = zobrazit vycentrované logo (scrollování dolů).
+  // Když je false, ukáže se plné menu (nahoře na stránce nebo při scrollu zpět nahoru).
+  const [showLogo, setShowLogo] = useState(false);
   const [open, setOpen] = useState(false);
+  const lastY = useRef(0);
 
   // Na homepage kotvy plynule scrollují (#sekce). Na podstránkách (např. /rezervace)
   // musí odkaz skočit na homepage a teprve tam dorolovat → /#sekce.
@@ -17,7 +21,19 @@ export function Nav() {
   const homeHref = isHome ? "#top" : "/";
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 40);
+      const prev = lastY.current;
+      if (y < 40) {
+        setShowLogo(false); // úplně nahoře → plné menu
+      } else if (y > prev + 5) {
+        setShowLogo(true); // scroll dolů → logo
+      } else if (y < prev - 5) {
+        setShowLogo(false); // scroll nahoru → naběhne menu
+      }
+      lastY.current = y;
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -41,29 +57,29 @@ export function Nav() {
 
         <div className="relative max-w-6xl mx-auto px-5 sm:px-8 h-20 sm:h-28 flex items-center justify-between">
 
-          {/* Značka vlevo — zmizí po scrollu */}
+          {/* Značka vlevo — zmizí když ukazujeme logo */}
           <a
             href={homeHref}
             className="font-display text-lg font-semibold tracking-wider text-bone transition-opacity duration-300"
-            style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? "none" : "auto" }}
-            tabIndex={scrolled ? -1 : 0}
+            style={{ opacity: showLogo ? 0 : 1, pointerEvents: showLogo ? "none" : "auto" }}
+            tabIndex={showLogo ? -1 : 0}
             aria-label={`${nav.brand}.`}
           >
             {nav.brand}
             <span className="text-emerald-light">.</span>
           </a>
 
-          {/* Logo vycentrované — ukáže se po scrollu */}
+          {/* Logo vycentrované — ukáže se při scrollu dolů */}
           <a
             href={homeHref}
             className="absolute left-1/2 top-1/2 transition-all duration-500 ease-out"
             style={{
-              opacity: scrolled ? 1 : 0,
-              transform: `translate(-50%, -50%) scale(${scrolled ? 1 : 0.85})`,
-              pointerEvents: scrolled ? "auto" : "none",
+              opacity: showLogo ? 1 : 0,
+              transform: `translate(-50%, -50%) scale(${showLogo ? 1 : 0.85})`,
+              pointerEvents: showLogo ? "auto" : "none",
             }}
             aria-label="Zpět nahoru"
-            tabIndex={scrolled ? 0 : -1}
+            tabIndex={showLogo ? 0 : -1}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -74,17 +90,17 @@ export function Nav() {
             />
           </a>
 
-          {/* Navigační odkazy — zmizí po scrollu */}
+          {/* Navigační odkazy — zmizí když ukazujeme logo */}
           <nav
             className="hidden md:flex items-center gap-8 transition-opacity duration-300"
-            style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? "none" : "auto" }}
+            style={{ opacity: showLogo ? 0 : 1, pointerEvents: showLogo ? "none" : "auto" }}
           >
             {nav.links.map((link) => (
               <a
                 key={link.href}
                 href={to(link.href)}
                 className="text-sm text-bone/75 hover:text-bone transition-colors"
-                tabIndex={scrolled ? -1 : 0}
+                tabIndex={showLogo ? -1 : 0}
               >
                 {link.label}
               </a>
@@ -93,7 +109,7 @@ export function Nav() {
               <a
                 href={nav.reservationsHref}
                 className="text-sm text-bone/75 hover:text-bone transition-colors"
-                tabIndex={scrolled ? -1 : 0}
+                tabIndex={showLogo ? -1 : 0}
               >
                 {nav.reservationsLabel}
               </a>
@@ -101,21 +117,21 @@ export function Nav() {
             <a
               href={to("#kontakt")}
               className="ml-2 inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-emerald hover:bg-emerald-light text-bone text-sm font-medium transition-colors"
-              tabIndex={scrolled ? -1 : 0}
+              tabIndex={showLogo ? -1 : 0}
             >
               {nav.cta}
               <span aria-hidden>→</span>
             </a>
           </nav>
 
-          {/* Tlačítko mobilního menu — zmizí po scrollu */}
+          {/* Tlačítko mobilního menu — zmizí když ukazujeme logo */}
           <button
             type="button"
             onClick={() => setOpen(true)}
             className="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-lg text-bone hover:bg-bone/5 transition-opacity duration-300"
-            style={{ opacity: scrolled ? 0 : 1, pointerEvents: scrolled ? "none" : "auto" }}
+            style={{ opacity: showLogo ? 0 : 1, pointerEvents: showLogo ? "none" : "auto" }}
             aria-label="Otevřít menu"
-            tabIndex={scrolled ? -1 : 0}
+            tabIndex={showLogo ? -1 : 0}
           >
             <Menu className="h-5 w-5" />
           </button>
