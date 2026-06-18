@@ -123,7 +123,7 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
     name: "Jakub Přibyla",
-    before: "/images/results/jakub-pribyla-before.jpg",
+    before: "/images/results/jakub-pribyla-before-v2.jpg",
     after: "/images/results/jakub-pribyla-after.jpg",
     duration: "Dlouhodobá spolupráce",
     quote:
@@ -132,8 +132,8 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
     name: "Justýna H.",
-    before: "/images/results/justyna-before-v3.jpg",
-    after: "/images/results/justyna-after-v4.jpg",
+    before: "/images/results/justyna-before-v4.jpg",
+    after: "/images/results/justyna-after-v5.jpg",
     duration: "4 měsíce",
     quote:
       "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
