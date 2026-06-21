@@ -60,7 +60,7 @@ export function Nav() {
           {/* Značka vlevo — zmizí když ukazujeme logo */}
           <a
             href={homeHref}
-            className="font-display text-lg font-semibold tracking-wider text-bone transition-opacity duration-300"
+            className="font-display text-xl font-bold tracking-wider text-bone transition-opacity duration-300"
             style={{ opacity: showLogo ? 0 : 1, pointerEvents: showLogo ? "none" : "auto" }}
             tabIndex={showLogo ? -1 : 0}
             aria-label={`${nav.brand}.`}
@@ -141,7 +141,7 @@ export function Nav() {
       {open && (
         <div className="fixed inset-0 z-[60] bg-ink md:hidden">
           <div className="px-5 sm:px-8 h-16 flex items-center justify-between">
-            <span className="font-display text-lg font-semibold tracking-wider text-bone">
+            <span className="font-display text-xl font-bold tracking-wider text-bone">
               {nav.brand}<span className="text-emerald-light">.</span>
             </span>
             <button
