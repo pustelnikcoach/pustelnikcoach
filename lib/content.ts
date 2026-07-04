@@ -49,7 +49,7 @@ export const hero = {
   subheadline:
     "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy. Jen **jednoduchá cesta k vysněné formě**, postavená na selském rozumu.",
 
-  ctaPrimary: "Chci trénink ZDARMA", // ÚPRAVA: text hlavního tlačítka
+  ctaPrimary: "Chci trénink ZDARMA!", // ÚPRAVA: text hlavního tlačítka
   ctaSecondary: "Vidět výsledky", // ÚPRAVA: text druhého tlačítka
 
   // ÚPRAVA: cesta k hero fotce (poměr 4:5, ulož do public/images/)
