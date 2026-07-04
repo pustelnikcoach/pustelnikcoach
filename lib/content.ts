@@ -182,7 +182,7 @@ export const archivedResults: ResultCard[] = [
     kind: "single",
     name: "Vali Rožošová",
     image: "/images/results/vali.jpg",
-    duration: "Dlouhodobá spolupráce",
+    duration: "Změna návyků",
     wide: true,
     quote:
       "Posunula jsem se psychicky, mám k sobě lepší vztah a cítím se silnější než dřív.",
