@@ -261,7 +261,7 @@ export const about = {
   ],
 
   // ÚPRAVA: cesta k portrétní fotce (poměr 4:5)
-  image: "/images/about.jpg",
+  image: "/images/about-flex.jpg",
   imageAlt: "Petr Pustelník",
 };
 
