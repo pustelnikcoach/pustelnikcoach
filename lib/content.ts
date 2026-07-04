@@ -24,7 +24,7 @@ export const nav = {
     { label: "FAQ", href: "#faq" },
     { label: "Kontakt", href: "#kontakt" },
   ],
-  cta: "Začít teď", // ÚPRAVA: text hlavního tlačítka v navigaci
+  cta: "Chci trénink ZDARMA", // ÚPRAVA: text hlavního tlačítka v navigaci
 
   // REZERVACE — skrytá záložka. Až bude hotová, přepni `showReservations` na
   // true a v liště (i v mobilním menu) se objeví odkaz "Rezervace" → /rezervace.
@@ -49,7 +49,7 @@ export const hero = {
   subheadline:
     "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy. Jen **jednoduchá cesta k vysněné formě**, postavená na selském rozumu.",
 
-  ctaPrimary: "Začít teď", // ÚPRAVA: text hlavního tlačítka
+  ctaPrimary: "Chci trénink ZDARMA", // ÚPRAVA: text hlavního tlačítka
   ctaSecondary: "Vidět výsledky", // ÚPRAVA: text druhého tlačítka
 
   // ÚPRAVA: cesta k hero fotce (poměr 4:5, ulož do public/images/)
@@ -537,7 +537,7 @@ export const faq = [
   },
   {
     q: "Můžu nejdřív vyzkoušet jeden trénink?",
-    a: "Jasně. **Jeden osobní trénink je 590 Kč** (studenti 500). Pokud potom přejdeš na měsíční balíček, započítá se.",
+    a: "**ANO — první trénink máš úplně zdarma.** Přijď, potrénujeme spolu, ukážu ti techniku a jak to u mě chodí. Žádný závazek, žádný prodejní tlak. Když ti to sedne, domluvíme se, jak dál.",
   },
 ];
 

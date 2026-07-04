@@ -5,9 +5,9 @@ import { Footer } from "@/components/sections/Footer";
 import { Nav } from "@/components/sections/Nav";
 
 export const metadata: Metadata = {
-  title: "Rezervace konzultace zdarma | Petr Pustelník",
+  title: "Rezervace tréninku zdarma | Petr Pustelník",
   description:
-    "Rezervuj si termín konzultace zdarma. Vyber si čas, vyplň pár údajů a termín se ti i mně objeví v kalendáři.",
+    "Rezervuj si termín prvního tréninku zdarma. Vyber si čas, vyplň pár údajů a termín se ti i mně objeví v kalendáři.",
   robots: { index: true, follow: true },
 };
 
@@ -38,7 +38,7 @@ export default function RezervacePage() {
               Rezervuj si termín
             </h1>
             <p className="mt-4 text-[1.0625rem] text-bone/65 leading-relaxed">
-              Vyber si termín <strong className="text-bone">konzultace ZDARMA!</strong>{" "}
+              Vyber si termín <strong className="text-bone">prvního tréninku ZDARMA!</strong>{" "}
               Vyplníš pár údajů a termín se uloží do tvého i mého kalendáře.
               Přijde ti i připomínka, ať na nic nezapomeneš.
             </p>
@@ -49,7 +49,7 @@ export default function RezervacePage() {
             {/* eslint-disable-next-line @next/next/no-unknown-property */}
             <iframe
               src={CALENDLY_URL}
-              title="Rezervace konzultace"
+              title="Rezervace tréninku zdarma"
               className="w-full"
               style={{ height: "1050px", border: "0" }}
               loading="lazy"

@@ -380,7 +380,7 @@ export function FitnessCalculator({ ctaHref = "/#kontakt" }: { ctaHref?: string 
               genetika, spánek, stres a historie tréninku
             </span>
             . Proto rozsahy, ne přesná čísla. Přesný plán doladíme spolu na
-            konzultaci.
+            prvním tréninku.
           </p>
         </div>
       </div>
