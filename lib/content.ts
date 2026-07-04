@@ -148,11 +148,11 @@ export const featuredResults: ResultCard[] = [
       "Brácha Petr mě připravil na soutěž v kulturistice (starší dorost, Morava a Slezsko), kterou jsem vyhrál. Vřele ho doporučuju.",
   },
   {
-    kind: "single",
+    kind: "ba",
     name: "Dominik Jedlička",
-    image: "/images/results/dominik-jedlicka.png",
+    before: "/images/results/dominik-before.jpg",
+    after: "/images/results/dominik-after.jpg",
     duration: "Dlouhodobá spolupráce",
-    wide: true,
     quote:
       "Přivedla mě nespokojenost s formou. Změnila se váha i vzhled. Doporučil bych ho lidem, co chtějí začít cvičit a neví jak na to, stejně tak i s jídelníčkem.",
   },
