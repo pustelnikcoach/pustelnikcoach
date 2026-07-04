@@ -123,7 +123,7 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
     name: "Jakub Přibyla",
-    before: "/images/results/jakub-pribyla-before-v2.jpg",
+    before: "/images/results/jakub-pribyla-before-v3.jpg",
     after: "/images/results/jakub-pribyla-after.jpg",
     duration: "Dlouhodobá spolupráce",
     quote:
@@ -165,7 +165,7 @@ export const archivedResults: ResultCard[] = [
     name: "Tomáš Medek",
     before: "/images/results/tomas-before.jpg",
     after: "/images/results/tomas-after.jpg",
-    duration: "Dlouhodobá spolupráce",
+    duration: "Změna návyků",
     quote:
       "Díky coachingu se mi výrazně zvedlo sebevědomí a cítím se ve svém těle mnohem líp.",
   },

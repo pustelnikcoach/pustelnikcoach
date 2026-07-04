@@ -150,7 +150,6 @@ export function ResultMedia({ card }: { card: ResultCard }) {
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/20 to-transparent pointer-events-none" />
     </div>
   );
 }
@@ -180,7 +179,6 @@ function ImageTile({
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-graphite via-graphite/10 to-transparent pointer-events-none" />
       <div
         className={
           "absolute bottom-3 left-3 inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-[0.65rem] tracking-[0.18em] uppercase backdrop-blur " +
