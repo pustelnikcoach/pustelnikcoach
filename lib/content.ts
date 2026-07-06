@@ -122,7 +122,7 @@ export type ResultCard =
 export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
-    name: "Jakub Přibyla",
+    name: "Jakub P.",
     before: "/images/results/jakub-pribyla-before-v3.jpg",
     after: "/images/results/jakub-pribyla-after.jpg",
     duration: "Dlouhodobá spolupráce",
@@ -140,7 +140,7 @@ export const featuredResults: ResultCard[] = [
   },
   {
     kind: "ba",
-    name: "Jakub Pustelník",
+    name: "Jakub P.",
     before: "/images/results/jakub-before.png",
     after: "/images/results/jakub-after.png",
     duration: "Dlouhodobá spolupráce",
@@ -149,7 +149,7 @@ export const featuredResults: ResultCard[] = [
   },
   {
     kind: "ba",
-    name: "Dominik Jedlička",
+    name: "Dominik J.",
     before: "/images/results/dominik-before-v2.jpg",
     after: "/images/results/dominik-after.jpg",
     duration: "Dlouhodobá spolupráce",
@@ -162,7 +162,7 @@ export const featuredResults: ResultCard[] = [
 export const archivedResults: ResultCard[] = [
   {
     kind: "ba",
-    name: "Tomáš Medek",
+    name: "Tomáš M.",
     before: "/images/results/tomas-before.jpg",
     after: "/images/results/tomas-after.jpg",
     duration: "Změna návyků",
@@ -171,7 +171,7 @@ export const archivedResults: ResultCard[] = [
   },
   {
     kind: "ba",
-    name: "Jan Neuwirth",
+    name: "Jan N.",
     before: "/images/results/jan-before.jpg",
     after: "/images/results/jan-after.jpg",
     duration: "Změna návyků",
@@ -180,7 +180,7 @@ export const archivedResults: ResultCard[] = [
   },
   {
     kind: "single",
-    name: "Vali Rožošová",
+    name: "Vali R.",
     image: "/images/results/vali.jpg",
     duration: "Změna návyků",
     wide: true,
@@ -189,7 +189,7 @@ export const archivedResults: ResultCard[] = [
   },
   {
     kind: "single",
-    name: "Felix Kuba",
+    name: "Felix K.",
     image: "/images/results/felix-kuba.png",
     duration: "Výherce Deadlift Masterclass 2025",
     wide: true,
@@ -217,19 +217,24 @@ export const testimonialsHeading = {
 
 export const testimonials = [
   {
-    name: "Metoděj Strachoň",
+    name: "Metoděj S.",
     quote:
       "Měl jsem přes 100 kg a hned při prvním tréninku mi Petr pomohl, aniž by za to cokoliv chtěl. Naučil mě jíst zdravě i pít dostatek vody a tréninky mě s ním vždycky bavily. Doporučil bych ho každému, kdo chce se sebou něco dělat.",
   },
   {
-    name: "Patrik Wludyka",
+    name: "Patrik W.",
     quote:
       "Oslovil jsem Petra kvůli přípravě na fyzické zkoušky do práce, chtěl jsem to vzít systematicky. Výrazně se mi zlepšila kondice i síla a mám v tréninku mnohem větší jistotu. Doporučil bych ho každému, kdo se chce cíleně připravit.",
   },
   {
-    name: "Luci Bogárová",
+    name: "Luci B.",
     quote:
       "Chtěla jsem se naučit cvičit a Petr mi byl sympatický. Má smysl pro humor a přitom to bere vážně. Od té doby, co s ním cvičím, mám velký posun v technice. Doporučím všem, co si chtějí pokecat a u toho pořádně zacvičit.",
+  },
+  {
+    name: "Petr G.",
+    quote:
+      "Říkal jsem si, že trenér je zbytečný, ale kdybych si ho našel dříve, tak bych k fitku přistupoval úplně jinak.",
   },
 ];
 

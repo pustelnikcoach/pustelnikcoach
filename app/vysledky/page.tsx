@@ -39,9 +39,9 @@ export default function VysledkyPage() {
           </header>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
-            {allResults.map((r) => (
+            {allResults.map((r, i) => (
               <article
-                key={r.name}
+                key={i}
                 className="group bg-graphite rounded-2xl overflow-hidden border border-bone/5 hover:border-emerald/30 transition-colors duration-300"
               >
                 <ResultMedia card={r} />

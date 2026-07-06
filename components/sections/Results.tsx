@@ -32,7 +32,7 @@ export function Results() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
           {featuredResults.map((r, i) => (
             <motion.article
-              key={r.name}
+              key={i}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
