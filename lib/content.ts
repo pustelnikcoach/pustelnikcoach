@@ -123,11 +123,11 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
     name: "Jakub P.",
-    before: "/images/results/jakub-pribyla-before-v3.jpg",
-    after: "/images/results/jakub-pribyla-after.jpg",
+    before: "/images/results/jakub-pribyla-before-v4.jpg",
+    after: "/images/results/jakub-pribyla-after-v2.jpg",
     duration: "Dlouhodobá spolupráce",
     quote:
-      "Začínal jsem na 115 kg a ve svém těle jsem se necítil dobře. Dneska jsem někdo úplně jiný a to z velké části díky němu.",
+      "Začínal jsem na 125 kg a ve svém těle jsem se necítil dobře. Dneska jsem na 83,5 a jsem někdo úplně jiný, z velké části díky němu.",
   },
   {
     kind: "ba",
