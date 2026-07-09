@@ -123,7 +123,7 @@ export const featuredResults: ResultCard[] = [
   {
     kind: "ba",
     name: "Jakub P.",
-    before: "/images/results/jakub-pribyla-before-v6.jpg",
+    before: "/images/results/jakub-pribyla-before-v7.jpg",
     after: "/images/results/jakub-pribyla-after-v3.jpg",
     duration: "Dlouhodobá spolupráce",
     quote:
