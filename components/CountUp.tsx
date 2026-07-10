@@ -35,14 +35,7 @@ export function CountUp({ value, className }: { value: string; className?: strin
 
   return (
     <span ref={ref} className={className}>
-      {target === null ? (
-        value
-      ) : (
-        <>
-          {num}
-          <span>{suffix}</span>
-        </>
-      )}
+      {target === null ? value : `${num}${suffix}`}
     </span>
   );
 }

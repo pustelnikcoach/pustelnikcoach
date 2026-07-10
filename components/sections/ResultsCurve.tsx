@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useInView } from "framer-motion";
 import { TrendingUp } from "lucide-react";
 import { curveCopy, curveHeading } from "@/lib/content";
 import { renderInline } from "@/lib/markdown";
