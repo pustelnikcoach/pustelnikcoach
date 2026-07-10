@@ -15,6 +15,7 @@ import { Process } from "@/components/sections/Process";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
 import { Testimonials } from "@/components/sections/Testimonials";
+import FoundingCounter from "@/components/sections/FoundingCounter";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Nav />
       <main>
         <Hero />
+        <FoundingCounter/>
         <ProofBar />
         <Calculator />
         <Results />
