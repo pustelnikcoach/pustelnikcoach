@@ -15,7 +15,7 @@ import { Process } from "@/components/sections/Process";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
 import { Testimonials } from "@/components/sections/Testimonials";
-import FoundingCounter from "@/components/sections/FoundingCounter";
+import { FoundingCounter } from "@/components/sections/FoundingCounter";
 
 export default function HomePage() {
   return (
