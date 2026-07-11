@@ -1,4 +1,4 @@
-const TAKEN = 7;   // ← kolik z 10 je obsazeno (vyšší = větší tlak)
+const TAKEN = 6;   // ← kolik z 10 je obsazeno (vyšší = větší tlak)
 const TOTAL = 10;
 
 export function FoundingCounter() {
