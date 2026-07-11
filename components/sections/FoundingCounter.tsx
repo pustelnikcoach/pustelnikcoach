@@ -34,7 +34,7 @@ export function FoundingCounter() {
           />
         </div>
         <p className="mt-4 font-medium text-bone">
-          Zbývá už jen <span className="font-semibold text-emerald">{left} z 10</span>
+          Zbývají už jen <span className="font-semibold text-emerald">{left} z 10</span>
         </p>
 
         <div className="mx-auto mt-8 grid max-w-lg grid-cols-3 gap-4">
