@@ -1,3 +1,5 @@
+import { proof } from "@/lib/content";
+
 export const TAKEN = 6;   // ← kolik z 10 je obsazeno (vyšší = větší tlak). Sdílí i StickyBar.
 export const TOTAL = 10;
 
@@ -35,6 +37,17 @@ export function FoundingCounter() {
           Zbývá už jen <span className="font-semibold text-emerald">{left} z 10</span>
         </p>
 
+        <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-4">
+          {proof.map((p) => (
+            <div key={p.number} className="text-center">
+              <div className="font-display text-2xl font-semibold text-emerald-light tabular-nums">
+                {p.number}
+              </div>
+              <div className="mt-1 text-xs text-mute">{p.label}</div>
+            </div>
+          ))}
+        </div>
+
         <a
           href="https://calendly.com/petrpustelnikcoach/konzultace"
           className="group mt-8 inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-emerald px-8 font-medium text-bone transition-all duration-200 hover:bg-emerald-light active:scale-[0.98]"
@@ -42,7 +55,10 @@ export function FoundingCounter() {
           Chci být 1 z 10 → první trénink ZDARMA
           <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
         </a>
-        <p className="mt-4 text-xs text-mute">Nebo napiš do DM „OPAVA". Bez závazku.</p>
+        <p className="mt-4 text-sm font-medium text-emerald-light">
+          🛡️ 90denní garance — neuvidíš progres, vrátím ti peníze.
+        </p>
+        <p className="mt-2 text-xs text-mute">Nebo napiš do DM „OPAVA". Bez závazku.</p>
       </div>
     </section>
   );

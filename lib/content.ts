@@ -363,12 +363,12 @@ export const pillars = [
 export const guarantee = {
   heading: "Garantuju ti výsledek. Ne sliby.",
 
-  statNumber: "100 %",
+  statNumber: "90",
   statLabel:
-    "klientů, kteří dotáhli plán do konce, dosáhlo svého cíle. Není to marketing. Je to průměr za šest let praxe.",
+    "dní. Poctivě dodržíš plán a neuvidíš progres? Vrátím ti peníze. Bez keců, bez podmínek navíc.",
 
   promise:
-    "**Z mé strany udělám maximum, aby plán doručil to, co slibuje.** Tvoje práce je ho dodržet, moje práce je tě k tomu dovést.",
+    "**Neriskuješ nic.** Dej tomu 90 dní a dodrž plán. Když nepřijde progres, dostaneš peníze zpátky. Moje práce je tě k výsledku dovést — a stojím si za tím vlastními penězi.",
 
   customTitle: "Nesedí ti žádný balíček?",
   customBody:
