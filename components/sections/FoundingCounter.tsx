@@ -16,9 +16,9 @@ export function FoundingCounter() {
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-bone/70">
           Beru jen <b className="text-bone">10 lidí</b> za zakládající cenu{" "}
-          <b className="text-bone">2 790 Kč/měs. napořád</b> (běžně 4 390,-). Až se{" "}
+          <b className="text-bone">2 790 Kč/měs. napořád</b> (běžně&nbsp;4&nbsp;390,-). Až se{" "}
           <b className="text-bone">kapacita</b> naplní, zavírám.{" "}
-          <b className="text-bone">Po otevření Opavy sleva končí.</b>
+          <b className="text-bone">Po otevření Opavy sleva KONČÍ!</b>
         </p>
 
         <div className="mt-8 flex items-baseline justify-center gap-2">
@@ -37,7 +37,7 @@ export function FoundingCounter() {
           Zbývá už jen <span className="font-semibold text-emerald">{left} z 10</span>
         </p>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-4">
+        <div className="mx-auto mt-8 grid max-w-lg grid-cols-3 gap-4">
           {proof.map((p) => (
             <div key={p.number} className="text-center">
               <div className="font-display text-2xl font-semibold text-emerald-light tabular-nums">

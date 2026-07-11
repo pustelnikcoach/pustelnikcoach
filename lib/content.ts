@@ -67,7 +67,7 @@ export const hero = {
 export const proof = [
   { number: "6+", label: "let praxe v trénování" },
   { number: "100+", label: "klientů dosáhlo cíle" },
-  { number: "100 %", label: "úspěšnost klientů, kteří dodrželi plán" },
+  { number: "100 %", label: "úspěšnost klientů" },
 ];
 
 // -----------------------------------------------------------------
@@ -136,7 +136,7 @@ export const featuredResults: ResultCard[] = [
     after: "/images/results/justyna-after-v5.jpg",
     duration: "4 měsíce",
     quote:
-      "Hip thrust z 15 kg na 80 kg, dřep z 20 na 60. Změna je vidět na postavě, síle i náladě.",
+      "Hip thrust z 15 kg na 135 kg, dřep z 20 na 80 kg. Změna je vidět na postavě, síle i náladě.",
   },
   {
     kind: "ba",
@@ -363,12 +363,12 @@ export const pillars = [
 export const guarantee = {
   heading: "Garantuju ti výsledek. Ne sliby.",
 
-  statNumber: "90",
+  statNumber: "90 dní",
   statLabel:
-    "dní. Poctivě dodržíš plán a neuvidíš progres? Vrátím ti peníze. Bez keců, bez podmínek navíc.",
+    "Poctivě dodržíš plán a neuvidíš progres? Vrátím ti peníze.",
 
   promise:
-    "**Neriskuješ nic.** Dej tomu 90 dní a dodrž plán. Když nepřijde progres, dostaneš peníze zpátky. Moje práce je tě k výsledku dovést — a stojím si za tím vlastními penězi.",
+    "**Neriskuješ nic.** Dej tomu 90 dní a dodrž plán. Když nepřijde progres, dostaneš peníze zpátky. Zajistím ti reálné výsledky a za tvůj úspěch ručím osobně.",
 
   customTitle: "Nesedí ti žádný balíček?",
   customBody:

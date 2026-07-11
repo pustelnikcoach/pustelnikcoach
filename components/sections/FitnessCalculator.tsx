@@ -367,8 +367,7 @@ export function FitnessCalculator({ ctaHref = "/#kontakt" }: { ctaHref?: string 
                   výsledku nedosáhneš,{" "}
                   <strong className="text-emerald-light">
                     vrátím ti peníze.
-                  </strong>{" "}
-                  Férové pro tebe, férové pro mě.
+                  </strong>
                 </p>
               </div>
             </div>

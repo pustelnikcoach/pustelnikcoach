@@ -2,7 +2,8 @@ import { TAKEN, TOTAL } from "./FoundingCounter";
 
 export function StickyBar() {
   const left = TOTAL - TAKEN;
-  const text = `Zbývají ${left}/${TOTAL} zakládajících míst — napiš OPAVA →`;
+  const slot = left === 1 ? "místo" : left < 5 ? "místa" : "míst";
+  const text = `Zbývají ${left} ${slot} → napiš OPAVA`;
   const group = (
     <div className="flex shrink-0">
       {[0, 1, 2, 3].map((i) => (
