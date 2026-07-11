@@ -9,7 +9,7 @@ export function FoundingCounter() {
     <section className="bg-ink-graphite px-5 sm:px-8 pt-28 sm:pt-32 pb-16 text-center">
       <div className="mx-auto max-w-2xl">
         <p className="mb-5 text-xs sm:text-[0.78rem] font-medium uppercase tracking-[0.18em] text-emerald">
-          NOVÝ Element Opava · Hlavní trenér
+          NOVÝ ElementGyms Opava · Hlavní trenér
         </p>
         <h2 className="font-display font-semibold text-display-xl text-bone">
           Zakládajících <span className="text-emerald">10</span>
@@ -49,16 +49,16 @@ export function FoundingCounter() {
         </div>
 
         <a
-          href="https://calendly.com/petrpustelnikcoach/konzultace"
+          href="#kontakt"
           className="group mt-8 inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-emerald px-8 font-medium text-bone transition-all duration-200 hover:bg-emerald-light active:scale-[0.98]"
         >
-          Chci být 1 z 10 → první trénink ZDARMA
+          Chci být 1 z 10
           <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span>
         </a>
         <p className="mt-4 text-sm font-medium text-emerald-light">
           🛡️ 90denní garance — neuvidíš progres, vrátím ti peníze.
         </p>
-        <p className="mt-2 text-xs text-mute">Nebo napiš do DM „OPAVA". Bez závazku.</p>
+        <p className="mt-2 text-xs text-mute">Nech mi kontakt — ozvu se ti do 48 hodin. Bez závazku.</p>
       </div>
     </section>
   );
