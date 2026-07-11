@@ -1,5 +1,5 @@
-const TAKEN = 6;   // ← kolik z 10 je obsazeno (vyšší = větší tlak)
-const TOTAL = 10;
+export const TAKEN = 6;   // ← kolik z 10 je obsazeno (vyšší = větší tlak). Sdílí i StickyBar.
+export const TOTAL = 10;
 
 export function FoundingCounter() {
   const left = TOTAL - TAKEN;

@@ -14,12 +14,14 @@ import { ProofBar } from "@/components/sections/ProofBar";
 import { Process } from "@/components/sections/Process";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
+import { StickyBar } from "@/components/sections/StickyBar";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FoundingCounter } from "@/components/sections/FoundingCounter";
 
 export default function HomePage() {
   return (
     <>
+      <StickyBar />
       <Nav />
       <main>
         <FoundingCounter />
