@@ -22,8 +22,8 @@ export default function HomePage() {
     <>
       <Nav />
       <main>
+        <FoundingCounter />
         <Hero />
-        <FoundingCounter/>
         <ProofBar />
         <Calculator />
         <Results />
