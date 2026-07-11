@@ -44,4 +44,3 @@ export function FoundingCounter() {
     </section>
   );
 }
-tsx
