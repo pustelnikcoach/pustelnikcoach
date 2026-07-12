@@ -27,8 +27,8 @@ export function Starting10() {
         </h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-bone/70">
           Beru jen 10 zakládajících klientů do nové Opavy za{" "}
-          <b className="text-bone">2 790 Kč/měs napořád</b> (běžně 4 390,-). Až se kapacita
-          naplní, zavírám — po otevření tahle cena končí.
+          <b className="text-bone">2&nbsp;790&nbsp;Kč/měs napořád</b> (běžně&nbsp;4&nbsp;390,-). Až se
+          kapacita naplní, zavírám — po otevření tahle cena končí.
         </p>
 
         <div className="mt-10 grid gap-10 sm:grid-cols-2">
