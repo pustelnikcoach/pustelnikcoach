@@ -14,6 +14,7 @@ import { ProofBar } from "@/components/sections/ProofBar";
 import { Process } from "@/components/sections/Process";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
+import { Starting10 } from "@/components/sections/Starting10";
 import { StickyBar } from "@/components/sections/StickyBar";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FoundingCounter } from "@/components/sections/FoundingCounter";
@@ -27,6 +28,7 @@ export default function HomePage() {
       <Nav />
       <main>
         <FoundingCounter />
+        <Starting10 />
         <Hero />
         <ProofBar />
         <Calculator />
@@ -34,12 +36,12 @@ export default function HomePage() {
         <ResultsCurve />
         <Testimonials />
         <About />
-        <Pillars />
         <Excuses />
         <Guarantee />
         <Packages />
         <CustomCollab />
         <Process />
+        <Pillars />
         <LeadFormSection />
         <FAQ />
       </main>
