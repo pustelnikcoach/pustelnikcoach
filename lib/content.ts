@@ -17,7 +17,13 @@
 export const nav = {
   brand: "PUSTELNIK", // ÚPRAVA: značka/logo text vlevo nahoře (tečka se přidá automaticky v zelené)
   links: [
-    { label: "Starting 10", href: "#starting-10" },
+    { label: "Starting 10", href: "/starting-10" },
+    { label: "O mně", href: "#o-mne" },
+    { label: "Výsledky", href: "#vysledky" },
+    { label: "Recenze", href: "#recenze" },
+    { label: "Balíčky", href: "#balicky" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Kontakt", href: "#kontakt" },
   ],
   cta: "Chci trénink ZDARMA", // ÚPRAVA: text hlavního tlačítka v navigaci
 

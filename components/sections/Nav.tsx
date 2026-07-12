@@ -17,7 +17,7 @@ export function Nav() {
   // Na homepage kotvy plynule scrollují (#sekce). Na podstránkách (např. /rezervace)
   // musí odkaz skočit na homepage a teprve tam dorolovat → /#sekce.
   const isHome = usePathname() === "/";
-  const to = (hash: string) => (isHome ? hash : `/${hash}`);
+  const to = (hash: string) => (hash.startsWith("/") ? hash : isHome ? hash : `/${hash}`);
   const homeHref = isHome ? "#top" : "/";
 
   useEffect(() => {
@@ -99,7 +99,7 @@ export function Nav() {
               <a
                 key={link.href}
                 href={to(link.href)}
-                className="text-sm text-bone/75 hover:text-bone transition-colors"
+                className="whitespace-nowrap text-sm text-bone/75 hover:text-bone transition-colors"
                 tabIndex={showLogo ? -1 : 0}
               >
                 {link.label}
@@ -108,7 +108,7 @@ export function Nav() {
             {nav.showReservations && (
               <a
                 href={nav.reservationsHref}
-                className="text-sm text-bone/75 hover:text-bone transition-colors"
+                className="whitespace-nowrap text-sm text-bone/75 hover:text-bone transition-colors"
                 tabIndex={showLogo ? -1 : 0}
               >
                 {nav.reservationsLabel}

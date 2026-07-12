@@ -1,7 +1,7 @@
 import { About } from "@/components/sections/About";
 import { Calculator } from "@/components/sections/Calculator";
 import { CustomCollab } from "@/components/sections/CustomCollab";
-import { Excuses } from "@/components/sections/Excuses";
+import { Reviews } from "@/components/sections/Reviews";
 import { FAQ } from "@/components/sections/FAQ";
 import { Footer } from "@/components/sections/Footer";
 import { Guarantee } from "@/components/sections/Guarantee";
@@ -12,9 +12,7 @@ import { Pillars } from "@/components/sections/Pillars";
 import { ProofBar } from "@/components/sections/ProofBar";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
-import { Starting10 } from "@/components/sections/Starting10";
 import { StickyBar } from "@/components/sections/StickyBar";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { FoundingCounter } from "@/components/sections/FoundingCounter";
 
 export const dynamic = "force-dynamic"; // počítadlo se počítá z času při každém requestu
@@ -26,20 +24,18 @@ export default function HomePage() {
       <Nav />
       <main>
         <FoundingCounter />
-        <Starting10 />
         <About />
         <Calculator />
         <Results />
-        <ResultsCurve />
         <ProofBar />
-        <Testimonials />
-        <Excuses />
         <Guarantee />
+        <Reviews />
+        <ResultsCurve />
+        <Pillars />
         <Packages />
         <CustomCollab />
-        <Pillars />
-        <LeadFormSection />
         <FAQ />
+        <LeadFormSection />
       </main>
       <Footer />
     </>

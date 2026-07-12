@@ -10,7 +10,7 @@ export function FoundingCounter() {
   const TAKEN = slotsTaken();
   const left = TOTAL - TAKEN;
   return (
-    <section className="bg-ink-graphite px-5 sm:px-8 pt-28 sm:pt-32 pb-16 text-center">
+    <section className="flex min-h-[90vh] items-center justify-center bg-ink-graphite px-5 sm:px-8 pt-28 sm:pt-32 pb-16 text-center">
       <div className="mx-auto max-w-2xl">
         <p className="mb-5 text-xs sm:text-[0.78rem] font-medium uppercase tracking-[0.18em] text-emerald">
           NOVÝ ElementGyms Opava · Hlavní trenér
