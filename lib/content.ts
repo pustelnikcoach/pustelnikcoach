@@ -84,7 +84,7 @@ export const proof = [
 // 3. Ulož fotky do public/images/results/
 // -----------------------------------------------------------------
 export const resultsHeading = {
-  title: "Výsledky, ne sliby",
+  title: "Výsledky klientů",
   subtitle:
     "Reálné fotky reálných klientů. Žádný photoshop, žádné stock fotky.",
 };

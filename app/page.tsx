@@ -26,13 +26,13 @@ export default function HomePage() {
         <FoundingCounter />
         <About />
         <Calculator />
+        <Packages />
         <Results />
         <ProofBar />
         <Guarantee />
         <Reviews />
         <ResultsCurve />
         <Pillars />
-        <Packages />
         <CustomCollab />
         <FAQ />
         <LeadFormSection />

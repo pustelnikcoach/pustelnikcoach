@@ -18,7 +18,7 @@ const reviews = [
 function Card({ name, text }: { name: string; text: string }) {
   return (
     <div className="mx-3 w-80 shrink-0 rounded-2xl border border-bone/10 bg-graphite p-6">
-      <p className="text-[15px] leading-relaxed text-bone/80">„{text}"</p>
+      <p className="text-[15px] italic leading-relaxed text-bone/85">„{text}"</p>
       <p className="mt-4 font-display text-emerald-light">{name}</p>
     </div>
   );

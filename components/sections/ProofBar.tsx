@@ -11,7 +11,7 @@ function ProofItem({ item, index }: { item: { number: string; label: string }; i
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="px-2 sm:px-8 py-6 sm:py-2 text-center sm:text-left first:sm:pl-0 last:sm:pr-0"
+      className="px-2 sm:px-8 py-6 sm:py-2 text-center"
     >
       <div className="font-display font-semibold text-4xl sm:text-5xl text-emerald-light leading-none tabular-nums">
         <CountUp value={item.number} />

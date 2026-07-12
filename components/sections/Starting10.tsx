@@ -23,7 +23,7 @@ export function Starting10() {
           Akce · jen do otevření Opavy
         </p>
         <h2 className="font-display font-semibold text-display-lg text-bone">
-          Zakládajících 10 — co v tom je
+          Starting 10 OPAVA
         </h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-bone/70">
           Beru jen 10 zakládajících klientů do nové Opavy za{" "}
