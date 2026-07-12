@@ -8,7 +8,6 @@ import { Guarantee } from "@/components/sections/Guarantee";
 import { LeadFormSection } from "@/components/sections/LeadFormSection";
 import { Nav } from "@/components/sections/Nav";
 import { Packages } from "@/components/sections/Packages";
-import { Pillars } from "@/components/sections/Pillars";
 import { ProofBar } from "@/components/sections/ProofBar";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
@@ -32,7 +31,7 @@ export default function HomePage() {
         <Guarantee />
         <Reviews />
         <ResultsCurve />
-        <Pillars />
+        {/* TODO: sem přijde VSL video (nahradilo „Čím se liším") — čeká na video od Petra */}
         <CustomCollab />
         <FAQ />
         <LeadFormSection />
