@@ -1,5 +1,3 @@
-import { proof } from "@/lib/content";
-
 export const TOTAL = 10;
 
 // 0 do 13.7. 6:00 (Praha), pak 6. Sdílí i StickyBar.
@@ -42,17 +40,6 @@ export function FoundingCounter() {
         <p className="mt-4 font-medium text-bone">
           Zbývají už jen <span className="font-semibold text-emerald">{left} z 10</span>
         </p>
-
-        <div className="mx-auto mt-8 grid max-w-lg grid-cols-3 gap-4">
-          {proof.map((p) => (
-            <div key={p.number} className="text-center">
-              <div className="font-display text-2xl font-semibold text-emerald-light tabular-nums">
-                {p.number}
-              </div>
-              <div className="mt-1 text-xs text-mute">{p.label}</div>
-            </div>
-          ))}
-        </div>
 
         <a
           href="#kontakt"

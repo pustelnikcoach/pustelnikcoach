@@ -2,16 +2,13 @@ import { slotsTaken, TOTAL } from "./FoundingCounter";
 
 export function StickyBar() {
   const left = TOTAL - slotsTaken();
-  const slot = left === 1 ? "MÍSTO" : left < 5 ? "MÍSTA" : "MÍST";
-  const messages = [
-    `ZBÝVAJÍ ${left} ${slot} → REZERVUJ NYNÍ 📩`,
-    `Možná si říkáš „zvládnu to?" — první trénink ZDARMA, nezávazně`,
-    `„Přidala jsem 120 kg na hip thrust za 4 měsíce" — Justýna`,
-  ];
+  const noun = left === 1 ? "MÍSTO" : left < 5 ? "MÍSTA" : "MÍST";
+  const verb = left >= 2 && left <= 4 ? "ZBÝVAJÍ" : "ZBÝVÁ";
+  const text = `${verb} ${left} ${noun} → REZERVUJ NYNÍ 📩`;
   const group = (
     <div className="flex shrink-0">
-      {messages.map((m) => (
-        <span key={m} className="mx-8">{m}</span>
+      {[0, 1, 2, 3].map((i) => (
+        <span key={i} className="mx-8">{text}</span>
       ))}
     </div>
   );
