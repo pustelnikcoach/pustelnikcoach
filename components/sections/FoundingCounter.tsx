@@ -1,9 +1,15 @@
 import { proof } from "@/lib/content";
 
-export const TAKEN = 6;   // ← kolik z 10 je obsazeno (vyšší = větší tlak). Sdílí i StickyBar.
 export const TOTAL = 10;
 
+// 0 do 13.7. 6:00 (Praha), pak 6. Sdílí i StickyBar.
+// ponytail: časová brána (jednorázový flip). Po 6:00 klidně nahraď pevným číslem.
+export function slotsTaken() {
+  return Date.now() >= Date.parse("2026-07-13T06:00:00+02:00") ? 6 : 0;
+}
+
 export function FoundingCounter() {
+  const TAKEN = slotsTaken();
   const left = TOTAL - TAKEN;
   return (
     <section className="bg-ink-graphite px-5 sm:px-8 pt-28 sm:pt-32 pb-16 text-center">

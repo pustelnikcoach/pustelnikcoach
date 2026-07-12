@@ -18,6 +18,8 @@ import { StickyBar } from "@/components/sections/StickyBar";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FoundingCounter } from "@/components/sections/FoundingCounter";
 
+export const dynamic = "force-dynamic"; // počítadlo se počítá z času při každém requestu
+
 export default function HomePage() {
   return (
     <>

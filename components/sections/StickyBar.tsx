@@ -1,7 +1,7 @@
-import { TAKEN, TOTAL } from "./FoundingCounter";
+import { slotsTaken, TOTAL } from "./FoundingCounter";
 
 export function StickyBar() {
-  const left = TOTAL - TAKEN;
+  const left = TOTAL - slotsTaken();
   const slot = left === 1 ? "místo" : left < 5 ? "místa" : "míst";
   const text = `ZBÝVAJÍ ${left} ${slot.toUpperCase()} → REZERVUJ NYNÍ 📩`;
   const group = (
