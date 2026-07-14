@@ -587,7 +587,7 @@ export const contact = {
   tiktok: "petrpustelnikcoach",
   tiktokUrl: "https://www.tiktok.com/@petrpustelnikcoach",
   facebook: "Petr Pustelník",
-  facebookUrl: "https://www.facebook.com/petr.pustelnik.13",
+  facebookUrl: "https://www.facebook.com/profile.php?id=61581158994838",
   gym: "Elements Gym Ostrava / Opava",
 };
 
