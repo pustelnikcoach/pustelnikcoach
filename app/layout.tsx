@@ -6,6 +6,8 @@ import "./globals.css";
 
 // Google Analytics 4 Measurement ID — pokud chceš změnit GA property, uprav jen tuhle hodnotu.
 const GA_ID = "G-R562N8TS0Y";
+// Google Ads conversion ID — pro měření konverzí z reklam.
+const ADS_ID = "AW-18227137742";
 
 const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
@@ -82,6 +84,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${GA_ID}');
+            gtag('config', '${ADS_ID}');
           `}
         </Script>
       </body>
