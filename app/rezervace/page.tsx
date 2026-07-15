@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { CalendlyConversion } from "@/components/sections/CalendlyConversion";
 import { Footer } from "@/components/sections/Footer";
 import { Nav } from "@/components/sections/Nav";
 
@@ -22,6 +23,7 @@ const CALENDLY_URL =
 export default function RezervacePage() {
   return (
     <>
+      <CalendlyConversion />
       <Nav />
       <main className="bg-ink min-h-screen pt-28 pb-20">
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
