@@ -41,6 +41,15 @@ import {
 } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
+// Google Ads konverze „Odeslání formuláře pro zájemce" (AW-18227137742).
+const ADS_CONVERSION = "AW-18227137742/KwC_CODL9NAcEM6ZsPND";
+
 const goalIcons: Record<(typeof GOALS)[number], LucideIcon> = {
   zhubnout: TrendingDown,
   nabrat: Dumbbell,
@@ -172,6 +181,8 @@ export function LeadForm() {
         throw new Error(body?.error || "Něco se pokazilo.");
       }
       setSubmitState({ status: "success", data });
+      // Konverzi hlásíme až když server poptávku potvrdil, ne při odeslání.
+      window.gtag?.("event", "conversion", { send_to: ADS_CONVERSION });
     } catch (err) {
       const message =
         err instanceof Error
