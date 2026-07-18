@@ -361,6 +361,18 @@ export const pillars = [
 // -----------------------------------------------------------------
 // GARANCE & SPOLUPRÁCE NA MÍRU — risk reversal sekce
 // -----------------------------------------------------------------
+// -----------------------------------------------------------------
+// VSL — hlavní video. Až natočíš: nahraj mp4 do public/video/vsl.mp4
+// a nastav videoUrl. Dokud je prázdné, sekce se NEZOBRAZÍ (bezpečné).
+// -----------------------------------------------------------------
+export const vsl = {
+  eyebrow: "PODÍVEJ SE",
+  heading: "Než mi napíšeš — pusť si tohle",
+  videoUrl: "", // ÚPRAVA: až natočíš → "/video/vsl.mp4"
+  poster: "/images/vsl-poster.jpg", // volitelný náhled; když chybí, přehrávač ho ignoruje
+  cta: "Chci trénink ZDARMA",
+};
+
 export const guarantee = {
   heading: "Garantuju ti výsledek. Ne sliby.",
 

@@ -13,6 +13,7 @@ import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
 import { StickyBar } from "@/components/sections/StickyBar";
 import { FoundingCounter } from "@/components/sections/FoundingCounter";
+import { VSL } from "@/components/sections/VSL";
 
 export const dynamic = "force-dynamic"; // počítadlo se počítá z času při každém requestu
 
@@ -31,7 +32,7 @@ export default function HomePage() {
         <Guarantee />
         <Reviews />
         <ResultsCurve />
-        {/* TODO: sem přijde VSL video (nahradilo „Čím se liším") — čeká na video od Petra */}
+        <VSL /> {/* Nahradilo „Čím se liším". Skryté dokud lib/content.ts vsl.videoUrl == "" */}
         <CustomCollab />
         <FAQ />
         <LeadFormSection />
