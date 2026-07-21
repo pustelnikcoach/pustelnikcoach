@@ -4,6 +4,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { GOAL_LABELS, LeadSchema } from "@/lib/schema";
+import { PLAN_ATTACHMENT, addToAudience } from "@/lib/plan-magnet";
 import {
   renderAutoresponderEmail,
   renderAutoresponderText,
@@ -78,6 +79,7 @@ export async function POST(req: Request) {
         subject: "Děkuju za zájem o spolupráci, ozvu se do 48 hodin",
         html: renderAutoresponderEmail(data),
         text: renderAutoresponderText(data),
+        attachments: [PLAN_ATTACHMENT],
       }),
     ]);
 
@@ -95,6 +97,8 @@ export async function POST(req: Request) {
       // Autoresponder selhal — lead už ale dorazil. Logujeme, ale uživateli to nevadí.
       console.warn("[lead] autoresponder failed", autoRes.error);
     }
+
+    await addToAudience(resend, data.email, data.name.split(" ")[0]);
 
     return NextResponse.json({ ok: true });
   } catch (err) {
