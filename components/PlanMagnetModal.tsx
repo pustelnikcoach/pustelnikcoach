@@ -77,7 +77,7 @@ export function PlanMagnetModal() {
         <img
           src="/plan-cover.png"
           alt="Titulní strana tréninkového plánu Upper/Lower 4× týdně"
-          className="h-40 w-full object-cover object-top sm:h-auto sm:w-2/5"
+          className="h-48 w-full bg-ink object-contain sm:h-auto sm:w-2/5"
         />
 
         <div className="p-6 sm:p-8">
