@@ -47,12 +47,12 @@ export function renderPlanEmail(): string {
           <h1 style="margin:0;font-family:Georgia,serif;font-size:26px;line-height:1.25;color:${bone};">Tady je tvůj plán 💪</h1>
         </td></tr>
         <tr><td style="padding:0 32px 28px 32px;font-size:16px;line-height:1.6;color:${bone};">
-          <p style="margin:0 0 16px 0;">Tréninkový plán <strong>Upper/Lower 4× týdně</strong> máš v příloze (PDF). Čtyřtýdenní blok pro redukci tuku bez ztráty svalu — stroje, jasné série, regrese na horší dny.</p>
-          <p style="margin:0 0 16px 0;">Kdyby příloha nešla otevřít, stáhni ho tady:</p>
+          <p style="margin:0 0 16px 0;">Ahoj, tady je slíbený plán — začni podle něj hned. Máš ho v příloze (PDF): <strong>Upper/Lower 4× týdně</strong>, čtyřtýdenní blok na stroje.</p>
           <p style="margin:0 0 4px 0;">
             <a href="${PLAN_URL}" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:12px 20px;border-radius:10px;font-size:15px;font-weight:600;">Stáhnout plán (PDF)</a>
           </p>
-          <p style="margin:24px 0 0 0;">Petr</p>
+          <p style="margin:24px 0 0 0;">Až budeš chtít plán postavený <strong>přesně na tebe</strong> (a někoho, kdo tě v tom povede), ozvi se — první konzultaci máš u mě zdarma.</p>
+          <p style="margin:16px 0 0 0;">Petr</p>
         </td></tr>
       </table>
     </td></tr>
@@ -61,13 +61,14 @@ export function renderPlanEmail(): string {
 }
 
 export function renderPlanText(): string {
-  return `Tady je tvůj plán.
-
-Tréninkový plán Upper/Lower 4x tydne mas v priloze (PDF).
-Ctyrtydenni blok pro redukci tuku bez ztraty svalu.
+  return `Ahoj, tady je slibeny plan - zacni podle nej hned.
+Mas ho v priloze (PDF): Upper/Lower 4x tydne, ctyrtydenni blok na stroje.
 
 Kdyby priloha nesla otevrit, stahni ho tady:
 ${PLAN_URL}
+
+Az budes chtit plan postaveny presne na tebe (a nekoho, kdo te v tom povede),
+ozvi se - prvni konzultaci mas u me zdarma.
 
 Petr
 Petr Pustelnik - pustelnikcoach.cz

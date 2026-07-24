@@ -45,7 +45,7 @@ export async function POST(req: Request) {
     const res = await resend.emails.send({
       from: `Petr Pustelník <${fromEmail}>`,
       to: [email],
-      subject: "Tvůj tréninkový plán Upper/Lower 4× týdně",
+      subject: "Tvůj tréninkový plán zdarma 💪",
       html: renderPlanEmail(),
       text: renderPlanText(),
       attachments: [PLAN_ATTACHMENT],
