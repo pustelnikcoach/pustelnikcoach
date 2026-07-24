@@ -8,6 +8,7 @@ import { Guarantee } from "@/components/sections/Guarantee";
 import { LeadFormSection } from "@/components/sections/LeadFormSection";
 import { Nav } from "@/components/sections/Nav";
 import { Packages } from "@/components/sections/Packages";
+import { PlanMagnet } from "@/components/sections/PlanMagnet";
 import { ProofBar } from "@/components/sections/ProofBar";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
@@ -34,6 +35,7 @@ export default function HomePage() {
         <ResultsCurve />
         <VSL /> {/* Nahradilo „Čím se liším". Skryté dokud lib/content.ts vsl.videoUrl == "" */}
         <CustomCollab />
+        <PlanMagnet />
         <FAQ />
         <LeadFormSection />
       </main>
