@@ -41,12 +41,12 @@ export function PlanMagnet() {
               Zdarma
             </div>
             <h2 className="mt-6 font-display font-semibold text-display-lg text-bone">
-              Zhubni tuk, ne svaly — za 4 týdny
+              Zhubni tuky, ne svaly — 4týdenní plán ZDARMA
             </h2>
             <p className="mt-4 text-[1.0625rem] text-bone/65 leading-relaxed">
-              Hotový čtyřtýdenní blok na stroje: přesné série, počty a lehčí
-              verze na dny, kdy nemáš čas ani energii. Nech mi e-mail a PDF ti
-              přijde do minuty.
+              Hotový čtyřtýdenní plán do každého fitka: přesné série, výběr
+              zátěže, mobilita, warm-up, nastavení a mnoho dalšího. Nech si
+              poslat ten svůj do minutky na mail.
             </p>
 
             {status === "done" ? (

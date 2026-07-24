@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import Script from "next/script";
 import { seo } from "@/lib/content";
+import { PlanMagnetModal } from "@/components/PlanMagnetModal";
 import "./globals.css";
 
 // Google Analytics 4 Measurement ID — pokud chceš změnit GA property, uprav jen tuhle hodnotu.
@@ -74,6 +75,7 @@ export default function RootLayout({
           Přeskočit na obsah
         </a>
         {children}
+        <PlanMagnetModal />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
