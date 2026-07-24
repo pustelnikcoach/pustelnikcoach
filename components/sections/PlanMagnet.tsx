@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-// TODO(CMO): copy sekce (nadpis, podnadpis, bullety, tlačítko) je placeholder.
-// Pozicování lead magnetu patří CMO — technika (odeslání + doručení PDF) je hotová.
+// Copy: CMO (24. 7.) — top-of-funnel lead magnet, 100% online (bez lokace).
 export function PlanMagnet() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">(
@@ -42,17 +41,18 @@ export function PlanMagnet() {
               Zdarma
             </div>
             <h2 className="mt-6 font-display font-semibold text-display-lg text-bone">
-              Tréninkový plán Upper/Lower 4× týdně
+              Zhubni tuk, ne svaly — za 4 týdny
             </h2>
             <p className="mt-4 text-[1.0625rem] text-bone/65 leading-relaxed">
-              Čtyřtýdenní blok pro redukci tuku bez ztráty svalu — stroje, jasné
-              série, regrese na horší dny. Nech mi e-mail a pošlu ti ho hned jako
-              PDF.
+              Hotový čtyřtýdenní blok na stroje: přesné série, počty a lehčí
+              verze na dny, kdy nemáš čas ani energii. Nech mi e-mail a PDF ti
+              přijde do minuty.
             </p>
 
             {status === "done" ? (
               <p className="mt-8 text-emerald-light font-semibold">
-                Hotovo — plán ti letí do e-mailu. Mrkni i do spamu. 💪
+                Hotovo — plán ti letí do e-mailu. Kdyby nedorazil do pár minut,
+                mrkni do spamu.
               </p>
             ) : (
               <form
@@ -75,7 +75,7 @@ export function PlanMagnet() {
                   disabled={status === "loading"}
                   className="rounded-xl bg-emerald px-6 py-3 font-semibold text-bone hover:bg-emerald-light transition-colors disabled:opacity-60"
                 >
-                  {status === "loading" ? "Posílám…" : "Poslat plán"}
+                  {status === "loading" ? "Posílám…" : "Chci plán zdarma"}
                 </button>
               </form>
             )}
