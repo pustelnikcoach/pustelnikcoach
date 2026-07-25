@@ -44,6 +44,7 @@ import { cn } from "@/lib/utils";
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
@@ -183,6 +184,7 @@ export function LeadForm() {
       setSubmitState({ status: "success", data });
       // Konverzi hlásíme až když server poptávku potvrdil, ne při odeslání.
       window.gtag?.("event", "conversion", { send_to: ADS_CONVERSION });
+      window.fbq?.("track", "Lead");
     } catch (err) {
       const message =
         err instanceof Error

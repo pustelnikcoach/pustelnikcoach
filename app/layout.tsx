@@ -9,6 +9,8 @@ import "./globals.css";
 const GA_ID = "G-R562N8TS0Y";
 // Google Ads conversion ID — pro měření konverzí z reklam.
 const ADS_ID = "AW-18227137742";
+// Meta Pixel ID — mereni konverzi z Meta reklam (dataset pustelnikcoach.cz).
+const META_PIXEL_ID = "1734988351152547";
 
 const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
@@ -28,6 +30,9 @@ export const metadata: Metadata = {
   title: seo.title,
   description: seo.description,
   metadataBase: new URL("https://pustelnikcoach.cz"),
+  other: {
+    "facebook-domain-verification": "jx5vclzzsra2flah7wclujequucaq6",
+  },
   openGraph: {
     title: seo.ogTitle,
     description: seo.ogDescription,
@@ -76,6 +81,20 @@ export default function RootLayout({
         </a>
         {children}
         <PlanMagnetModal />
+        <Script id="meta-pixel" strategy="afterInteractive">
+          {`
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '${META_PIXEL_ID}');
+            fbq('track', 'PageView');
+          `}
+        </Script>
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
