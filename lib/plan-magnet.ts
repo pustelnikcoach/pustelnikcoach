@@ -47,12 +47,28 @@ export function renderPlanEmail(): string {
           <h1 style="margin:0;font-family:Georgia,serif;font-size:26px;line-height:1.25;color:${bone};">Tady je tvůj plán 💪</h1>
         </td></tr>
         <tr><td style="padding:0 32px 28px 32px;font-size:16px;line-height:1.6;color:${bone};">
-          <p style="margin:0 0 16px 0;">Ahoj, v příloze posílám slíbený plán! Začít můžeš klidně hned.</p>
-          <p style="margin:0 0 4px 0;">
+          <p style="margin:0 0 16px 0;">Ahoj, v příloze máš slíbený plán. Upper/Lower, 4× týdně, přesné série i výběr zátěže. Začít můžeš klidně dnes.</p>
+          <p style="margin:0 0 24px 0;">
             <a href="${PLAN_URL}" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:12px 20px;border-radius:10px;font-size:15px;font-weight:600;">Stáhnout plán (PDF)</a>
           </p>
-          <p style="margin:24px 0 0 0;">Pokud chceš plán postavený přímo pro tebe (a někoho, kdo ti ho do detailů vysvětlí), ozvi se a první konzultaci máš <strong>ZDARMA</strong>!</p>
-          <p style="margin:16px 0 0 0;">— Petr, Hlavní trenér ElementGyms Opava</p>
+
+          <p style="margin:0 0 12px 0;">A teď to, co ti nikdo u plánu zdarma neřekne.</p>
+          <p style="margin:0 0 12px 0;">Tenhle plán je dobrý. Ale je stejný pro tebe i pro člověka, který váží o třicet kilo víc a nikdy nedřepoval. Neví, kolik toho zvládneš, co ti bolí a co budeš dělat, až se za šest týdnů váha zastaví — a ona se zastaví.</p>
+          <p style="margin:0 0 24px 0;"><strong style="color:${bone};">85 % lidí to vzdá mezi 4. a 8. týdnem.</strong> Ne proto, že mají špatný plán. Proto, že v tu chvíli nemají nikoho, kdo jim řekne, co změnit.</p>
+
+          <p style="margin:0 0 12px 0;">Proto dávám <strong style="color:${bone};">první konzultaci i první trénink zdarma</strong>. Bez závazku a bez prodejního tlaku — i když si nesedneme, odejdeš s tím, co konkrétně máš zlepšit.</p>
+          <p style="margin:0 0 24px 0;">
+            <a href="https://pustelnikcoach.cz/#kontakt" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:600;">Chci trénink zdarma →</a>
+          </p>
+          <p style="margin:0 0 24px 0;font-size:15px;">Nebo mi rovnou zavolej: <a href="tel:+420702169863" style="color:#7FD8B8;text-decoration:none;font-weight:600;">702 169 863</a>. Napsat můžeš i na tenhle mail, čtu ho sám.</p>
+
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px 0;border:1px solid rgba(15,76,58,0.55);border-radius:12px;">
+            <tr><td style="padding:16px 18px;font-size:14px;line-height:1.55;color:${bone};">
+              <strong style="color:${bone};">Otevírám Opavu a beru 10 zakládajících klientů</strong> do balíčku Hybrid&nbsp;Pro za 2&nbsp;790&nbsp;Kč/měs. napořád (běžně 4&nbsp;390&nbsp;Kč). Až se kapacita naplní, cena končí. Plus 90denní garance — neuvidíš progres, vracím peníze.
+            </td></tr>
+          </table>
+
+          <p style="margin:0;">— Petr Pustelník, hlavní trenér ElementGyms Opava</p>
         </td></tr>
       </table>
     </td></tr>
@@ -61,14 +77,36 @@ export function renderPlanEmail(): string {
 }
 
 export function renderPlanText(): string {
-  return `Ahoj, v priloze posilam slibeny plan! Zacit muzes klidne hned.
+  return `Ahoj, v priloze mas slibeny plan. Upper/Lower, 4x tydne, presne serie
+i vyber zataze. Zacit muzes klidne dnes.
 
 Kdyby priloha nesla otevrit, stahni ho tady:
 ${PLAN_URL}
 
-Pokud chces plan postaveny primo pro tebe (a nekoho kdo ti ho do detailu vysvetli),
-ozvi se a prvni konzultaci mas ZDARMA!
+A teď to, co ti nikdo u planu zdarma nerekne.
 
-- Petr, Hlavni trener ElementGyms Opava
+Tenhle plan je dobry. Ale je stejny pro tebe i pro cloveka, ktery vazi o tricet
+kilo vic a nikdy nedrepoval. Nevi, kolik toho zvladnes, co te boli a co budes
+delat, az se za sest tydnu vaha zastavi - a ona se zastavi.
+
+85 % lidi to vzda mezi 4. a 8. tydnem. Ne proto, ze maji spatny plan.
+Proto, ze v tu chvili nemaji nikoho, kdo jim rekne, co zmenit.
+
+Proto davam prvni konzultaci i prvni trenink ZDARMA. Bez zavazku a bez
+prodejniho tlaku - i kdyz si nesedneme, odejdes s tim, co konkretne mas zlepsit.
+
+Chci trenink zdarma:
+https://pustelnikcoach.cz/#kontakt
+
+Nebo mi rovnou zavolej: 702 169 863
+Napsat muzes i na tenhle mail, ctu ho sam.
+
+---
+Oteviram Opavu a beru 10 zakladajicich klientu do balicku Hybrid Pro za
+2 790 Kc/mes. naporad (bezne 4 390 Kc). Az se kapacita naplni, cena konci.
+Plus 90denni garance - neuvidis progres, vracim penize.
+---
+
+- Petr Pustelnik, hlavni trener ElementGyms Opava
 `;
 }
