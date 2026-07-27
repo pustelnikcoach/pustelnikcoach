@@ -26,9 +26,14 @@ export function Starting10() {
           Starting 10 OPAVA
         </h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-bone/70">
-          Beru jen 10 zakládajících klientů do nové Opavy za{" "}
-          <b className="text-bone">2&nbsp;790&nbsp;Kč/měs napořád</b> (běžně&nbsp;4&nbsp;390,-). Až se
+          Beru jen 10 zakládajících klientů do nové Opavy do balíčku{" "}
+          <b className="text-bone">Hybrid&nbsp;Pro</b> za{" "}
+          <b className="text-bone">2&nbsp;790&nbsp;Kč/měs napořád</b> (běžně&nbsp;4&nbsp;390&nbsp;Kč). Až se
           kapacita naplní, zavírám — po otevření tahle cena končí.
+        </p>
+        <p className="mt-3 max-w-2xl text-[0.9375rem] leading-relaxed text-bone/55">
+          Hybrid Pro = 4× osobní trénink měsíčně · osobní konzultace · tréninkový
+          plán · jídelníček ve 4 variantách · suplementace · komunikace kdykoliv
         </p>
 
         <div className="mt-10 grid gap-10 sm:grid-cols-2">

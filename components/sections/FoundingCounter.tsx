@@ -19,10 +19,15 @@ export function FoundingCounter() {
           Zakládajících <span className="text-emerald">10</span>
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-[1.0625rem] leading-relaxed text-bone/70">
-          Beru jen <b className="text-bone">10 lidí</b> za zakládající cenu{" "}
-          <b className="text-bone">2 790 Kč/měs. napořád</b> (běžně&nbsp;4&nbsp;390,-). Až se{" "}
+          Beru jen <b className="text-bone">10 lidí</b> do balíčku{" "}
+          <b className="text-bone">Hybrid&nbsp;Pro</b> za zakládající cenu{" "}
+          <b className="text-bone">2 790 Kč/měs. napořád</b> (běžně&nbsp;4&nbsp;390&nbsp;Kč). Až se{" "}
           <b className="text-bone">kapacita</b> naplní, zavírám.{" "}
           <b className="text-bone">Po otevření Opavy sleva KONČÍ!</b>
+        </p>
+        <p className="mx-auto mt-3 max-w-xl text-[0.9375rem] leading-relaxed text-bone/55">
+          4× osobní trénink měsíčně · osobní konzultace · tréninkový plán ·
+          jídelníček ve 4 variantách · suplementace · komunikace kdykoliv
         </p>
 
         <div className="mt-8 flex items-baseline justify-center gap-2">
