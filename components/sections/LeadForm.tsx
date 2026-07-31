@@ -90,11 +90,15 @@ export function LeadForm() {
     defaultValues: {
       goal: undefined,
       kg: undefined,
-      timeline: undefined,
-      experience: undefined,
-      package: undefined,
-      source: undefined,
-      reason: undefined,
+      // Zkrácený formulář (1. 8. 2026): ptáme se jen na CÍL + KONTAKT.
+      // Ostatní pole mají neutrální default, ať projde validace a nespadne
+      // e-mailová/route pipeline (ta na ně sahá). Doptá se na hovoru.
+      // TODO (ráno s Viki): udělat tahle pole nepovinná + vrátit attribution (source).
+      timeline: "nespecham",
+      experience: "obcas",
+      package: "Nevim",
+      source: "jinde",
+      reason: "jine",
       name: "",
       email: "",
       phone: "",
@@ -108,12 +112,9 @@ export function LeadForm() {
   watch();
   const needsKg = goalValue === "zhubnout" || goalValue === "nabrat";
 
-  const steps: StepId[] = useMemo(() => {
-    const base: StepId[] = ["goal"];
-    if (needsKg) base.push("kg");
-    base.push("timeline", "experience", "package", "source", "reason", "contact");
-    return base;
-  }, [needsKg]);
+  // Zkrácený formulář (1. 8. 2026): jen CÍL → KONTAKT. Ostatní kroky vyřazené
+  // (defaulty nastavené v defaultValues výše). needsKg drží kg vyčištěné.
+  const steps: StepId[] = useMemo(() => ["goal", "contact"], []);
 
   const [stepIdx, setStepIdx] = useState(0);
   const [submitState, setSubmitState] = useState<
