@@ -61,7 +61,7 @@ export async function POST(req: Request) {
   const now = new Date();
 
   try {
-    const subject = `🎯 Nový lead: ${data.name} · ${GOAL_LABELS[data.goal]} · ${data.package}`;
+    const subject = `🎯 Nový lead: ${data.name} · ${GOAL_LABELS[data.goal]}${data.package ? ` · ${data.package}` : ""}`;
 
     const [notifyRes, autoRes] = await Promise.all([
       resend.emails.send({

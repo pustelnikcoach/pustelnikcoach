@@ -56,9 +56,9 @@ export function renderPlanEmail(): string {
           <p style="margin:0 0 12px 0;">Tenhle plán je dobrý. Ale je stejný pro tebe i pro člověka, který váží o třicet kilo víc a nikdy nedřepoval. Neví, kolik toho zvládneš, co ti bolí a co budeš dělat, až se za šest týdnů váha zastaví — a ona se zastaví.</p>
           <p style="margin:0 0 24px 0;"><strong style="color:${bone};">85 % lidí to vzdá mezi 4. a 8. týdnem.</strong> Ne proto, že mají špatný plán. Proto, že v tu chvíli nemají nikoho, kdo jim řekne, co změnit.</p>
 
-          <p style="margin:0 0 12px 0;">Proto dávám <strong style="color:${bone};">první konzultaci i první trénink zdarma</strong>. Bez závazku a bez prodejního tlaku — i když si nesedneme, odejdeš s tím, co konkrétně máš zlepšit.</p>
+          <p style="margin:0 0 12px 0;">Proto dávám <strong style="color:${bone};">první konzultaci zdarma</strong>. Bez závazku a bez prodejního tlaku — i když si nesedneme, odejdeš s tím, co konkrétně máš zlepšit.</p>
           <p style="margin:0 0 24px 0;">
-            <a href="https://pustelnikcoach.cz/#kontakt" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:600;">Chci trénink zdarma →</a>
+            <a href="https://pustelnikcoach.cz/#kontakt" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:600;">Chci konzultaci zdarma →</a>
           </p>
           <p style="margin:0 0 24px 0;font-size:15px;">Nebo mi rovnou zavolej: <a href="tel:+420702169863" style="color:#7FD8B8;text-decoration:none;font-weight:600;">702 169 863</a>. Napsat můžeš i na tenhle mail, čtu ho sám.</p>
 

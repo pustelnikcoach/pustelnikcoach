@@ -30,11 +30,11 @@ export function renderLeadEmail(data: LeadInput, receivedAt: Date): string {
     ["Telefon", `<a href="tel:${escape(data.phone.replace(/\s+/g, ""))}" style="color:${bone};">${escape(data.phone)}</a>`],
     ["Cíl", GOAL_LABELS[data.goal]],
     ["Kolik kg", data.kg ? KG_LABELS[data.kg] : "—"],
-    ["Časový horizont", TIMELINE_LABELS[data.timeline]],
-    ["Zkušenost", EXPERIENCE_LABELS[data.experience]],
-    ["Balíček", escape(data.package)],
+    ["Časový horizont", data.timeline ? TIMELINE_LABELS[data.timeline] : "—"],
+    ["Zkušenost", data.experience ? EXPERIENCE_LABELS[data.experience] : "—"],
+    ["Balíček", data.package ? escape(data.package) : "—"],
     ["Odkud přišel", SOURCE_LABELS[data.source]],
-    ["Proč si vybral mě", REASON_LABELS[data.reason]],
+    ["Proč si vybral mě", data.reason ? REASON_LABELS[data.reason] : "—"],
     ["Zpráva", data.message ? escape(data.message).replace(/\n/g, "<br/>") : "—"],
   ];
 
@@ -57,7 +57,7 @@ export function renderLeadEmail(data: LeadInput, receivedAt: Date): string {
                 ${escape(data.name)}
               </h1>
               <div style="margin-top:6px;font-size:14px;color:${mute};">
-                ${GOAL_LABELS[data.goal]} · ${escape(data.package)}
+                ${GOAL_LABELS[data.goal]}${data.package ? ` · ${escape(data.package)}` : ""}
               </div>
             </td>
           </tr>
@@ -134,7 +134,7 @@ export function renderAutoresponderEmail(data: LeadInput): string {
           <tr>
             <td style="padding:16px 32px 32px 32px;border-top:1px solid rgba(232,230,225,0.08);font-size:13px;color:${mute};">
               <strong style="color:${bone};">Petr Pustelník</strong><br/>
-              Osobní trenér · Elements Gym Ostrava / Opava
+              Osobní trenér · ElementGyms Ostrava / Opava
             </td>
           </tr>
         </table>
@@ -152,18 +152,18 @@ export function renderLeadText(data: LeadInput, receivedAt: Date): string {
     timeZone: "Europe/Prague",
   });
   return `Nový lead z webu · ${data.name}
-${GOAL_LABELS[data.goal]} · ${data.package}
+${GOAL_LABELS[data.goal]}${data.package ? ` · ${data.package}` : ""}
 
 Jméno: ${data.name}
 E-mail: ${data.email}
 Telefon: ${data.phone}
 Cíl: ${GOAL_LABELS[data.goal]}
 Kolik kg: ${data.kg ? KG_LABELS[data.kg] : "—"}
-Časový horizont: ${TIMELINE_LABELS[data.timeline]}
-Zkušenost: ${EXPERIENCE_LABELS[data.experience]}
-Balíček: ${data.package}
+Časový horizont: ${data.timeline ? TIMELINE_LABELS[data.timeline] : "—"}
+Zkušenost: ${data.experience ? EXPERIENCE_LABELS[data.experience] : "—"}
+Balíček: ${data.package ?? "—"}
 Odkud přišel: ${SOURCE_LABELS[data.source]}
-Proč si vybral mě: ${REASON_LABELS[data.reason]}
+Proč si vybral mě: ${data.reason ? REASON_LABELS[data.reason] : "—"}
 Zpráva: ${data.message || "—"}
 
 Odesláno z pustelnikcoach.cz · ${date}
@@ -186,7 +186,7 @@ https://instagram.com/petrpustelnikcoach
 Petr
 
 Petr Pustelník
-Osobní trenér · Elements Gym Ostrava / Opava
+Osobní trenér · ElementGyms Ostrava / Opava
 `;
 }
 

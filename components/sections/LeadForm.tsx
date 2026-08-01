@@ -90,15 +90,13 @@ export function LeadForm() {
     defaultValues: {
       goal: undefined,
       kg: undefined,
-      // Zkrácený formulář (1. 8. 2026): ptáme se jen na CÍL + KONTAKT.
-      // Ostatní pole mají neutrální default, ať projde validace a nespadne
-      // e-mailová/route pipeline (ta na ně sahá). Doptá se na hovoru.
-      // TODO (ráno s Viki): udělat tahle pole nepovinná + vrátit attribution (source).
-      timeline: "nespecham",
-      experience: "obcas",
-      package: "Nevim",
-      source: "jinde",
-      reason: "jine",
+      // Zkrácený formulář (1. 8. 2026): kroky CÍL → ODKUD → KONTAKT.
+      // Ostatní pole jsou nepovinná (schema) — nezobrazují se, doptá se na hovoru.
+      timeline: undefined,
+      experience: undefined,
+      package: undefined,
+      source: undefined,
+      reason: undefined,
       name: "",
       email: "",
       phone: "",
@@ -112,9 +110,9 @@ export function LeadForm() {
   watch();
   const needsKg = goalValue === "zhubnout" || goalValue === "nabrat";
 
-  // Zkrácený formulář (1. 8. 2026): jen CÍL → KONTAKT. Ostatní kroky vyřazené
-  // (defaulty nastavené v defaultValues výše). needsKg drží kg vyčištěné.
-  const steps: StepId[] = useMemo(() => ["goal", "contact"], []);
+  // Zkrácený formulář (1. 8. 2026): CÍL → ODKUD → KONTAKT. Ostatní kroky vyřazené
+  // (pole nepovinná v schema). „source" (odkud) zůstává kvůli attribution.
+  const steps: StepId[] = useMemo(() => ["goal", "source", "contact"], []);
 
   const [stepIdx, setStepIdx] = useState(0);
   const [submitState, setSubmitState] = useState<
@@ -185,6 +183,7 @@ export function LeadForm() {
       setSubmitState({ status: "success", data });
       // Konverzi hlásíme až když server poptávku potvrdil, ne při odeslání.
       window.gtag?.("event", "conversion", { send_to: ADS_CONVERSION });
+      window.gtag?.("event", "generate_lead"); // GA4 konverze (označit jako Key event v GA4)
       window.fbq?.("track", "Lead");
     } catch (err) {
       const message =

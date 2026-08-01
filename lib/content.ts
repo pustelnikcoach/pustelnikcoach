@@ -25,7 +25,7 @@ export const nav = {
     { label: "FAQ", href: "#faq" },
     { label: "Kontakt", href: "#kontakt" },
   ],
-  cta: "Chci trénink ZDARMA", // ÚPRAVA: text hlavního tlačítka v navigaci
+  cta: "Chci konzultaci ZDARMA", // ÚPRAVA: text hlavního tlačítka v navigaci
 
   // REZERVACE — skrytá záložka. Až bude hotová, přepni `showReservations` na
   // true a v liště (i v mobilním menu) se objeví odkaz "Rezervace" → /rezervace.
@@ -50,7 +50,7 @@ export const hero = {
   subheadline:
     "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy. Jen **jednoduchá cesta k vysněné formě**, postavená na selském rozumu.",
 
-  ctaPrimary: "Chci trénink ZDARMA!", // ÚPRAVA: text hlavního tlačítka
+  ctaPrimary: "Chci konzultaci ZDARMA!", // ÚPRAVA: text hlavního tlačítka
   ctaSecondary: "Vidět výsledky", // ÚPRAVA: text druhého tlačítka
 
   // ÚPRAVA: cesta k hero fotce (poměr 4:5, ulož do public/images/)
@@ -250,10 +250,10 @@ export const about = {
   paragraphs: [
     "V roce **2021** mě jako **šestnáctiletého** srazilo auto. Doktoři mi dávali **1% šanci na přežití**.",
     "Když mi tělo dalo druhou šanci, slíbil jsem si, že ji **nepromarním**. Od toho dne beru zdraví i život **vážně**.",
-    "**Šest let cvičím. Dva roky trénuju klienty v Elements Gymu Ostrava.**",
+    "**Šest let cvičím. Dva roky trénuju klienty v ElementGyms Ostrava.**",
     "Začal jsem **u sebe**. Léta jsem studoval, co opravdu funguje, a postavil postavu, kterou jsem chtěl. Bez zkratek, bez extrémních diet, bez magie.",
     "Pak se začali ptát **kamarádi**. Co jíš, jak cvičíš, jak to děláš. Tak jsem začal pomáhat jim. Když to fungovalo opakovaně, došlo mi, že stejný systém můžu dát i lidem mimo svůj okruh.",
-    "Teď trénuju **klienty** v Elements Gymu a online po celé republice. Formování postavy, sílu, powerlifting i kulturistiku včetně závodní přípravy.",
+    "Teď trénuju **klienty** v ElementGyms a online po celé republice. Formování postavy, sílu, powerlifting i kulturistiku včetně závodní přípravy.",
     "**Zdraví máte jen jedno.** O tělo se musí starat, nejde jen o váhu nebo postavu, jde o klouby, srdce, hlavu, spánek. Žádný cíl není moc malý a žádný čas není moc pozdě.",
     "Jsi tu správně. **Jsem tvůj člověk.**",
   ],
@@ -263,7 +263,7 @@ export const about = {
     "Fitness trenér / instruktor fitness",
     "Sestavování jídelníčků",
     "6+ let praxe v cvičení",
-    "Elements Gym Ostrava / Opava",
+    "ElementGyms Ostrava / Opava",
   ],
 
   // ÚPRAVA: cesta k portrétní fotce (poměr 4:5)
@@ -370,7 +370,7 @@ export const vsl = {
   heading: "Než mi napíšeš — pusť si tohle",
   videoUrl: "", // ÚPRAVA: až natočíš → "/video/vsl.mp4"
   poster: "/images/vsl-poster.jpg", // volitelný náhled; když chybí, přehrávač ho ignoruje
-  cta: "Chci trénink ZDARMA",
+  cta: "Chci konzultaci ZDARMA",
 };
 
 export const guarantee = {
@@ -547,15 +547,15 @@ export const faq = [
   },
   {
     q: "Musím chodit do gymu?",
-    a: "**Online Coaching** děláš odkudkoliv: gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v Elements Gymu Ostrava i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
+    a: "**Online Coaching** děláš odkudkoliv: gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v ElementGyms Ostrava i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
   },
   {
     q: "Co když nesedí žádný balíček z ceníku?",
     a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků. S Lukášem Přibylou jsme šli mimo standard a fungovalo to.",
   },
   {
-    q: "Můžu nejdřív vyzkoušet jeden trénink?",
-    a: "**ANO — první trénink máš úplně zdarma.** Přijď, potrénujeme spolu, ukážu ti techniku a jak to u mě chodí. Žádný závazek, žádný prodejní tlak. Když ti to sedne, domluvíme se, jak dál.",
+    q: "Můžu si to nejdřív vyzkoušet, než se rozhodnu?",
+    a: "Jasně. Začneme **nezávaznou konzultací** — projdeme tvůj cíl, ukážu ti, jak pracuju, a dostaneš ode mě konkrétní plán. Žádný závazek, žádný prodejní tlak. Když ti to sedne, domluvíme se, jak dál.",
   },
 ];
 
@@ -600,7 +600,7 @@ export const contact = {
   tiktokUrl: "https://www.tiktok.com/@petrpustelnikcoach",
   facebook: "Petr Pustelník",
   facebookUrl: "https://www.facebook.com/profile.php?id=61581158994838",
-  gym: "Elements Gym Ostrava / Opava",
+  gym: "ElementGyms Ostrava / Opava",
 };
 
 // -----------------------------------------------------------------
@@ -618,9 +618,9 @@ export const legal = {
 // SEO — co se zobrazí v Google a při sdílení na sítích
 // -----------------------------------------------------------------
 export const seo = {
-  title: "Petr Pustelník | Osobní trenér Ostrava / Opava | Elements Gym",
+  title: "Petr Pustelník | Osobní trenér Ostrava / Opava | ElementGyms",
   description:
-    "Osobní trenér v Ostravě a Opavě (Elements Gym). 6+ let praxe, přes 100 klientů, 100 % úspěšnost při dodržení plánu. Hubnutí, nabírání svalů, formování postavy.",
+    "Osobní trenér v Ostravě a Opavě (ElementGyms). 6+ let praxe, přes 100 klientů, 100 % úspěšnost při dodržení plánu. Hubnutí, nabírání svalů, formování postavy.",
   ogTitle: "Petr Pustelník | Osobní trenér Ostrava / Opava",
   ogDescription:
     "Tvoje forma mluví dřív než ty. Jednoduchá cesta k vysněné formě, postavená na selském rozumu.",

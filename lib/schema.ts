@@ -34,11 +34,13 @@ const phoneRegex = /^(\+?420|0)?[\s-]?[0-9]{3}[\s-]?[0-9]{3}[\s-]?[0-9]{3}$/;
 export const LeadSchema = z.object({
   goal: z.enum(GOALS, { required_error: "Vyber cíl" }),
   kg: z.enum(KG_BUCKETS).optional(),
-  timeline: z.enum(TIMELINES, { required_error: "Vyber časový horizont" }),
-  experience: z.enum(EXPERIENCE, { required_error: "Vyber svou úroveň" }),
-  package: z.enum(PACKAGE_CHOICES, { required_error: "Vyber balíček" }),
+  // Zkrácený formulář (1. 8. 2026): povinné jen goal + source + kontakt.
+  // Ostatní nepovinná — doptá se na hovoru, ať formulář netře konverzi.
+  timeline: z.enum(TIMELINES).optional(),
+  experience: z.enum(EXPERIENCE).optional(),
+  package: z.enum(PACKAGE_CHOICES).optional(),
   source: z.enum(SOURCES, { required_error: "Vyber, odkud jsi se o mně dozvěděl" }),
-  reason: z.enum(REASONS, { required_error: "Vyber, proč jsi vybral mě" }),
+  reason: z.enum(REASONS).optional(),
   name: z
     .string()
     .min(2, "Zadej jméno a příjmení")
