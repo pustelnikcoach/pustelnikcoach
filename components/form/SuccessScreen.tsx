@@ -21,8 +21,8 @@ export function SuccessScreen({ data }: Props) {
   const summary: Array<[string, string]> = [
     ["Cíl", GOAL_LABELS[data.goal]],
     ["Kolik", data.kg ? KG_LABELS[data.kg] : "—"],
-    ["Časový horizont", TIMELINE_LABELS[data.timeline]],
-    ["Balíček", data.package],
+    ["Časový horizont", data.timeline ? TIMELINE_LABELS[data.timeline] : "—"],
+    ["Balíček", data.package ?? "—"],
   ];
 
   return (
