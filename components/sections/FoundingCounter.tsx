@@ -1,9 +1,9 @@
 export const TOTAL = 10;
 
-// 0 do 13.7. 6:00 (Praha), pak 7. Sdílí i StickyBar.
-// ponytail: časová brána (jednorázový flip). Po 6:00 klidně nahraď pevným číslem.
+// Obsazeno: ručně nastavené číslo. Sdílí i StickyBar.
+// ponytail: pevná hodnota — časová brána už dosloužila (13.7.2026).
 export function slotsTaken() {
-  return Date.now() >= Date.parse("2026-07-13T06:00:00+02:00") ? 7 : 0;
+  return 8;
 }
 
 export function FoundingCounter() {
