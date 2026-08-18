@@ -17,7 +17,6 @@
 export const nav = {
   brand: "PUSTELNIK", // ÚPRAVA: značka/logo text vlevo nahoře (tečka se přidá automaticky v zelené)
   links: [
-    { label: "Starting 10", href: "/starting-10" },
     { label: "O mně", href: "#o-mne" },
     { label: "Výsledky", href: "#vysledky" },
     { label: "Recenze", href: "#recenze" },
@@ -32,6 +31,18 @@ export const nav = {
   showReservations: true,
   reservationsLabel: "Rezervace",
   reservationsHref: "/rezervace",
+};
+
+// -----------------------------------------------------------------
+// ZAKLÁDAJÍCÍ CENA — jediné místo, kde se to mění
+// -----------------------------------------------------------------
+// Tohle se propisuje do úvodní sekce, spodní lišty, stránky
+// /starting-10 i do e-mailu s tréninkovým plánem. Měň jen tady.
+export const founding = {
+  deadline: "31. 8.", // dokdy zakládající cena platí
+  price: "2 790", // zakládající cena za měsíc
+  regular: "4 390", // běžná cena Hybrid Pro za měsíc
+  lock: "12 měsíců", // jak dlouho zakládající cena drží
 };
 
 // -----------------------------------------------------------------

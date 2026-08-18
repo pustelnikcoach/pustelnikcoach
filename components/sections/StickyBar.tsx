@@ -1,10 +1,7 @@
-import { slotsTaken, TOTAL } from "./FoundingCounter";
+import { founding } from "@/lib/content";
 
 export function StickyBar() {
-  const left = TOTAL - slotsTaken();
-  const noun = left === 1 ? "MÍSTO" : left < 5 ? "MÍSTA" : "MÍST";
-  const verb = left >= 2 && left <= 4 ? "ZBÝVAJÍ" : "ZBÝVÁ";
-  const text = `${verb} ${left} ${noun} → REZERVUJ NYNÍ 📩`;
+  const text = `ZAKLÁDAJÍCÍ CENA ${founding.price} KČ KONČÍ ${founding.deadline} → REZERVUJ NYNÍ 📩`;
   const group = (
     <div className="flex shrink-0">
       {[0, 1, 2, 3].map((i) => (

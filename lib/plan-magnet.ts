@@ -56,7 +56,7 @@ export function renderPlanEmail(): string {
           <p style="margin:0 0 12px 0;">Tenhle plán je dobrý. Ale je stejný pro tebe i pro člověka, který váží o třicet kilo víc a nikdy nedřepoval. Neví, kolik toho zvládneš, co ti bolí a co budeš dělat, až se za šest týdnů váha zastaví — a ona se zastaví.</p>
           <p style="margin:0 0 24px 0;"><strong style="color:${bone};">85 % lidí to vzdá mezi 4. a 8. týdnem.</strong> Ne proto, že mají špatný plán. Proto, že v tu chvíli nemají nikoho, kdo jim řekne, co změnit.</p>
 
-          <p style="margin:0 0 12px 0;">Proto dávám <strong style="color:${bone};">první konzultaci zdarma</strong>. Bez závazku a bez prodejního tlaku — i když si nesedneme, odejdeš s tím, co konkrétně máš zlepšit.</p>
+          <p style="margin:0 0 12px 0;">Proto dávám <strong style="color:${bone};">první konzultaci zdarma</strong>. Bez prodejního tlaku, i když si nesedneme, odejdeš s tím, co konkrétně máš zlepšit.</p>
           <p style="margin:0 0 24px 0;">
             <a href="https://pustelnikcoach.cz/#kontakt" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:600;">Chci konzultaci zdarma →</a>
           </p>
@@ -64,7 +64,7 @@ export function renderPlanEmail(): string {
 
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px 0;border:1px solid rgba(15,76,58,0.55);border-radius:12px;">
             <tr><td style="padding:16px 18px;font-size:14px;line-height:1.55;color:${bone};">
-              <strong style="color:${bone};">Otevírám Opavu a beru 10 zakládajících klientů</strong> do balíčku Hybrid&nbsp;Pro za 2&nbsp;790&nbsp;Kč/měs. napořád (běžně 4&nbsp;390&nbsp;Kč). Až se kapacita naplní, cena končí. Plus 90denní garance — neuvidíš progres, vracím peníze.
+              <strong style="color:${bone};">Do 31.&nbsp;8. beru nové klienty za zakládající cenu</strong>: balíček Hybrid&nbsp;Pro za 2&nbsp;790&nbsp;Kč/měs. místo 4&nbsp;390&nbsp;Kč. Cena se ti zamkne na 12&nbsp;měsíců, pak přechází na běžný ceník. Plus 90denní garance — neuvidíš progres, vracím peníze.
             </td></tr>
           </table>
 
@@ -92,8 +92,8 @@ delat, az se za sest tydnu vaha zastavi - a ona se zastavi.
 85 % lidi to vzda mezi 4. a 8. tydnem. Ne proto, ze maji spatny plan.
 Proto, ze v tu chvili nemaji nikoho, kdo jim rekne, co zmenit.
 
-Proto davam prvni konzultaci i prvni trenink ZDARMA. Bez zavazku a bez
-prodejniho tlaku - i kdyz si nesedneme, odejdes s tim, co konkretne mas zlepsit.
+Proto davam prvni konzultaci i prvni trenink ZDARMA. Bez prodejniho tlaku,
+i kdyz si nesedneme, odejdes s tim, co konkretne mas zlepsit.
 
 Chci trenink zdarma:
 https://pustelnikcoach.cz/#kontakt
@@ -102,8 +102,9 @@ Nebo mi rovnou zavolej: 702 169 863
 Napsat muzes i na tenhle mail, ctu ho sam.
 
 ---
-Oteviram Opavu a beru 10 zakladajicich klientu do balicku Hybrid Pro za
-2 790 Kc/mes. naporad (bezne 4 390 Kc). Az se kapacita naplni, cena konci.
+Do 31. 8. beru nove klienty za zakladajici cenu: balicek Hybrid Pro za
+2 790 Kc/mes. misto 4 390 Kc. Cena se ti zamkne na 12 mesicu, pak prechazi
+na bezny cenik.
 Plus 90denni garance - neuvidis progres, vracim penize.
 ---
 

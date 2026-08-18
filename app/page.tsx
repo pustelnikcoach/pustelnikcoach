@@ -13,10 +13,8 @@ import { ProofBar } from "@/components/sections/ProofBar";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
 import { StickyBar } from "@/components/sections/StickyBar";
-import { FoundingCounter } from "@/components/sections/FoundingCounter";
+import { FoundingOffer } from "@/components/sections/FoundingOffer";
 import { VSL } from "@/components/sections/VSL";
-
-export const dynamic = "force-dynamic"; // počítadlo se počítá z času při každém requestu
 
 export default function HomePage() {
   return (
@@ -24,7 +22,7 @@ export default function HomePage() {
       <StickyBar />
       <Nav />
       <main>
-        <FoundingCounter />
+        <FoundingOffer />
         <About />
         <Calculator />
         <Packages />
