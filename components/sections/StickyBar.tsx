@@ -1,21 +1,16 @@
-import { founding } from "@/lib/content";
+import { heroState } from "@/lib/content";
 
 export function StickyBar() {
-  const text = `ZAKLÁDAJÍCÍ CENA ${founding.price} KČ KONČÍ ${founding.deadline} → REZERVUJ NYNÍ 📩`;
-  const group = (
-    <div className="flex shrink-0">
-      {[0, 1, 2, 3].map((i) => (
-        <span key={i} className="mx-8">{text}</span>
-      ))}
-    </div>
-  );
+  // Až se místo obsadí nebo projde termín, lišta zmizí a spodek webu je čistý.
+  if (heroState() !== "nabidka") return null;
+
   return (
-    <a href="#kontakt" className="fixed inset-x-0 bottom-0 z-50 block overflow-hidden bg-emerald py-2 text-sm font-medium text-bone transition-colors hover:bg-emerald-light">
-      <style>{`@keyframes ptmarquee{to{transform:translateX(-50%)}}`}</style>
-      <div className="flex w-max" style={{ animation: "ptmarquee 22s linear infinite" }}>
-        {group}
-        {group}
-      </div>
+    <a
+      href="#kontakt"
+      className="fixed inset-x-0 bottom-0 z-50 block bg-emerald px-4 py-2.5 text-center text-[0.78rem] font-semibold uppercase tracking-[0.06em] text-bone transition-colors hover:bg-emerald-light sm:text-sm"
+    >
+      Poslední 1 místo za zakládající cenu{" "}
+      <span className="hidden sm:inline">→ Rezervuj </span>📩
     </a>
   );
 }

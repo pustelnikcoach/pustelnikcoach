@@ -24,7 +24,7 @@ export const nav = {
     { label: "FAQ", href: "#faq" },
     { label: "Kontakt", href: "#kontakt" },
   ],
-  cta: "Chci konzultaci ZDARMA", // ÚPRAVA: text hlavního tlačítka v navigaci
+  cta: "Chci konzultaci ZDARMA!", // ÚPRAVA: text hlavního tlačítka v navigaci
 
   // REZERVACE — skrytá záložka. Až bude hotová, přepni `showReservations` na
   // true a v liště (i v mobilním menu) se objeví odkaz "Rezervace" → /rezervace.
@@ -40,10 +40,31 @@ export const nav = {
 // /starting-10 i do e-mailu s tréninkovým plánem. Měň jen tady.
 export const founding = {
   deadline: "31. 8.", // dokdy zakládající cena platí
+
+  // Spodní zelená lišta "Poslední 1 místo" zmizí a spodek webu zůstane čistý.
+  // Stane se to samo po termínu níž, nebo hned, když přepíšeš taken na true.
+  taken: false, // přepni na true, až se poslední místo obsadí
+  endsAt: "2026-09-01T00:00:00+02:00", // konec 31. 8. o půlnoci, čas pražský
+
+  // Dva měsíce po konci akce se web vrátí k původnímu znění (blok `hero` níž).
+  backToOriginalAt: "2026-11-01T00:00:00+01:00",
+
   price: "2 790", // zakládající cena za měsíc
   regular: "4 390", // běžná cena Hybrid Pro za měsíc
   lock: "12 měsíců", // jak dlouho zakládající cena drží
 };
+
+// V jakém stavu je úvodní obrazovka. Používá to úvodní sekce i spodní lišta,
+// aby se obě přepnuly ve stejnou chvíli.
+//   "nabidka"  = zakládající cena běží, zbývá poslední místo
+//   "obsazeno" = místo je pryč nebo prošel termín, běžná cena a konzultace zdarma
+//   "puvodni"  = zpátky na původní web
+export function heroState(): "nabidka" | "obsazeno" | "puvodni" {
+  const now = Date.now();
+  if (!founding.taken && now < Date.parse(founding.endsAt)) return "nabidka";
+  if (now < Date.parse(founding.backToOriginalAt)) return "obsazeno";
+  return "puvodni";
+}
 
 // -----------------------------------------------------------------
 // HERO — úvodní sekce webu (to první, co návštěvník vidí)
@@ -59,7 +80,7 @@ export const hero = {
   // ÚPRAVA: podnadpis pod hlavním textem
   // (hvězdičkami **text** udělá tučně)
   subheadline:
-    "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné výmluvy. Jen **jednoduchá cesta k vysněné formě**, postavená na selském rozumu.",
+    "**Šest let praxe. Přes sto klientů.** Žádné restarty, žádné zázraky. Pouze **jednoduchá cesta k vysněné formě**, postavená na základech a selském rozumu.",
 
   ctaPrimary: "Chci konzultaci ZDARMA!", // ÚPRAVA: text hlavního tlačítka
   ctaSecondary: "Vidět výsledky", // ÚPRAVA: text druhého tlačítka
@@ -381,7 +402,7 @@ export const vsl = {
   heading: "Než mi napíšeš — pusť si tohle",
   videoUrl: "", // ÚPRAVA: až natočíš → "/video/vsl.mp4"
   poster: "/images/vsl-poster.jpg", // volitelný náhled; když chybí, přehrávač ho ignoruje
-  cta: "Chci konzultaci ZDARMA",
+  cta: "Chci konzultaci ZDARMA!",
 };
 
 export const guarantee = {

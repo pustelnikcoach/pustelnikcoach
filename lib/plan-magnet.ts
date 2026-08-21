@@ -58,7 +58,7 @@ export function renderPlanEmail(): string {
 
           <p style="margin:0 0 12px 0;">Proto dávám <strong style="color:${bone};">první konzultaci zdarma</strong>. Bez prodejního tlaku, i když si nesedneme, odejdeš s tím, co konkrétně máš zlepšit.</p>
           <p style="margin:0 0 24px 0;">
-            <a href="https://pustelnikcoach.cz/#kontakt" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:600;">Chci konzultaci zdarma →</a>
+            <a href="https://pustelnikcoach.cz/#kontakt" style="display:inline-block;background:${emerald};color:${bone};text-decoration:none;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:600;">Chci konzultaci ZDARMA! →</a>
           </p>
           <p style="margin:0 0 24px 0;font-size:15px;">Nebo mi rovnou zavolej: <a href="tel:+420702169863" style="color:#7FD8B8;text-decoration:none;font-weight:600;">702 169 863</a>. Napsat můžeš i na tenhle mail, čtu ho sám.</p>
 

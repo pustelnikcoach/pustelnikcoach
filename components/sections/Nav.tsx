@@ -92,7 +92,7 @@ export function Nav() {
 
           {/* Navigační odkazy — zmizí když ukazujeme logo */}
           <nav
-            className="hidden md:flex items-center gap-8 transition-opacity duration-300"
+            className="hidden md:flex flex-1 items-center justify-between pl-10 lg:pl-16 transition-opacity duration-300"
             style={{ opacity: showLogo ? 0 : 1, pointerEvents: showLogo ? "none" : "auto" }}
           >
             {nav.links.map((link) => (
@@ -116,7 +116,7 @@ export function Nav() {
             )}
             <a
               href={to("#kontakt")}
-              className="ml-2 inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-emerald hover:bg-emerald-light text-bone text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 h-10 px-4 rounded-xl bg-emerald hover:bg-emerald-light text-bone text-sm font-medium transition-colors"
               tabIndex={showLogo ? -1 : 0}
             >
               {nav.cta}
