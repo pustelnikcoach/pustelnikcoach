@@ -43,7 +43,7 @@ export const founding = {
 
   // Spodní zelená lišta "Poslední 1 místo" zmizí a spodek webu zůstane čistý.
   // Stane se to samo po termínu níž, nebo hned, když přepíšeš taken na true.
-  taken: false, // přepni na true, až se poslední místo obsadí
+  taken: true, // přepni na false, kdyby se místo zase uvolnilo
   endsAt: "2026-09-01T00:00:00+02:00", // konec 31. 8. o půlnoci, čas pražský
 
   // Dva měsíce po konci akce se web vrátí k původnímu znění (blok `hero` níž).
