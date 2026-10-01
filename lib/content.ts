@@ -34,37 +34,6 @@ export const nav = {
 };
 
 // -----------------------------------------------------------------
-// ZAKLÁDAJÍCÍ CENA — jediné místo, kde se to mění
-// -----------------------------------------------------------------
-// Tohle se propisuje do úvodní sekce, spodní lišty, stránky
-// /starting-10 i do e-mailu s tréninkovým plánem. Měň jen tady.
-export const founding = {
-  deadline: "31. 8.", // dokdy zakládající cena platí
-
-  // Spodní zelená lišta "Poslední 1 místo" zmizí a spodek webu zůstane čistý.
-  // Stane se to samo po termínu níž, nebo hned, když přepíšeš taken na true.
-  taken: true, // přepni na false, kdyby se místo zase uvolnilo
-  endsAt: "2026-09-01T00:00:00+02:00", // konec 31. 8. o půlnoci, čas pražský
-
-  // Dva měsíce po konci akce se web vrátí k původnímu znění (blok `hero` níž).
-  backToOriginalAt: "2026-11-01T00:00:00+01:00",
-
-  lock: "12 měsíců", // jak dlouho zakládající cena drží
-};
-
-// V jakém stavu je úvodní obrazovka. Používá to úvodní sekce i spodní lišta,
-// aby se obě přepnuly ve stejnou chvíli.
-//   "nabidka"  = zakládající cena běží, zbývá poslední místo
-//   "obsazeno" = místo je pryč nebo prošel termín, běžná cena a konzultace zdarma
-//   "puvodni"  = zpátky na původní web
-export function heroState(): "nabidka" | "obsazeno" | "puvodni" {
-  const now = Date.now();
-  if (!founding.taken && now < Date.parse(founding.endsAt)) return "nabidka";
-  if (now < Date.parse(founding.backToOriginalAt)) return "obsazeno";
-  return "puvodni";
-}
-
-// -----------------------------------------------------------------
 // HERO — úvodní sekce webu (to první, co návštěvník vidí)
 // -----------------------------------------------------------------
 export const hero = {

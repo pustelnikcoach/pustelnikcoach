@@ -12,18 +12,12 @@ import { PlanMagnet } from "@/components/sections/PlanMagnet";
 import { ProofBar } from "@/components/sections/ProofBar";
 import { Results } from "@/components/sections/Results";
 import { ResultsCurve } from "@/components/sections/ResultsCurve";
-import { StickyBar } from "@/components/sections/StickyBar";
 import { Hero } from "@/components/sections/Hero";
 import { VSL } from "@/components/sections/VSL";
-
-// Stránka je statická. Tohle ji nechá jednou za hodinu přegenerovat,
-// aby se úvodní obrazovka i lišta samy přepnuly, až projdou data v content.ts.
-export const revalidate = 3600;
 
 export default function HomePage() {
   return (
     <>
-      <StickyBar />
       <Nav />
       <main>
         <Hero />
