@@ -20,9 +20,6 @@ const grid =
 const badge =
   "inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.16em]";
 const heading = "mt-5 font-display text-display-lg font-semibold text-bone";
-const priceRow =
-  "mt-5 flex flex-wrap items-baseline justify-center gap-x-4 gap-y-1 md:justify-start";
-const bigPrice = "font-display text-display-lg font-semibold text-bone";
 const body =
   "mx-auto mt-6 max-w-md text-[1.0625rem] leading-relaxed text-bone/70 md:mx-0";
 const button =
@@ -48,7 +45,7 @@ function Frame({ children }: { children: React.ReactNode }) {
 export function Hero() {
   const state = heroState();
 
-  // Zakládající cena běží: poslední místo za 2 790.
+  // Zakládající cena běží: poslední místo.
   if (state === "nabidka") {
     return (
       <Frame>
@@ -64,13 +61,6 @@ export function Hero() {
           <br />
           končí <span className="text-emerald">{founding.deadline}</span>
         </h1>
-        <div className={priceRow}>
-          <span className="text-xl text-mute line-through decoration-mute/70">
-            {founding.regular}&nbsp;Kč
-          </span>
-          <span className={bigPrice}>{founding.price}&nbsp;Kč</span>
-          <span className="text-lg text-mute">/měs</span>
-        </div>
         <p className={body}>
           Balíček <b className="text-bone">Hybrid&nbsp;Pro</b> s hlavním trenérem nově
           otevřeného fitka ElementGyms Opava. Cena se zamkne pouze na{" "}
@@ -91,7 +81,7 @@ export function Hero() {
     );
   }
 
-  // Místo je pryč nebo prošel termín: běžná cena a konzultace zdarma.
+  // Místo je pryč nebo prošel termín: konzultace zdarma.
   if (state === "obsazeno") {
     return (
       <Frame>
@@ -103,13 +93,8 @@ export function Hero() {
           <br />
           nezměnil.
         </h1>
-        <div className={priceRow}>
-          <span className={bigPrice}>{founding.regular}&nbsp;Kč</span>
-          <span className="text-lg text-mute">/měs · Hybrid&nbsp;Pro</span>
-        </div>
         <p className={body}>
-          Balíček <b className="text-bone">Hybrid&nbsp;Pro</b> je stále za běžnou cenu.
-          I když si nesedneme, odejdeš z konzultace s radami, co konkrétně zlepšit.
+          Pojďme si dát nezávaznou konzultaci. I když si nesedneme, odejdeš z konzultace s radami, co konkrétně zlepšit.
         </p>
         <a href="#kontakt" className={`${button} mt-7`}>
           Chci konzultaci ZDARMA!

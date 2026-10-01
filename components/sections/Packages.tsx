@@ -100,13 +100,6 @@ export function Packages() {
                   </p>
                 )}
 
-                <div className="mt-5 flex items-baseline gap-1">
-                  <span className="font-display text-5xl font-semibold text-bone leading-none">
-                    {pkg.price}
-                  </span>
-                  <span className="text-mute text-base ml-1">Kč {pkg.period}</span>
-                </div>
-
                 <ul className="mt-7 space-y-3">
                   {pkg.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-[0.95rem] text-bone/80">
@@ -151,9 +144,6 @@ export function Packages() {
                 className="p-5 rounded-xl bg-graphite/60 border border-bone/5"
               >
                 <div className="text-sm text-bone/85">{item.name}</div>
-                <div className="mt-2 font-display text-2xl font-semibold text-bone">
-                  {item.price} <span className="text-base text-mute">Kč</span>
-                </div>
                 {item.note && (
                   <div className="mt-1 text-xs text-mute">{item.note}</div>
                 )}

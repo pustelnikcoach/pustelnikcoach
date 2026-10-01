@@ -62,11 +62,6 @@ export function renderPlanEmail(): string {
           </p>
           <p style="margin:0 0 24px 0;font-size:15px;">Nebo mi rovnou zavolej: <a href="tel:+420702169863" style="color:#7FD8B8;text-decoration:none;font-weight:600;">702 169 863</a>. Napsat můžeš i na tenhle mail, čtu ho sám.</p>
 
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px 0;border:1px solid rgba(15,76,58,0.55);border-radius:12px;">
-            <tr><td style="padding:16px 18px;font-size:14px;line-height:1.55;color:${bone};">
-              <strong style="color:${bone};">Do 31.&nbsp;8. beru nové klienty za zakládající cenu</strong>: balíček Hybrid&nbsp;Pro za 2&nbsp;790&nbsp;Kč/měs. místo 4&nbsp;390&nbsp;Kč. Cena se ti zamkne na 12&nbsp;měsíců, pak přechází na běžný ceník. Plus 90denní garance — neuvidíš progres, vracím peníze.
-            </td></tr>
-          </table>
 
           <p style="margin:0;">— Petr Pustelník, hlavní trenér ElementGyms Opava</p>
         </td></tr>
@@ -101,12 +96,6 @@ https://pustelnikcoach.cz/#kontakt
 Nebo mi rovnou zavolej: 702 169 863
 Napsat muzes i na tenhle mail, ctu ho sam.
 
----
-Do 31. 8. beru nove klienty za zakladajici cenu: balicek Hybrid Pro za
-2 790 Kc/mes. misto 4 390 Kc. Cena se ti zamkne na 12 mesicu, pak prechazi
-na bezny cenik.
-Plus 90denni garance - neuvidis progres, vracim penize.
----
 
 - Petr Pustelnik, hlavni trener ElementGyms Opava
 `;

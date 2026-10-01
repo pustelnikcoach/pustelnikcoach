@@ -350,7 +350,7 @@ export function LeadForm() {
                           field.onChange(p.name);
                         }}
                         title={p.name}
-                        subtitle={`${p.price} Kč ${p.period}`}
+                        subtitle={p.bestFor}
                       />
                     ))}
                     <OptionCard

@@ -1,7 +1,7 @@
 // =================================================================
 // PUSTELNIK COACH — obsah webu
 // =================================================================
-// Tady jsou všechny texty, ceny, výsledky klientů a kontakty.
+// Tady jsou všechny texty, výsledky klientů a kontakty.
 // Když chceš něco změnit, řekni o tom Claude Code česky —
 // najde to a upraví.
 //
@@ -49,8 +49,6 @@ export const founding = {
   // Dva měsíce po konci akce se web vrátí k původnímu znění (blok `hero` níž).
   backToOriginalAt: "2026-11-01T00:00:00+01:00",
 
-  price: "2 790", // zakládající cena za měsíc
-  regular: "4 390", // běžná cena Hybrid Pro za měsíc
   lock: "12 měsíců", // jak dlouho zakládající cena drží
 };
 
@@ -417,7 +415,7 @@ export const guarantee = {
 
   customTitle: "Nesedí ti žádný balíček?",
   customBody:
-    "Není nutné si vybrat balíček z ceníku. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Lukášem Přibylou. Společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
+    "Není nutné si vybrat hotový balíček. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Lukášem Přibylou. Společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
   customCta: "Domluvit spolupráci na míru",
 };
 
@@ -426,7 +424,7 @@ export const guarantee = {
 // -----------------------------------------------------------------
 export const urgency = {
   message:
-    "**Můj čas není digitální produkt.** Ceník je jen pro představu. Nejdřív si dáme nezávaznou konzultaci, kde ti řeknu, který balíček ti sedne nejvíc.",
+    "**Můj čas není digitální produkt.** Nejdřív si dáme nezávaznou konzultaci, kde ti řeknu, který balíček ti sedne nejvíc a kolik bude stát.",
 };
 
 // -----------------------------------------------------------------
@@ -441,8 +439,6 @@ export const packagesHeading = {
 export const packages = [
   {
     name: "Online Coaching",
-    price: "2 290",
-    period: "/měsíc",
     tag: null,
     bestFor: "Máš disciplínu, ale chceš plán a kontrolu.",
     features: [
@@ -455,8 +451,6 @@ export const packages = [
   },
   {
     name: "Hybrid",
-    price: "3 290",
-    period: "/měsíc",
     tag: null,
     bestFor: "Zkoušíš vážnější přístup, chceš osobní kontakt.",
     features: [
@@ -470,8 +464,6 @@ export const packages = [
   },
   {
     name: "Hybrid Pro",
-    price: "4 390",
-    period: "/měsíc",
     tag: "NEJOBLÍBENĚJŠÍ",
     bestFor: "Chceš výsledky teď a víš, že sám to nezvládneš.",
     features: [
@@ -485,8 +477,6 @@ export const packages = [
   },
   {
     name: "Hybrid Elite",
-    price: "6 490",
-    period: "/měsíc",
     tag: "MAX VÝSLEDEK",
     bestFor: "Závodní příprava nebo extrémní cíl.",
     features: [
@@ -506,12 +496,11 @@ export const packages = [
 export const oneTimeHeading = "Jednorázové služby";
 
 export const oneTime = [
-  { name: "1 osobní trénink", price: "590", note: "studenti 500" },
-  { name: "Tréninkový plán", price: "1 090", note: null },
-  { name: "Jídelníček", price: "1 490", note: "4 varianty na každé jídlo" },
+  { name: "1 osobní trénink", note: "studenti 500" },
+  { name: "Tréninkový plán", note: null },
+  { name: "Jídelníček", note: "4 varianty na každé jídlo" },
   {
     name: "Naučím tě cvičit",
-    price: "6 790",
     note: "10 lekcí + plán + suplementace",
   },
 ];
@@ -582,8 +571,12 @@ export const faq = [
     a: "**Online Coaching** děláš odkudkoliv: gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v ElementGyms Ostrava i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
   },
   {
-    q: "Co když nesedí žádný balíček z ceníku?",
+    q: "Co když mi nesedí žádný balíček?",
     a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků. S Lukášem Přibylou jsme šli mimo standard a fungovalo to.",
+  },
+  {
+    q: "Kolik to stojí?",
+    a: "Záleží na tom, co potřebuješ a jak často se budeme vídat. **Cenu ti řeknu na nezávazné konzultaci**, až budu vědět, kde jsi a kam chceš. Nechci ti prodat balíček, který ti nesedne.",
   },
   {
     q: "Můžu si to nejdřív vyzkoušet, než se rozhodnu?",

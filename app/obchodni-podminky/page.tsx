@@ -74,8 +74,8 @@ export default function TermsPage() {
         4. Cena a platba
       </h2>
       <p>
-        Aktuální ceny balíčků a jednorázových služeb jsou uvedeny na tomto webu
-        v sekci „Spolupráce“. Měsíční balíčky se platí předem na začátku
+        Cenu balíčku nebo jednorázové služby ti sdělím individuálně před
+        zahájením spolupráce a potvrdím ji písemně (e-mailem nebo zprávou). Měsíční balíčky se platí předem na začátku
         příslušného měsíce na základě faktury. Jednorázové služby se hradí
         před plněním.
       </p>

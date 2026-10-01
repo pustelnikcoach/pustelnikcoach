@@ -29,11 +29,10 @@ export function Starting10() {
         </h2>
         <p className="mt-4 max-w-2xl leading-relaxed text-bone/70">
           Do <b className="text-bone">{founding.deadline}</b> beru nové klienty do
-          balíčku <b className="text-bone">Hybrid&nbsp;Pro</b> za{" "}
-          <b className="text-bone">{founding.price}&nbsp;Kč/měs</b> místo{" "}
-          {founding.regular}&nbsp;Kč. Cena se ti zamkne na{" "}
-          <b className="text-bone">{founding.lock}</b>, pak přechází na běžný
-          ceník.
+          balíčku <b className="text-bone">Hybrid&nbsp;Pro</b> za
+          zakládající cenu, která se ti zamkne na{" "}
+          <b className="text-bone">{founding.lock}</b>. Konkrétní částku ti řeknu
+          na konzultaci.
         </p>
         <p className="mt-3 max-w-2xl text-[0.9375rem] leading-relaxed text-bone/55">
           Hybrid Pro = 4× osobní trénink měsíčně · osobní konzultace · tréninkový

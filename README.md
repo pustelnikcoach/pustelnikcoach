@@ -21,12 +21,6 @@ Ahoj Petisi. Tenhle web spravuješ **přes Claude Code**. Stačí mu napsat čes
 
 ## Co můžeš říct Claude Code — příklady
 
-### Změnit cenu
-
-> *"Změň cenu balíčku Hybrid Pro z 4390 na 4590"*
->
-> *"Zvedni cenu osobního tréninku na 650 korun"*
-
 ### Přidat nového klienta do výsledků
 
 > *"Přidej nového klienta. Jmenuje se Tomáš Novák, shodil z 95 na 78 kilo za 6 měsíců. Citát: 'Konečně mám systém, ke kterému se vracím.' Fotku ti za chvilku pošlu."*
