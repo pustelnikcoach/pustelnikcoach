@@ -496,7 +496,7 @@ export const packages = [
 export const oneTimeHeading = "Jednorázové služby";
 
 export const oneTime = [
-  { name: "1 osobní trénink", note: "studenti 500" },
+  { name: "1 osobní trénink", note: "sleva pro studenty" },
   { name: "Tréninkový plán", note: null },
   { name: "Jídelníček", note: "4 varianty na každé jídlo" },
   {
