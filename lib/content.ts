@@ -388,6 +388,22 @@ export const guarantee = {
 };
 
 // -----------------------------------------------------------------
+// CO DOSTANEŠ — krátký blok pod "O mně" (bez balíčků a cen)
+// -----------------------------------------------------------------
+export const offer = {
+  heading: "Co ode mě dostaneš",
+  subtitle: "Online nebo osobně v Ostravě či Opavě.",
+  items: [
+    { title: "Trénink", text: "Plán podle tvého cíle, času a zkušeností. Žádnou šablonu." },
+    { title: "Jídelníček", text: "Ze surovin, které máš rád. Ke každé dostaneš několik variant." },
+    { title: "Kontrola", text: "Pravidelně hlídám tvůj progres. Když se něco zasekne, plán spolu upravíme." },
+    { title: "Komunikace", text: "Pokud si nevíš rady nebo máš pochyby, napíšeš a já ti osobně odpovím." },
+  ],
+  note: "Jak to bude vypadat přímo u tebe, probereme na společné konzultaci.",
+  cta: "Chci konzultaci ZDARMA!",
+};
+
+// -----------------------------------------------------------------
 // BALÍČKY — na webu se nezobrazují, drží jen názvy pro formulář
 // -----------------------------------------------------------------
 export const packages = [

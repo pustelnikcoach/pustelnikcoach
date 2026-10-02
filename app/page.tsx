@@ -7,6 +7,7 @@ import { Footer } from "@/components/sections/Footer";
 import { Guarantee } from "@/components/sections/Guarantee";
 import { LeadFormSection } from "@/components/sections/LeadFormSection";
 import { Nav } from "@/components/sections/Nav";
+import { Offer } from "@/components/sections/Offer";
 import { PlanMagnet } from "@/components/sections/PlanMagnet";
 import { ProofBar } from "@/components/sections/ProofBar";
 import { Results } from "@/components/sections/Results";
@@ -21,6 +22,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <About />
+        <Offer />
         <Calculator />
         <Results />
         <ProofBar />
