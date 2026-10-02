@@ -20,7 +20,6 @@ export const nav = {
     { label: "O mně", href: "#o-mne" },
     { label: "Výsledky", href: "#vysledky" },
     { label: "Recenze", href: "#recenze" },
-    { label: "Balíčky", href: "#balicky" },
     { label: "FAQ", href: "#faq" },
     { label: "Kontakt", href: "#kontakt" },
   ],
@@ -382,29 +381,15 @@ export const guarantee = {
   promise:
     "**Neriskuješ nic.** Dej tomu 90 dní a dodrž plán. Když nepřijde progres, dostaneš peníze zpátky. Zajistím ti reálné výsledky a za tvůj úspěch ručím osobně.",
 
-  customTitle: "Nesedí ti žádný balíček?",
+  customTitle: "Chceš spolupráci na míru?",
   customBody:
-    "Není nutné si vybrat hotový balíček. Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Lukášem Přibylou. Společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
+    "Když mi popíšeš, co potřebuješ, **domluvíme něco na míru**. Třeba jako s Lukášem Přibylou. Společně jsme šli mimo standard a **shodil 3 kg tuku za měsíc.**",
   customCta: "Domluvit spolupráci na míru",
 };
 
 // -----------------------------------------------------------------
-// URGENCY — krátká věta nad balíčky
+// BALÍČKY — na webu se nezobrazují, drží jen názvy pro formulář
 // -----------------------------------------------------------------
-export const urgency = {
-  message:
-    "**Můj čas není digitální produkt.** Nejdřív si dáme nezávaznou konzultaci, kde ti řeknu, který balíček ti sedne nejvíc a kolik bude stát.",
-};
-
-// -----------------------------------------------------------------
-// BALÍČKY — měsíční spolupráce (4 hlavní balíčky)
-// -----------------------------------------------------------------
-export const packagesHeading = {
-  title: "Spolupráce",
-  subtitle:
-    "Měsíční partnerství. Tohle nejsou produkty na klik. **Každá spolupráce začíná konzultací**, kde se domluvíme, co ti sedí.",
-};
-
 export const packages = [
   {
     name: "Online Coaching",
@@ -456,21 +441,6 @@ export const packages = [
       "Jídelníček, 4 varianty",
       "Suplementace",
     ],
-  },
-];
-
-// -----------------------------------------------------------------
-// JEDNORÁZOVKY — služby, co se neprodávají měsíčně
-// -----------------------------------------------------------------
-export const oneTimeHeading = "Jednorázové služby";
-
-export const oneTime = [
-  { name: "1 osobní trénink", note: "sleva pro studenty" },
-  { name: "Tréninkový plán", note: null },
-  { name: "Jídelníček", note: "4 varianty na každé jídlo" },
-  {
-    name: "Naučím tě cvičit",
-    note: "10 lekcí + plán + suplementace",
   },
 ];
 
@@ -540,8 +510,8 @@ export const faq = [
     a: "**Online Coaching** děláš odkudkoliv: gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v ElementGyms Ostrava i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
   },
   {
-    q: "Co když mi nesedí žádný balíček?",
-    a: "**Ozvi se a domluvíme něco na míru.** Není nutné si vybrat z předem postavených balíčků. S Lukášem Přibylou jsme šli mimo standard a fungovalo to.",
+    q: "Jde to i na míru?",
+    a: "**Ozvi se a domluvíme něco na míru.** S Lukášem Přibylou jsme šli mimo standard a fungovalo to.",
   },
   {
     q: "Kolik to stojí?",

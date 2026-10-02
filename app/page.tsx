@@ -7,7 +7,6 @@ import { Footer } from "@/components/sections/Footer";
 import { Guarantee } from "@/components/sections/Guarantee";
 import { LeadFormSection } from "@/components/sections/LeadFormSection";
 import { Nav } from "@/components/sections/Nav";
-import { Packages } from "@/components/sections/Packages";
 import { PlanMagnet } from "@/components/sections/PlanMagnet";
 import { ProofBar } from "@/components/sections/ProofBar";
 import { Results } from "@/components/sections/Results";
@@ -23,7 +22,6 @@ export default function HomePage() {
         <Hero />
         <About />
         <Calculator />
-        <Packages />
         <Results />
         <ProofBar />
         <Guarantee />
