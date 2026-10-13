@@ -8,10 +8,9 @@ export const KG_BUCKETS = ["do-5", "5-10", "10-15", "15-plus"] as const;
 export const TIMELINES = ["3m", "6m", "12m", "nespecham"] as const;
 export const EXPERIENCE = ["zacatecnik", "obcas", "pokrocily"] as const;
 export const PACKAGE_CHOICES = [
-  "Online Coaching",
-  "Hybrid",
-  "Hybrid Pro",
-  "Hybrid Elite",
+  "Online coaching",
+  "Osobní coaching Ostrava",
+  "Osobní coaching Opava",
   "Nevim",
 ] as const;
 export const SOURCES = [

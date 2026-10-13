@@ -408,55 +408,16 @@ export const offer = {
 // -----------------------------------------------------------------
 export const packages = [
   {
-    name: "Online Coaching",
-    tag: null,
-    bestFor: "Máš disciplínu, ale chceš plán a kontrolu.",
-    features: [
-      "Online komunikace",
-      "2× měsíčně kontrola",
-      "Tréninkový plán",
-      "Jídelníček",
-      "Suplementace",
-    ],
+    name: "Online coaching",
+    bestFor: "Trénuješ kdekoliv. Já ti dám plán, jídelníček a kontrolu.",
   },
   {
-    name: "Hybrid",
-    tag: null,
-    bestFor: "Zkoušíš vážnější přístup, chceš osobní kontakt.",
-    features: [
-      "Online komunikace",
-      "1× osobní konzultace",
-      "2× osobní tréninky",
-      "Tréninkový plán",
-      "Jídelníček, 4 varianty",
-      "Suplementace",
-    ],
+    name: "Osobní coaching Ostrava",
+    bestFor: "Trénujeme spolu v ElementGyms Ostrava.",
   },
   {
-    name: "Hybrid Pro",
-    tag: "NEJOBLÍBENĚJŠÍ",
-    bestFor: "Chceš výsledky teď a víš, že sám to nezvládneš.",
-    features: [
-      "Online komunikace",
-      "1× osobní konzultace",
-      "4× osobní tréninky",
-      "Tréninkový plán",
-      "Jídelníček, 4 varianty",
-      "Suplementace",
-    ],
-  },
-  {
-    name: "Hybrid Elite",
-    tag: "MAX VÝSLEDEK",
-    bestFor: "Závodní příprava nebo extrémní cíl.",
-    features: [
-      "Online komunikace",
-      "1× osobní konzultace",
-      "8× osobních tréninků",
-      "Tréninkový plán",
-      "Jídelníček, 4 varianty",
-      "Suplementace",
-    ],
+    name: "Osobní coaching Opava",
+    bestFor: "Trénujeme spolu v ElementGyms Opava.",
   },
 ];
 
@@ -507,7 +468,7 @@ export const faqHeading = {
 export const faq = [
   {
     q: "Funguje to, i když mám hodně práce?",
-    a: "Online Coaching je postavený pro lidi se dvěma hodinami týdně. Plán, jídelníček a kontrola se vejdou do obědové pauzy. **Hybrid je intenzivnější, ale flexibilní.** Tréninky plánujeme podle tebe, ne podle mě.",
+    a: "Online coaching je postavený pro lidi se dvěma hodinami týdně. Plán, jídelníček a kontrola se vejdou do obědové pauzy. **Osobní coaching je intenzivnější, ale flexibilní.** Tréninky plánujeme podle tebe, ne podle mě.",
   },
   {
     q: "Co když budu cestovat?",
@@ -523,7 +484,7 @@ export const faq = [
   },
   {
     q: "Musím chodit do gymu?",
-    a: "**Online Coaching** děláš odkudkoliv: gym, doma, venku. **Hybrid balíčky** předpokládají osobní tréninky v ElementGyms Ostrava i Opava. Pokud bydlíš jinde, Online Coaching je tvoje cesta.",
+    a: "**Online coaching** děláš odkudkoliv: gym, doma, venku. **Osobní coaching** znamená tréninky se mnou v ElementGyms Ostrava nebo Opava. Pokud bydlíš jinde, online coaching je tvoje cesta.",
   },
   {
     q: "Jde to i na míru?",

@@ -54,8 +54,8 @@ export default function TermsPage() {
       </h2>
       <p>
         Předmětem služby je individuální tréninková a výživová spolupráce
-        v rozsahu zvoleného balíčku (Online Coaching, Hybrid, Hybrid Pro,
-        Hybrid Elite), případně jednorázových služeb (osobní trénink, tréninkový
+        v rozsahu zvoleného balíčku (Online coaching, Osobní coaching Ostrava,
+        Osobní coaching Opava), případně jednorázových služeb (osobní trénink, tréninkový
         plán, jídelníček, kurz „Naučím tě cvičit“) nebo spolupráce na míru
         dohodnuté individuálně.
       </p>
